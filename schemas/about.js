@@ -44,6 +44,39 @@ export default {
         },
       ],
     },
+    {
+      title: 'Backgrounds',
+      name: 'backgrounds',
+      type: 'object',
+      fields: [
+        {
+          title: 'Image Left',
+          name: 'imageLeft',
+          type: 'image',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+              initialValue: 'Morin',
+            },
+          ],
+        },
+        {
+          title: 'Image Right',
+          name: 'imageRight',
+          type: 'image',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+              initialValue: 'Morin',
+            },
+          ],
+        },
+      ],
+    },
   ],
   preview: {
     prepare() {

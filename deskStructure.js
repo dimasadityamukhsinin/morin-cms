@@ -9,6 +9,7 @@ import {
   FiFlag,
   FiFileText,
   FiList,
+  FiInfo,
 } from 'react-icons/fi'
 
 export default () =>
@@ -28,12 +29,14 @@ export default () =>
             'product',
             'productList',
             'productType',
+            'aboutList',
             'about',
             'home',
             'footer',
             'settings',
           ].includes(listItem.getId()),
       ),
+      S.documentTypeListItem('aboutList').icon(() => <FiInfo />),
       S.listItem()
         .title('Products')
         .icon(() => <FiBook />)

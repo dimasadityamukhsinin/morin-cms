@@ -66,7 +66,7 @@ export default {
           fields: [
             {
               title: 'Edit Alt Text',
-              name: 'name',
+              name: 'alt',
               type: 'string',
               initialValue: 'Morin',
             },
@@ -153,7 +153,7 @@ export default {
       fields: [
         {
           title: 'Edit Alt Text',
-          name: 'name',
+          name: 'alt',
           type: 'string',
           initialValue: 'Morin',
         },

@@ -29,14 +29,12 @@ export default () =>
             'product',
             'productList',
             'productType',
-            'aboutList',
             'about',
             'home',
             'footer',
             'settings',
           ].includes(listItem.getId()),
       ),
-      S.documentTypeListItem('aboutList').icon(() => <FiInfo />),
       S.listItem()
         .title('Products')
         .icon(() => <FiBook />)

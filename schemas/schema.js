@@ -18,7 +18,6 @@ import getMorin from './getMorin'
 import about from './about'
 import eventCategory from './eventCategory'
 import eventList from './eventList'
-import aboutList from './aboutList'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,7 +36,6 @@ export default createSchema({
     product,
     productList,
     productType,
-    aboutList,
     about,
     home,
     footer,

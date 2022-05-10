@@ -80,12 +80,12 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Easy', value: 'easy' },
-          { title: 'Medium', value: 'medium' },
-          { title: 'Hard', value: 'hard' },
+          { title: 'Easy', value: 'Easy' },
+          { title: 'Medium', value: 'Medium' },
+          { title: 'Hard', value: 'Hard' },
         ],
       },
-      initialValue: 'easy',
+      initialValue: 'Easy',
     },
     {
       name: 'cookingTime',
@@ -93,12 +93,12 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: '10 mins', value: '10mins' },
-          { title: '< 30 mins', value: 'under30mins' },
-          { title: '30-60 mins', value: '30to60mins' },
+          { title: '10 mins', value: '10 mins' },
+          { title: '< 30 mins', value: '< 30 mins' },
+          { title: '30-60 mins', value: '30-60 mins' },
         ],
       },
-      initialValue: '10mins',
+      initialValue: '10 mins',
     },
     {
       name: 'category',
@@ -106,12 +106,12 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Beverages', value: 'beverages' },
-          { title: 'Desserts', value: 'desserts' },
-          { title: 'Appetizers', value: 'appetizers' },
+          { title: 'Beverages', value: 'Beverages' },
+          { title: 'Desserts', value: 'Desserts' },
+          { title: 'Appetizers', value: 'Appetizers' },
         ],
       },
-      initialValue: 'beverages',
+      initialValue: 'Beverages',
     },
     {
       name: 'ingredients',

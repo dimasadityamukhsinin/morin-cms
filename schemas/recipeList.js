@@ -120,7 +120,6 @@ export default {
       of: [
         {
           name: 'description',
-          title: 'Description',
           type: 'string',
           validation: (Rule) => Rule.required(),
         },

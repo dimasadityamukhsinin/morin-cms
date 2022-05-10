@@ -142,14 +142,18 @@ export default {
       type: 'object',
       fields: [
         {
-          name: 'decor1',
           title: 'Decor 1',
-          type: 'image',
+          name: 'decor1',
+          type: 'reference',
+          to: [{ type: 'decorList' }],
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'decor2',
           title: 'Decor 2',
-          type: 'image',
+          type: 'reference',
+          to: [{ type: 'decorList' }],
+          validation: (Rule) => Rule.required(),
         },
       ],
     },

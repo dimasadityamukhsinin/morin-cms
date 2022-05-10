@@ -19,6 +19,7 @@ export default () =>
       ...S.documentTypeListItems().filter(
         (listItem) =>
           ![
+            'decorList',
             'getMorin',
             'event',
             'eventList',
@@ -44,6 +45,7 @@ export default () =>
             .items([
               S.documentTypeListItem('productList').icon(() => <FiFileText />),
               S.documentTypeListItem('productType').icon(() => <FiFlag />),
+              S.documentTypeListItem('decorList').icon(() => <FiFileText />),
             ]),
         ),
       S.listItem()
@@ -59,7 +61,7 @@ export default () =>
         ),
       S.listItem()
         .title('Events')
-        .icon(() => <FiStar />)
+        .icon(() => <FiFlag />)
         .child(
           S.list()
             .title('Events')

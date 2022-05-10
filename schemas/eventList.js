@@ -101,10 +101,32 @@ export default {
       ],
     },
     {
-      title: 'Event Module',
-      name: 'eventModule',
+      title: 'Description',
+      name: 'description',
       type: 'array',
       of: [
+        {
+          title: 'Block',
+          type: 'block',
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+              { title: 'Strike', value: 'strike-through' },
+              { title: 'Underline', value: 'underline' },
+            ],
+            annotations: [],
+          },
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'H1', value: 'h1' },
+            { title: 'H2', value: 'h2' },
+            { title: 'H3', value: 'h3' },
+            { title: 'H4', value: 'h4' },
+            { title: 'H5', value: 'h5' },
+          ],
+          lists: [],
+        },
         {
           title: 'Image Component',
           name: 'imageComponent',
@@ -137,46 +159,8 @@ export default {
             prepare(selection) {
               const { media } = selection
               return {
-                title: 'Image Component',
+                title: 'Image',
                 media: media,
-              }
-            },
-          },
-        },
-        {
-          title: 'Qoute Component',
-          name: 'qouteComponent',
-          type: 'object',
-          fields: [
-            {
-              title: 'Description',
-              name: 'description',
-              type: 'blockContent',
-            },
-          ],
-          preview: {
-            prepare() {
-              return {
-                title: 'Qoute Component',
-              }
-            },
-          },
-        },
-        {
-          title: 'Editor Component',
-          name: 'editorComponent',
-          type: 'object',
-          fields: [
-            {
-              title: 'Description',
-              name: 'description',
-              type: 'blockContent',
-            },
-          ],
-          preview: {
-            prepare() {
-              return {
-                title: 'Editor Component',
               }
             },
           },

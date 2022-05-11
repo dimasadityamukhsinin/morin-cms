@@ -88,6 +88,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'whatsapp',
+      title: 'WhatsApp',
+      type: 'url',
+    },
+    {
       name: 'mailchimpID',
       description:
         'Place your Mailchimp URL here to receive incoming emails from this website',

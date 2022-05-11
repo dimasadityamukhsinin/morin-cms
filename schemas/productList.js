@@ -120,18 +120,13 @@ export default {
       type: 'object',
       fields: [
         {
-          name: 'background1',
-          title: 'Background Clean',
+          name: 'component1',
+          title: 'Component 1',
           type: 'image',
         },
         {
-          name: 'background2',
-          title: 'Background Blur 1',
-          type: 'image',
-        },
-        {
-          name: 'background3',
-          title: 'Background Blur 2',
+          name: 'component2',
+          title: 'Component 2',
           type: 'image',
         },
       ],

@@ -222,6 +222,45 @@ export default {
       },
     },
     {
+      title: 'You may also like',
+      name: 'related',
+      type: 'object',
+      fields: [
+        {
+          title: 'Manual / Auto',
+          name: 'option',
+          type: 'boolean',
+          initialValue: false,
+        },
+        {
+          title: 'Manual',
+          name: 'manual',
+          type: 'object',
+          hidden: ({ parent }) => !(parent?.option === false),
+          fields: [
+            {
+              title: 'Related 1',
+              name: 'related1',
+              type: 'reference',
+              to: [{ type: 'recipeList' }],
+            },
+            {
+              title: 'Related 2',
+              name: 'related2',
+              type: 'reference',
+              to: [{ type: 'recipeList' }],
+            },
+            {
+              title: 'Related 3',
+              name: 'related3',
+              type: 'reference',
+              to: [{ type: 'recipeList' }],
+            },
+          ],
+        },
+      ],
+    },
+    {
       title: 'Set Text Color',
       name: 'textColor',
       type: 'color',

@@ -9,7 +9,8 @@ import {
   FiFlag,
   FiFileText,
   FiList,
-  FiInfo,
+  FiAlertCircle,
+  FiPhone,
 } from 'react-icons/fi'
 
 export default () =>
@@ -19,6 +20,10 @@ export default () =>
       ...S.documentTypeListItems().filter(
         (listItem) =>
           ![
+            'contact',
+            'contactList',
+            'faq',
+            'faqList',
             'decorList',
             'getMorin',
             'event',
@@ -70,6 +75,8 @@ export default () =>
               S.documentTypeListItem('eventCategory').icon(() => <FiFlag />),
             ]),
         ),
+      S.documentTypeListItem('faqList').icon(() => <FiAlertCircle />),
+      S.documentTypeListItem('contactList').icon(() => <FiPhone />),
       S.listItem()
         .title('Pages')
         .icon(() => <FiFile />)
@@ -104,6 +111,16 @@ export default () =>
                 .icon(() => <FiStar />)
                 .child(
                   S.document().schemaType('getMorin').documentId('getMorin'),
+                ),
+              S.listItem()
+                .title('Faq')
+                .icon(() => <FiStar />)
+                .child(S.document().schemaType('faq').documentId('faq')),
+              S.listItem()
+                .title('Contact')
+                .icon(() => <FiStar />)
+                .child(
+                  S.document().schemaType('contact').documentId('contact'),
                 ),
             ]),
         ),

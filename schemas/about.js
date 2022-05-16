@@ -56,7 +56,7 @@ export default {
           fields: [
             {
               title: 'Edit Alt Text',
-              name: 'name',
+              name: 'alt',
               type: 'string',
               initialValue: 'Morin',
             },
@@ -69,7 +69,7 @@ export default {
           fields: [
             {
               title: 'Edit Alt Text',
-              name: 'name',
+              name: 'alt',
               type: 'string',
               initialValue: 'Morin',
             },
@@ -83,8 +83,26 @@ export default {
       type: 'object',
       fields: [
         {
-          title: 'Title',
-          name: 'title',
+          title: 'Title Cover',
+          name: 'titleCover',
+          type: 'string',
+        },
+        {
+          name: 'thumbnail',
+          title: 'Thumbnail',
+          type: 'image',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'alt',
+              type: 'string',
+              initialValue: 'Morin',
+            },
+          ],
+        },
+        {
+          title: 'Title Description',
+          name: 'titleDescription',
           type: 'string',
         },
         {
@@ -137,8 +155,26 @@ export default {
       type: 'object',
       fields: [
         {
-          title: 'Title',
-          name: 'title',
+          title: 'Title Cover',
+          name: 'titleCover',
+          type: 'string',
+        },
+        {
+          name: 'thumbnail',
+          title: 'Thumbnail',
+          type: 'image',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'alt',
+              type: 'string',
+              initialValue: 'Morin',
+            },
+          ],
+        },
+        {
+          title: 'Title Description',
+          name: 'titleDescription',
           type: 'string',
         },
         {

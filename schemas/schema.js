@@ -19,6 +19,10 @@ import about from './about'
 import eventCategory from './eventCategory'
 import eventList from './eventList'
 import decorList from './decorList'
+import faq from './faq'
+import faqList from './faqList'
+import contact from './contact'
+import contactList from './contactList'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -27,6 +31,10 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    contact,
+    contactList,
+    faq,
+    faqList,
     decorList,
     getMorin,
     event,

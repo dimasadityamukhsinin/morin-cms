@@ -36,9 +36,126 @@ export default {
           fields: [
             {
               title: 'Edit Alt Text',
-              name: 'name',
+              name: 'alt',
               type: 'string',
               initialValue: 'Morin',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: 'Shop Online',
+      name: 'shopOnline',
+      type: 'array',
+      of: [
+        {
+          title: 'Online Martketplace',
+          name: 'onlineMarketPlace',
+          type: 'object',
+          fields: [
+            {
+              title: 'Title',
+              name: 'title',
+              type: 'string',
+            },
+            {
+              title: 'Link',
+              name: 'link',
+              type: 'url',
+            },
+            {
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'alt',
+                  type: 'string',
+                  initialValue: 'Morin',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: 'Shop Offline',
+      name: 'shopOffline',
+      type: 'object',
+      fields: [
+        {
+          title: 'Major Distributors',
+          name: 'majorDistributors',
+          type: 'array',
+          of: [
+            {
+              title: 'Distributor',
+              name: 'distributor',
+              type: 'object',
+              fields: [
+                {
+                  title: 'Title',
+                  name: 'title',
+                  type: 'string',
+                },
+                {
+                  title: 'Link',
+                  name: 'link',
+                  type: 'url',
+                },
+                {
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Retailers',
+          name: 'retailers',
+          type: 'array',
+          of: [
+            {
+              title: 'Retail',
+              name: 'retail',
+              type: 'object',
+              fields: [
+                {
+                  title: 'Title',
+                  name: 'title',
+                  type: 'string',
+                },
+                {
+                  title: 'Description',
+                  name: 'description',
+                  type: 'array',
+                  of: [
+                    {
+                      title: 'Block',
+                      type: 'block',
+                      marks: {
+                        decorators: [],
+                        annotations: [],
+                      },
+                      styles: [{ title: 'Normal', value: 'normal' }],
+                      lists: [],
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },

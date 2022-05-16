@@ -142,7 +142,19 @@ export default {
     {
       title: 'Recipe Description',
       name: 'description',
-      type: 'blockContent',
+      type: 'array',
+      of: [
+        {
+          title: 'Block',
+          type: 'block',
+          marks: {
+            decorators: [],
+            annotations: [],
+          },
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+        },
+      ],
     },
     {
       name: 'thumbnail',
@@ -235,24 +247,12 @@ export default {
         {
           title: 'Manual',
           name: 'manual',
-          type: 'object',
+          type: 'array',
           hidden: ({ parent }) => !(parent?.option === false),
-          fields: [
+          of: [
             {
-              title: 'Related 1',
-              name: 'related1',
-              type: 'reference',
-              to: [{ type: 'recipeList' }],
-            },
-            {
-              title: 'Related 2',
-              name: 'related2',
-              type: 'reference',
-              to: [{ type: 'recipeList' }],
-            },
-            {
-              title: 'Related 3',
-              name: 'related3',
+              title: 'Recipes',
+              name: 'recipes',
               type: 'reference',
               to: [{ type: 'recipeList' }],
             },

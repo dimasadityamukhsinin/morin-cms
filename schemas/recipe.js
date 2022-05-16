@@ -44,6 +44,24 @@ export default {
           },
         ],
       },
+      {
+        name: 'background',
+        title: 'Background',
+        type: 'image',
+        fields: [
+          {
+            title: 'Edit Alt Text',
+            name: 'alt',
+            type: 'string',
+            initialValue: 'Morin',
+          },
+        ],
+      },
+      {
+          title: "Description",
+          name: "description",
+          type: "string",
+      }
     ],
     preview: {
       prepare() {

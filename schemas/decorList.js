@@ -4,6 +4,11 @@ export default {
   type: 'document',
   fields: [
     {
+      title: "Title",
+      name: "title",
+      type: "string",
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -19,14 +24,8 @@ export default {
   ],
   preview: {
     select: {
+      title: "title",
       media: 'image',
-    },
-    prepare(selection) {
-      const { media } = selection
-      return {
-        title: 'Decor',
-        media: media,
-      }
     },
   },
 }

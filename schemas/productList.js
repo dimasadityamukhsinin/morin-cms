@@ -98,7 +98,7 @@ export default {
     {
       title: 'Product Description',
       name: 'description',
-      type: 'blockContent',
+      type: 'text',
     },
     {
       name: 'thumbnail',
@@ -111,6 +111,68 @@ export default {
           name: 'name',
           type: 'string',
           initialValue: 'Morin',
+        },
+      ],
+    },
+    {
+      title: 'Thumbnail Fruit',
+      name: 'thumbnailFruit',
+      type: 'object',
+      fields: [
+        {
+          title: 'Fruit 1',
+          name: 'fruit1',
+          type: 'image',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+              initialValue: 'Morin',
+            },
+          ],
+        },
+        {
+          title: 'Fruit 2',
+          name: 'fruit2',
+          type: 'image',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+              initialValue: 'Morin',
+            },
+          ],
+        },
+        {
+          title: 'Fruit 3',
+          name: 'fruit3',
+          type: 'image',
+          hidden: ({ parent }) => !(parent?.layout === "1"),
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+              initialValue: 'Morin',
+            },
+          ],
+        },
+        {
+          title: 'Layout',
+          name: 'layout',
+          type: 'string',
+          options: {
+            list: [
+              { title: '1', value: '1' },
+              { title: '2', value: '2' },
+              { title: '3', value: '3' },
+              { title: '4', value: '4' },
+            ],
+            layout: 'radio',
+          },
+          initialValue: '1',
         },
       ],
     },

@@ -179,17 +179,13 @@ export default {
     {
       title: 'Background Component',
       name: 'background',
-      type: 'object',
+      type: 'image',
       fields: [
         {
-          name: 'component1',
-          title: 'Component 1',
-          type: 'image',
-        },
-        {
-          name: 'component2',
-          title: 'Component 2',
-          type: 'image',
+          title: 'Edit Alt Text',
+          name: 'alt',
+          type: 'string',
+          initialValue: 'Morin',
         },
       ],
     },

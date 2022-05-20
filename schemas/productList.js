@@ -4,8 +4,14 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Product Title',
+      name: 'title_en',
+      title: 'Product Title - EN',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'title_id',
+      title: 'Product Title - ID',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
@@ -16,7 +22,7 @@ export default {
       description:
         "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
       options: {
-        source: 'title',
+        source: 'title_en',
         maxLength: 96,
       },
       validation: (Rule) =>
@@ -34,10 +40,51 @@ export default {
         }),
     },
     {
-      title: 'SEO',
+      title: 'SEO - EN',
       description:
         'Search Engine Optimization allows to improve the ranking in search results.',
-      name: 'seo',
+      name: 'seo_en',
+      type: 'object',
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          name: 'seo_description',
+          description:
+            'Enter up to 400 characters to describe this article. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).',
+          type: 'string',
+          title: 'Description',
+        },
+        {
+          name: 'seo_keywords',
+          description:
+            'Enter some keywords to describe this article (separated by commas)',
+          type: 'string',
+          title: 'Keywords',
+        },
+        {
+          name: 'seo_image',
+          title: 'Image',
+          description:
+            '800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)',
+          type: 'image',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+              initialValue: 'Morin',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: 'SEO - ID',
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
+      name: 'seo_id',
       type: 'object',
       options: {
         collapsible: true,
@@ -96,8 +143,13 @@ export default {
       ],
     },
     {
-      title: 'Product Description',
-      name: 'description',
+      title: 'Product Description - EN',
+      name: 'description_en',
+      type: 'text',
+    },
+    {
+      title: 'Product Description - ID',
+      name: 'description_id',
       type: 'text',
     },
     {
@@ -190,8 +242,29 @@ export default {
       ],
     },
     {
-      title: 'Decor Component',
-      name: 'decor',
+      title: 'Decor Component - EN',
+      name: 'decor_en',
+      type: 'object',
+      fields: [
+        {
+          title: 'Decor 1',
+          name: 'decor1',
+          type: 'reference',
+          to: [{ type: 'decorList' }],
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'decor2',
+          title: 'Decor 2',
+          type: 'reference',
+          to: [{ type: 'decorList' }],
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      title: 'Decor Component - ID',
+      name: 'decor_id',
       type: 'object',
       fields: [
         {
@@ -255,7 +328,7 @@ export default {
   }),
   preview: {
     select: {
-      title: 'title',
+      title: 'title_en',
       media: 'thumbnail',
     },
   },

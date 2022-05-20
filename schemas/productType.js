@@ -4,8 +4,14 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Title',
-      name: 'title',
+      title: 'Title - EN',
+      name: 'title_en',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Title - ID',
+      name: 'title_id',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
@@ -16,7 +22,7 @@ export default {
       description:
         "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
       options: {
-        source: 'title',
+        source: 'title_en',
         maxLength: 96,
       },
       validation: (Rule) =>
@@ -40,8 +46,8 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Decor Component',
-      name: 'decor',
+      title: 'Decor Component - EN',
+      name: 'decor_en',
       type: 'object',
       fields: [
         {
@@ -61,9 +67,35 @@ export default {
       ],
     },
     {
-      title: 'Description',
-      name: 'description',
-      type: 'string',
+      title: 'Decor Component - ID',
+      name: 'decor_id',
+      type: 'object',
+      fields: [
+        {
+          title: 'Decor 1',
+          name: 'decor1',
+          type: 'reference',
+          to: [{ type: 'decorList' }],
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'decor2',
+          title: 'Decor 2',
+          type: 'reference',
+          to: [{ type: 'decorList' }],
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      title: 'Description - EN',
+      name: 'description_en',
+      type: 'text',
+    },
+    {
+      title: 'Description - ID',
+      name: 'description_id',
+      type: 'text',
     },
     {
       title: 'Image 1',
@@ -104,7 +136,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'title_en',
     },
   },
 }

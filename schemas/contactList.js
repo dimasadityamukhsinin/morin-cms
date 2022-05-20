@@ -4,8 +4,13 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Title',
-      name: 'title',
+      title: 'Title - EN',
+      name: 'title_en',
+      type: 'string',
+    },
+    {
+      title: 'Title - ID',
+      name: 'title_id',
       type: 'string',
     },
     {
@@ -14,8 +19,25 @@ export default {
       type: 'string',
     },
     {
-      title: 'Description',
-      name: 'description',
+      title: 'Description - EN',
+      name: 'description_en',
+      type: 'array',
+      of: [
+        {
+          title: 'Block',
+          type: 'block',
+          marks: {
+            decorators: [],
+            annotations: [],
+          },
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+        },
+      ],
+    },
+    {
+      title: 'Description - ID',
+      name: 'description_id',
       type: 'array',
       of: [
         {
@@ -56,4 +78,9 @@ export default {
         type: "url",
     }
   ],
+  preview: {
+    select: {
+      title: "title_en",
+    },
+  },
 }

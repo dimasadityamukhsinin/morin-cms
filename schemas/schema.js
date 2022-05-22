@@ -23,6 +23,8 @@ import faq from './faq'
 import faqList from './faqList'
 import contact from './contact'
 import contactList from './contactList'
+import difficultyList from './difficultyList'
+import cookingTimeList from './cookingTimeList'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -43,6 +45,8 @@ export default createSchema({
     recipe,
     recipeList,
     recipeCategory,
+    difficultyList,
+    cookingTimeList,
     product,
     productList,
     productType,

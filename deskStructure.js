@@ -32,6 +32,8 @@ export default () =>
             'recipe',
             'recipeList',
             'recipeCategory',
+            'difficultyList',
+            'cookingTimeList',
             'product',
             'productList',
             'productType',
@@ -62,6 +64,8 @@ export default () =>
             .items([
               S.documentTypeListItem('recipeList').icon(() => <FiFileText />),
               S.documentTypeListItem('recipeCategory').icon(() => <FiFlag />),
+              S.documentTypeListItem('difficultyList').icon(() => <FiFlag />),
+              S.documentTypeListItem('cookingTimeList').icon(() => <FiFlag />),
             ]),
         ),
       S.listItem()

@@ -122,43 +122,25 @@ export default {
       ],
     },
     {
-      name: 'difficulty',
-      title: 'Difficulty',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Easy', value: 'Easy' },
-          { title: 'Medium', value: 'Medium' },
-          { title: 'Hard', value: 'Hard' },
-        ],
-      },
-      initialValue: 'Easy',
+      name: "difficulty",
+      title: "Difficulty",
+      type: "reference",
+      to: [{ type: 'difficultyList' }],
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'cookingTime',
-      title: 'Cooking Time',
-      type: 'string',
-      options: {
-        list: [
-          { title: '10 mins', value: '10 mins' },
-          { title: '< 30 mins', value: '< 30 mins' },
-          { title: '30-60 mins', value: '30-60 mins' },
-        ],
-      },
-      initialValue: '10 mins',
+      name: "cookingTime",
+      title: "Cooking Time",
+      type: "reference",
+      to: [{ type: 'cookingTimeList' }],
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'category',
-      title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Beverages', value: 'Beverages' },
-          { title: 'Desserts', value: 'Desserts' },
-          { title: 'Appetizers', value: 'Appetizers' },
-        ],
-      },
-      initialValue: 'Beverages',
+      name: "recipeCategory",
+      title: "Recipe Category",
+      type: "reference",
+      to: [{ type: 'recipeCategory' }],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'ingredients_en',

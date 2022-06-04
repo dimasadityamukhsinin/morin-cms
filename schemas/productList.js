@@ -201,7 +201,7 @@ export default {
           title: 'Fruit 3',
           name: 'fruit3',
           type: 'image',
-          hidden: ({ parent }) => !(parent?.layout === "1"),
+          hidden: ({ parent }) => !(parent?.layout === '1'),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -225,19 +225,6 @@ export default {
             layout: 'radio',
           },
           initialValue: '1',
-        },
-      ],
-    },
-    {
-      title: 'Background Component',
-      name: 'background',
-      type: 'image',
-      fields: [
-        {
-          title: 'Edit Alt Text',
-          name: 'alt',
-          type: 'string',
-          initialValue: 'Morin',
         },
       ],
     },
@@ -294,9 +281,71 @@ export default {
           type: 'object',
           fields: [
             {
+              title: 'Default Weight',
+              name: 'defaultWeight',
+              type: 'boolean',
+              initialValue: false,
+              validation: (Rule) =>
+                Rule.required().custom((field, context) => {
+                  console.log(context.document.listWeight.filter(
+                    (item) => item.defaultWeight,
+                  ).length > 1)
+                  if (
+                    context.document.listWeight.filter(
+                      (item) => item.defaultWeight,
+                    ).length > 1
+                  ) {
+                    return 'The default weight has been selected'
+                  } else {
+                    return true
+                  }
+                }),
+            },
+            {
               title: 'Title',
               name: 'title',
               type: 'string',
+            },
+            {
+              title: 'Image',
+              name: 'image',
+              type: 'image',
+              validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'name',
+                  type: 'string',
+                  initialValue: 'Morin',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: 'Similar Products',
+      name: 'similar',
+      type: 'object',
+      fields: [
+        {
+          title: 'Manual / Auto',
+          name: 'option',
+          type: 'boolean',
+          initialValue: false,
+        },
+        {
+          title: 'Manual',
+          name: 'manual',
+          type: 'array',
+          hidden: ({ parent }) => !(parent?.option === false),
+          of: [
+            {
+              title: 'Product',
+              name: 'products',
+              type: 'reference',
+              to: [{ type: 'productList' }],
             },
           ],
         },

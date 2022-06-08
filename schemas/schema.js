@@ -25,6 +25,7 @@ import contact from './contact'
 import contactList from './contactList'
 import difficultyList from './difficultyList'
 import cookingTimeList from './cookingTimeList'
+import editorBasic from './editorBasic'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -54,6 +55,7 @@ export default createSchema({
     home,
     footer,
     settings,
-    blockContent
+    blockContent,
+    editorBasic
   ]),
 })

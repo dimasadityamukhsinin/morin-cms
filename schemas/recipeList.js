@@ -183,36 +183,12 @@ export default {
     {
       title: 'Recipe Description - EN',
       name: 'description_en',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          marks: {
-            decorators: [],
-            annotations: [],
-          },
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-        },
-      ],
+      type: 'editorBasic',
     },
     {
       title: 'Recipe Description - ID',
       name: 'description_id',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          marks: {
-            decorators: [],
-            annotations: [],
-          },
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-        },
-      ],
+      type: 'editorBasic',
     },
     {
       name: 'thumbnail',

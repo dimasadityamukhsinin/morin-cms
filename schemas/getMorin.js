@@ -187,19 +187,7 @@ export default {
                 {
                   title: 'Description',
                   name: 'description',
-                  type: 'array',
-                  of: [
-                    {
-                      title: 'Block',
-                      type: 'block',
-                      marks: {
-                        decorators: [],
-                        annotations: [],
-                      },
-                      styles: [{ title: 'Normal', value: 'normal' }],
-                      lists: [],
-                    },
-                  ],
+                  type: 'editorBasic',
                 },
               ],
               preview: {

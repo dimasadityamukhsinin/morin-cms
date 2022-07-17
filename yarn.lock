@@ -1906,7 +1906,7 @@
 
 "@sanity/uuid@^3.0.1":
   version "3.0.1"
-  resolved "https://registry.npmjs.org/@sanity/uuid/-/uuid-3.0.1.tgz#e688f5a1f909b3f2dea6f8d0ac922b64bb910234"
+  resolved "https://registry.yarnpkg.com/@sanity/uuid/-/uuid-3.0.1.tgz#e688f5a1f909b3f2dea6f8d0ac922b64bb910234"
   integrity sha512-cfWq8l/M6TiDYlp2VYJR2MNdrl0u/lkYWjJVflLHsiGjG8SZKbbRSsfG1fn7rSvdZg+o/xfBlKCfhFTtEiXKJg==
   dependencies:
     "@types/uuid" "^8.0.0"
@@ -6180,6 +6180,11 @@ lodash.foreach@^3.0.3:
     lodash._baseeach "^3.0.0"
     lodash._bindcallback "^3.0.0"
     lodash.isarray "^3.0.0"
+
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
 
 lodash.isarguments@^3.0.0:
   version "3.1.0"

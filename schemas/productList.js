@@ -287,9 +287,6 @@ export default {
               initialValue: false,
               validation: (Rule) =>
                 Rule.required().custom((field, context) => {
-                  console.log(context.document.listWeight.filter(
-                    (item) => item.defaultWeight,
-                  ).length > 1)
                   if (
                     context.document.listWeight.filter(
                       (item) => item.defaultWeight,

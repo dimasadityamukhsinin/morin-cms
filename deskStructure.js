@@ -53,6 +53,7 @@ export default () =>
               S.documentTypeListItem('productList').icon(() => <FiFileText />),
               S.documentTypeListItem('productType').icon(() => <FiFlag />),
               S.documentTypeListItem('decorList').icon(() => <FiFileText />),
+              S.documentTypeListItem('shopifyData').title("Store Products").icon(() => <FiFileText />),
             ]),
         ),
       S.listItem()

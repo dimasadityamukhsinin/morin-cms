@@ -1,24 +1,61 @@
-import { SunIcon, WarningOutlineIcon, LockIcon } from '@sanity/icons'
-import { Box, Card, Flex, Stack, Text, TextInput, Tooltip } from '@sanity/ui'
-import React, { forwardRef } from 'react'
-import { FormField } from '@sanity/base/components'
-import { uuid } from '@sanity/uuid'
-import get from 'lodash.get'
+import { SunIcon, ImageIcon } from '@sanity/icons'
+import React, { forwardRef, useState } from 'react'
+
+const ShopifyDocumentStatus = forwardRef((props, ref) => {
+  const { url } = props
+
+  const [imageVisible, setImageVisible] = useState(true)
+
+  // Hide image on error / 404
+  const handleImageError = () => setImageVisible(false)
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        alignItems: 'center',
+        borderRadius: 'inherit',
+        display: 'flex',
+        height: '100%',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        width: '100%',
+      }}
+    >
+      {imageVisible && url ? (
+        <img
+          onError={handleImageError}
+          src={`${url}&width=400`}
+          style={{
+            height: '100%',
+            left: 0,
+            objectFit: 'contain',
+            position: 'absolute',
+            top: 0,
+            width: '100%',
+          }}
+        />
+      ) : (
+        <ImageIcon style={{ position: 'absolute' }} />
+      )}
+    </div>
+  )
+})
 
 export default {
-  name: "test_shopify",
-  title: "Test Shopify",
-  type: "document",
-  __experimental_actions: ["update", "publish"], // disable for initial publish
+  name: 'shopifyData',
+  title: 'Shopify Data',
+  type: 'document',
+  __experimental_actions: ['update', 'publish'], // disable for initial publish
   fieldsets: [
     {
-      title: "Status",
-      name: "status",
+      title: 'Status',
+      name: 'status',
     },
     {
-      title: "Shopify",
-      name: "shopify",
-      description: "Synced from Shopify",
+      title: 'Shopify',
+      name: 'shopify',
+      description: 'Synced from Shopify',
       options: { collapsible: true },
     },
   ],
@@ -184,7 +221,7 @@ export default {
                 },
                 prepare(selection) {
                   const { name } = selection
-    
+
                   return {
                     title: name,
                   }
@@ -199,7 +236,15 @@ export default {
 
   preview: {
     select: {
-      title: "title",
+      title: 'shopifyProduct.title',
+      media: 'shopifyProduct.image',
+    },
+    prepare(selection) {
+      const { title, media } = selection
+      return {
+        media: <ShopifyDocumentStatus url={media} />,
+        title,
+      }
     },
   },
-};
+}

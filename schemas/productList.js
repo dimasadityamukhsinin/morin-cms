@@ -287,14 +287,23 @@ export default {
               initialValue: false,
               validation: (Rule) =>
                 Rule.required().custom((field, context) => {
-                  if (
-                    context.document.listWeight.filter(
-                      (item) => item.defaultWeight,
-                    ).length > 1
-                  ) {
-                    return 'The default weight has been selected'
-                  } else {
-                    return true
+                  console.log(context.document.listWeight.filter(
+                    (item) => item.defaultWeight,
+                  ))
+                  if(context.document.listWeight.filter(
+                    (item) => item.defaultWeight,
+                  ).length === 0) {
+                    return "Required"
+                  }else {
+                    if (
+                      context.document.listWeight.filter(
+                        (item) => item.defaultWeight,
+                      ).length > 1
+                    ) {
+                      return 'The default weight has been selected'
+                    } else {
+                      return true
+                    }
                   }
                 }),
             },

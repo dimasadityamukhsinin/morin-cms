@@ -26,8 +26,7 @@ import contactList from './contactList'
 import difficultyList from './difficultyList'
 import cookingTimeList from './cookingTimeList'
 import editorBasic from './editorBasic'
-import test_shopify from './test_shopify'
-import shopifyProduct from './shopify/products'
+import shopifyData from './shopifyData'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -59,7 +58,6 @@ export default createSchema({
     settings,
     blockContent,
     editorBasic,
-    test_shopify,
-    shopifyProduct
+    shopifyData
   ]),
 })

@@ -86,6 +86,30 @@ export default {
       ],
     },
     {
+      title: "Title - EN",
+      name: "title_en",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Title - ID",
+      name: "title_id",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Description - EN",
+      name: "description_en",
+      type: "text",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Description - ID",
+      name: "description_id",
+      type: "text",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Backgrounds',
       name: 'backgrounds',
       type: 'object',

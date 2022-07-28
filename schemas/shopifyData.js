@@ -52,12 +52,6 @@ export default {
       title: 'Status',
       name: 'status',
     },
-    {
-      title: 'Shopify',
-      name: 'shopify',
-      description: 'Synced from Shopify',
-      options: { collapsible: true },
-    },
   ],
   fields: [
     {
@@ -227,6 +221,141 @@ export default {
                   }
                 },
               },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      description:
+        "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
+      options: {
+        source: 'shopifyProduct.title',
+        maxLength: 96,
+      },
+      validation: (Rule) =>
+        Rule.custom((slug) => {
+          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
+          if (slug) {
+            if (slug.current.match(regex) !== null) {
+              return true
+            } else {
+              return 'Not a valid slug'
+            }
+          } else {
+            return 'Required'
+          }
+        }),
+    },
+    {
+      name: 'thumbnail',
+      description: 'A cover image for this product | PNG / JPEG / WEBP',
+      title: 'Thumbnail',
+      type: 'image',
+      fields: [
+        {
+          title: 'Edit Alt Text',
+          name: 'name',
+          type: 'string',
+          initialValue: 'Morin',
+        },
+      ],
+    },
+    {
+      title: 'Product Type',
+      name: 'type',
+      type: 'reference',
+      to: [{ type: 'productType' }],
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Product Description - EN',
+      name: 'description_en',
+      type: 'text',
+    },
+    {
+      title: 'Product Description - ID',
+      name: 'description_id',
+      type: 'text',
+    },
+    {
+      title: "Image Slider",
+      name: 'slider_image',
+      type: 'array',
+      of: [
+        {
+          title: 'Slider',
+          name: 'slider',
+          type: 'object',
+          fields: [
+            {
+              title: 'Image',
+              name: 'image',
+              type: 'image',
+              validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'alt',
+                  type: 'string',
+                  initialValue: 'Morin',
+                },
+              ],
+            },
+          ],
+          preview: {
+            prepare() {
+              return {
+                title: 'Image Slider',
+              }
+            },
+          },
+        }
+      ]
+    },
+    {
+      title: 'Weight',
+      name: 'listWeight',
+      type: 'array',
+      of: [
+        {
+          title: 'Weight',
+          name: 'weight',
+          type: 'object',
+          fields: [
+            {
+              title: 'Default Weight',
+              name: 'defaultWeight',
+              type: 'boolean',
+              initialValue: false,
+              validation: (Rule) =>
+                Rule.required().custom((field, context) => {
+                  if (
+                    context.document.listWeight.filter(
+                      (item) => item.defaultWeight,
+                    ).length === 0
+                  ) {
+                    return 'Required'
+                  } else {
+                    if (
+                      context.document.listWeight.filter(
+                        (item) => item.defaultWeight,
+                      ).length > 1
+                    ) {
+                      return 'The default weight has been selected'
+                    } else {
+                      return true
+                    }
+                  }
+                }),
+            },
+            {
+              title: 'Title',
+              name: 'title',
+              type: 'string',
             },
           ],
         },

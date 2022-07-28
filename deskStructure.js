@@ -41,6 +41,7 @@ export default () =>
             'home',
             'footer',
             'settings',
+            'shopifyData'
           ].includes(listItem.getId()),
       ),
       S.listItem()

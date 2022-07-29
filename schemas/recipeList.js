@@ -122,23 +122,23 @@ export default {
       ],
     },
     {
-      name: "difficulty",
-      title: "Difficulty",
-      type: "reference",
+      name: 'difficulty',
+      title: 'Difficulty',
+      type: 'reference',
       to: [{ type: 'difficultyList' }],
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "cookingTime",
-      title: "Cooking Time",
-      type: "reference",
+      name: 'cookingTime',
+      title: 'Cooking Time',
+      type: 'reference',
       to: [{ type: 'cookingTimeList' }],
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "recipeCategory",
-      title: "Recipe Category",
-      type: "reference",
+      name: 'recipeCategory',
+      title: 'Recipe Category',
+      type: 'reference',
       to: [{ type: 'recipeCategory' }],
       validation: (Rule) => Rule.required(),
     },
@@ -148,9 +148,28 @@ export default {
       type: 'array',
       of: [
         {
-          name: 'description',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
+          title: 'Ingredient',
+          name: 'ingredient',
+          type: 'object',
+          fields: [
+            {
+              title: 'Title',
+              name: 'title',
+              type: 'string',
+            },
+            {
+              title: 'Description',
+              name: 'description',
+              type: 'array',
+              of: [
+                {
+                  name: 'description',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            },
+          ],
         },
       ],
     },
@@ -160,9 +179,28 @@ export default {
       type: 'array',
       of: [
         {
-          name: 'description',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
+          title: 'Ingredient',
+          name: 'ingredient',
+          type: 'object',
+          fields: [
+            {
+              title: 'Title',
+              name: 'title',
+              type: 'string',
+            },
+            {
+              title: 'Description',
+              name: 'description',
+              type: 'array',
+              of: [
+                {
+                  name: 'description',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            },
+          ],
         },
       ],
     },

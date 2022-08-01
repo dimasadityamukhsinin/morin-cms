@@ -129,6 +129,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Get This Product",
+      name: "linkStore",
+      type: "url",
+    },
+    {
       title: 'Recipes',
       name: 'recipes',
       type: 'array',
@@ -339,7 +344,7 @@ export default {
           title: 'Manual / Auto',
           name: 'option',
           type: 'boolean',
-          initialValue: false,
+          initialValue: true,
         },
         {
           title: 'Manual',

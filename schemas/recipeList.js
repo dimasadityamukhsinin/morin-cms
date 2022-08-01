@@ -340,6 +340,11 @@ export default {
             },
           ],
         },
+        {
+          title: "Video",
+          name: "video",
+          type: "url",
+        }
       ],
       options: {
         layout: 'grid',

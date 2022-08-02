@@ -224,6 +224,54 @@ export default {
             },
           ],
         },
+        // Options
+        {
+          name: 'variants',
+          title: 'Variants',
+          type: 'array',
+          of: [
+            {
+              title: 'Product Variants',
+              name: 'productVariants',
+              type: 'object',
+              readOnly: true,
+              fields: [
+                {
+                  title: "Variant ID",
+                  name: "id",
+                  type: "string",
+                },
+                {
+                  title: 'Title',
+                  name: 'title',
+                  type: 'string',
+                },
+                {
+                  title: 'Price',
+                  name: 'price',
+                  type: 'number',
+                },
+                {
+                  title: 'Quantity',
+                  name: 'inventoryQuantity',
+                  type: 'number',
+                },
+              ],
+              preview: {
+                select: {
+                  title: 'title',
+                },
+                prepare(selection) {
+                  const { title } = selection
+
+                  return {
+                    title: title,
+                  }
+                },
+              },
+            },
+          ],
+        },
       ],
     },
     {

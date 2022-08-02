@@ -343,7 +343,33 @@ export default {
         {
           title: "Video",
           name: "video",
-          type: "url",
+          type: "object",
+          fields: [
+            {
+              name: 'thumbnail',
+              title: 'Thumbnail',
+              type: 'image',
+              validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'alt',
+                  type: 'string',
+                  initialValue: 'Morin',
+                },
+              ],
+            },
+            {
+              title: "Link",
+              name: "link",
+              type: "url",
+            }
+          ],
+          preview: {
+            select: {
+              media: 'thumbnail',
+            },
+          },
         }
       ],
       options: {

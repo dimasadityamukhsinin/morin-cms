@@ -144,8 +144,22 @@ export default {
     },
     {
       name: 'thumbnail',
-      description: 'A cover image for this product | PNG / JPEG / WEBP',
+      description: 'PNG / JPEG / WEBP',
       title: 'Thumbnail',
+      type: 'image',
+      fields: [
+        {
+          title: 'Edit Alt Text',
+          name: 'alt',
+          type: 'string',
+          initialValue: 'Morin',
+        },
+      ],
+    },
+    {
+      name: 'cover_image',
+      description: 'PNG / JPEG / WEBP',
+      title: 'Cover Image',
       type: 'image',
       fields: [
         {

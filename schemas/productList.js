@@ -131,7 +131,8 @@ export default {
     {
       title: "Get This Product",
       name: "linkStore",
-      type: "url",
+      type: 'reference',
+      to: [{ type: 'shopifyData' }],
     },
     {
       title: 'Recipes',

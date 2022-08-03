@@ -1,3 +1,12 @@
+import React from 'react'
+import { FiExternalLink } from 'react-icons/fi'
+
+const linkRender = (props) => (
+  <span>
+    {props.children} <FiExternalLink />
+  </span>
+)
+
 export default {
   name: 'about',
   title: 'About',
@@ -86,27 +95,27 @@ export default {
       ],
     },
     {
-      title: "Title - EN",
-      name: "title_en",
-      type: "string",
+      title: 'Title - EN',
+      name: 'title_en',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Title - ID",
-      name: "title_id",
-      type: "string",
+      title: 'Title - ID',
+      name: 'title_id',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Description - EN",
-      name: "description_en",
-      type: "text",
+      title: 'Description - EN',
+      name: 'description_en',
+      type: 'text',
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Description - ID",
-      name: "description_id",
-      type: "text",
+      title: 'Description - ID',
+      name: 'description_id',
+      type: 'text',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -172,7 +181,23 @@ export default {
                   { title: 'Strike', value: 'strike-through' },
                   { title: 'Underline', value: 'underline' },
                 ],
-                annotations: [],
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    blockEditor: {
+                      icon: () => <FiExternalLink />,
+                      render: linkRender,
+                    },
+                    fields: [
+                      {
+                        name: 'url',
+                        type: 'url',
+                      },
+                    ],
+                  },
+                ],
               },
               styles: [
                 { title: 'Normal', value: 'normal' },
@@ -214,7 +239,23 @@ export default {
                   { title: 'Strike', value: 'strike-through' },
                   { title: 'Underline', value: 'underline' },
                 ],
-                annotations: [],
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    blockEditor: {
+                      icon: () => <FiExternalLink />,
+                      render: linkRender,
+                    },
+                    fields: [
+                      {
+                        name: 'url',
+                        type: 'url',
+                      },
+                    ],
+                  },
+                ],
               },
               styles: [
                 { title: 'Normal', value: 'normal' },
@@ -296,7 +337,23 @@ export default {
                   { title: 'Strike', value: 'strike-through' },
                   { title: 'Underline', value: 'underline' },
                 ],
-                annotations: [],
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    blockEditor: {
+                      icon: () => <FiExternalLink />,
+                      render: linkRender,
+                    },
+                    fields: [
+                      {
+                        name: 'url',
+                        type: 'url',
+                      },
+                    ],
+                  },
+                ],
               },
               styles: [
                 { title: 'Normal', value: 'normal' },
@@ -338,7 +395,23 @@ export default {
                   { title: 'Strike', value: 'strike-through' },
                   { title: 'Underline', value: 'underline' },
                 ],
-                annotations: [],
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    blockEditor: {
+                      icon: () => <FiExternalLink />,
+                      render: linkRender,
+                    },
+                    fields: [
+                      {
+                        name: 'url',
+                        type: 'url',
+                      },
+                    ],
+                  },
+                ],
               },
               styles: [
                 { title: 'Normal', value: 'normal' },

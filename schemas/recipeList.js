@@ -155,19 +155,33 @@ export default {
             {
               title: 'Title',
               name: 'title',
-              type: 'string',
+              type: 'boolean',
+              initialValue: false,
+              validation: (Rule) =>
+                Rule.required().custom((field, context) => {
+                  if (
+                    context.document.ingredients_en.filter((item) => item.title)
+                      .length === 0
+                  ) {
+                    return 'Required'
+                  } else {
+                    if (
+                      context.document.ingredients_en.filter(
+                        (item) => item.title,
+                      ).length > 1
+                    ) {
+                      return 'The title has been selected'
+                    } else {
+                      return true
+                    }
+                  }
+                }),
             },
             {
               title: 'Description',
               name: 'description',
-              type: 'array',
-              of: [
-                {
-                  name: 'description',
-                  type: 'string',
-                  validation: (Rule) => Rule.required(),
-                },
-              ],
+              type: 'string',
+              validation: (Rule) => Rule.required(),
             },
           ],
         },
@@ -186,19 +200,33 @@ export default {
             {
               title: 'Title',
               name: 'title',
-              type: 'string',
+              type: 'boolean',
+              initialValue: false,
+              validation: (Rule) =>
+                Rule.required().custom((field, context) => {
+                  if (
+                    context.document.ingredients_en.filter((item) => item.title)
+                      .length === 0
+                  ) {
+                    return 'Required'
+                  } else {
+                    if (
+                      context.document.ingredients_en.filter(
+                        (item) => item.title,
+                      ).length > 1
+                    ) {
+                      return 'The title has been selected'
+                    } else {
+                      return true
+                    }
+                  }
+                }),
             },
             {
               title: 'Description',
               name: 'description',
-              type: 'array',
-              of: [
-                {
-                  name: 'description',
-                  type: 'string',
-                  validation: (Rule) => Rule.required(),
-                },
-              ],
+              type: 'string',
+              validation: (Rule) => Rule.required(),
             },
           ],
         },
@@ -341,9 +369,9 @@ export default {
           ],
         },
         {
-          title: "Video",
-          name: "video",
-          type: "object",
+          title: 'Video',
+          name: 'video',
+          type: 'object',
           fields: [
             {
               name: 'thumbnail',
@@ -360,17 +388,17 @@ export default {
               ],
             },
             {
-              title: "Link",
-              name: "link",
-              type: "url",
-            }
+              title: 'Link',
+              name: 'link',
+              type: 'url',
+            },
           ],
           preview: {
             select: {
               media: 'thumbnail',
             },
           },
-        }
+        },
       ],
       options: {
         layout: 'grid',

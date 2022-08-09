@@ -303,6 +303,7 @@ export default {
       description: 'A cover image for this product | PNG / JPEG / WEBP',
       title: 'Thumbnail',
       type: 'image',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Edit Alt Text',
@@ -333,11 +334,13 @@ export default {
       title: "Image Slider",
       name: 'slider_image',
       type: 'array',
+      validation: (Rule) => Rule.required(),
       of: [
         {
           title: 'Slider',
           name: 'slider',
           type: 'object',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: 'Image',
@@ -363,52 +366,7 @@ export default {
           },
         }
       ]
-    },
-    {
-      title: 'Weight',
-      name: 'listWeight',
-      type: 'array',
-      of: [
-        {
-          title: 'Weight',
-          name: 'weight',
-          type: 'object',
-          fields: [
-            {
-              title: 'Default Weight',
-              name: 'defaultWeight',
-              type: 'boolean',
-              initialValue: false,
-              validation: (Rule) =>
-                Rule.required().custom((field, context) => {
-                  if (
-                    context.document.listWeight.filter(
-                      (item) => item.defaultWeight,
-                    ).length === 0
-                  ) {
-                    return 'Required'
-                  } else {
-                    if (
-                      context.document.listWeight.filter(
-                        (item) => item.defaultWeight,
-                      ).length > 1
-                    ) {
-                      return 'The default weight has been selected'
-                    } else {
-                      return true
-                    }
-                  }
-                }),
-            },
-            {
-              title: 'Title',
-              name: 'title',
-              type: 'string',
-            },
-          ],
-        },
-      ],
-    },
+    }
   ],
 
   preview: {

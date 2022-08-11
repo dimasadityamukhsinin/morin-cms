@@ -337,6 +337,56 @@ export default {
       ],
     },
     {
+      title: 'Language',
+      name: 'language',
+      type: 'object',
+      fields: [
+        {
+          title: 'Other Events',
+          name: 'event',
+          type: 'object',
+          fields: [
+            {
+              title: 'Title',
+              name: 'title',
+              type: 'object',
+              fields: [
+                {
+                  title: 'ID',
+                  name: 'id',
+                  type: 'string',
+                },
+                {
+                  title: 'EN',
+                  name: 'en',
+                  type: 'string',
+                  initialValue: 'Other Events',
+                },
+              ],
+            },
+            {
+              title: "Button",
+              name: "btn",
+              type: "object",
+              fields: [
+                {
+                  title: 'ID',
+                  name: 'id',
+                  type: 'string',
+                },
+                {
+                  title: 'EN',
+                  name: 'en',
+                  type: 'string',
+                  initialValue: 'See event',
+                },
+              ]
+            }
+          ],
+        },
+      ],
+    },
+    {
       title: 'Date Published',
       name: 'date',
       type: 'date',

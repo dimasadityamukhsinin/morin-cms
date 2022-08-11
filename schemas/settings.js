@@ -156,12 +156,180 @@ export default {
       type: 'url',
     },
     {
+      name: 'instagram',
+      title: 'Instagram',
+      type: 'object',
+      fields: [
+        {
+          title: 'Title',
+          name: 'title',
+          type: 'string',
+        },
+        {
+          title: 'URL',
+          name: 'url',
+          type: 'url',
+        },
+      ],
+    },
+    {
       name: 'mailchimpID',
       description:
         'Place your Mailchimp URL here to receive incoming emails from this website',
       title: 'Mailchimp Embed URL',
       type: 'string',
       validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Menu Language',
+      name: 'menu_lang',
+      type: 'object',
+      fields: [
+        {
+          title: 'Home',
+          name: 'home',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              initialValue: 'Home',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+            },
+          ],
+        },
+        {
+          title: 'About',
+          name: 'about',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'About Us',
+            },
+          ],
+        },
+        {
+          title: 'Products',
+          name: 'products',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'Products',
+            },
+          ],
+        },
+        {
+          title: 'Recipes',
+          name: 'recipes',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'Recipes',
+            },
+          ],
+        },
+        {
+          title: 'Events',
+          name: 'events',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'Events',
+            },
+          ],
+        },
+        {
+          title: 'Get Morin',
+          name: 'get_morin',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'Get Morin',
+            },
+          ],
+        },
+        {
+          title: 'FAQ',
+          name: 'faq',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'FAQ',
+            },
+          ],
+        },
+        {
+          title: 'Contact',
+          name: 'contact',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'Contact Us',
+            },
+          ],
+        },
+      ],
     },
   ],
   preview: {

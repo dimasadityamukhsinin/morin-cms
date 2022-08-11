@@ -157,6 +157,24 @@ export default {
       type: 'object',
       fields: [
         {
+          title: "Button",
+          name: "btn",
+          type: "object",
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              initialValue: 'Read More',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+            },
+          ],
+        },
+        {
           title: 'Title - EN',
           name: 'title_en',
           type: 'string',
@@ -289,6 +307,24 @@ export default {
       name: 'our_process',
       type: 'object',
       fields: [
+        {
+          title: "Button",
+          name: "btn",
+          type: "object",
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'Learn More',
+            },
+          ],
+        },
         {
           title: 'Title Cover - EN',
           name: 'titleCover_en',
@@ -445,6 +481,24 @@ export default {
       name: 'visi_misi',
       type: 'object',
       fields: [
+        {
+          title: "Button",
+          name: "btn",
+          type: "object",
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'Learn More',
+            },
+          ],
+        },
         {
           title: 'Title Cover - EN',
           name: 'titleCover_en',

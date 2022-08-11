@@ -86,6 +86,18 @@ export default {
       ],
     },
     {
+      title: 'Title - EN',
+      name: 'title_en',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Title - ID',
+      name: 'title_id',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'background',
       title: 'Background',
       type: 'image',
@@ -108,6 +120,24 @@ export default {
       name: 'description_id',
       type: 'text',
     },
+    {
+      title: "Button Language",
+      name: "btn_lang",
+      type: "object",
+      fields: [
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'string',
+        },
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'string',
+          initialValue: "See All"
+        },
+      ],
+    }
   ],
   preview: {
     prepare() {

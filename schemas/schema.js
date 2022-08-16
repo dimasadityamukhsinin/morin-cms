@@ -29,6 +29,7 @@ import editorBasic from './editorBasic'
 import shopifyData from './shopifyData'
 import recipeDetail from './recipeDetail'
 import productDetail from './productDetail'
+import eventDetail from './eventDetail'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -45,6 +46,7 @@ export default createSchema({
     getMorin,
     event,
     eventList,
+    eventDetail,
     eventCategory,
     recipe,
     recipeList,

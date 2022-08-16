@@ -28,6 +28,7 @@ export default () =>
             'getMorin',
             'event',
             'eventList',
+            'eventDetail',
             'eventCategory',
             'recipe',
             'recipeList',
@@ -124,6 +125,10 @@ export default () =>
                 .title('Event')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('event').documentId('event')),
+              S.listItem()
+                .title('Event Detail')
+                .icon(() => <FiStar />)
+                .child(S.document().schemaType('eventDetail').documentId('eventDetail')),
               S.listItem()
                 .title('Get Morin')
                 .icon(() => <FiStar />)

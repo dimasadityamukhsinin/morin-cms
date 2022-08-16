@@ -393,25 +393,7 @@ export default {
                   type: 'string',
                 },
               ],
-            },
-            {
-              title: 'Button',
-              name: 'btn',
-              type: 'object',
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                  initialValue: "@morin_jam"
-                },
-              ],
-            },
+            }
           ]
         }
       ],

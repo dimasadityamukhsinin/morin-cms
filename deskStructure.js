@@ -31,10 +31,12 @@ export default () =>
             'eventCategory',
             'recipe',
             'recipeList',
+            'recipeDetail',
             'recipeCategory',
             'difficultyList',
             'cookingTimeList',
             'product',
+            'productDetail',
             'productList',
             'productType',
             'about',
@@ -105,9 +107,19 @@ export default () =>
                   S.document().schemaType('product').documentId('product'),
                 ),
               S.listItem()
+                .title('Product Detail')
+                .icon(() => <FiStar />)
+                .child(
+                  S.document().schemaType('productDetail').documentId('productDetail'),
+                ),
+              S.listItem()
                 .title('Recipe')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('recipe').documentId('recipe')),
+              S.listItem()
+                .title('Recipe Detail')
+                .icon(() => <FiStar />)
+                .child(S.document().schemaType('recipeDetail').documentId('recipeDetail')),
               S.listItem()
                 .title('Event')
                 .icon(() => <FiStar />)

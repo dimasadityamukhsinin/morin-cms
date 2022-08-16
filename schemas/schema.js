@@ -27,6 +27,8 @@ import difficultyList from './difficultyList'
 import cookingTimeList from './cookingTimeList'
 import editorBasic from './editorBasic'
 import shopifyData from './shopifyData'
+import recipeDetail from './recipeDetail'
+import productDetail from './productDetail'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -46,10 +48,12 @@ export default createSchema({
     eventCategory,
     recipe,
     recipeList,
+    recipeDetail,
     recipeCategory,
     difficultyList,
     cookingTimeList,
     product,
+    productDetail,
     productList,
     productType,
     about,

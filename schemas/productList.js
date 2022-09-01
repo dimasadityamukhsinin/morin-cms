@@ -129,10 +129,23 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Get This Product",
-      name: "linkStore",
-      type: 'reference',
-      to: [{ type: 'shopifyData' }],
+      title: "Get this Product",
+      name: "getProduct",
+      type: "object",
+      fields: [
+        {
+          title: "Product",
+          name: "linkStore",
+          type: 'reference',
+          to: [{ type: 'shopifyData' }],
+        },
+        {
+          title: "Hide Button",
+          name: "hide_get",
+          type: "boolean",
+          initialValue: false,
+        },
+      ]
     },
     {
       title: 'Recipes',

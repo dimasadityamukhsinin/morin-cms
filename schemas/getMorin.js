@@ -86,6 +86,30 @@ export default {
       ],
     },
     {
+      title: "Shop",
+      name: "shop",
+      type: "object",
+      fields: [
+        {
+          title: "Title",
+          name: "title",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Link",
+          name: "link",
+          type: "url",
+        },
+        {
+          title: "Hide Button",
+          name: "hide_shop",
+          type: "boolean",
+          initialValue: false,
+        },
+      ]
+    },
+    {
       title: 'Shop Online',
       name: 'shopOnline',
       type: 'array',

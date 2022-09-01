@@ -101,6 +101,12 @@ export default {
       ],
     },
     {
+      title: "Turn Off Language",
+      name: "turn_language",
+      type: "boolean",
+      initialValue: false,
+    },
+    {
       name: 'share_en',
       title: 'Share - EN',
       type: 'object',

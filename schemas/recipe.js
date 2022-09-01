@@ -120,6 +120,12 @@ export default {
       name: 'description_id',
       type: 'text',
     },
+    {
+      title: 'Set Language Color',
+      name: 'langColor',
+      type: 'color',
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     prepare() {

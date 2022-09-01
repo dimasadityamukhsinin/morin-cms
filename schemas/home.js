@@ -141,6 +141,12 @@ export default {
                 },
               ],
             },
+            {
+              title: 'Set Language Color',
+              name: 'langColor',
+              type: 'color',
+              validation: (Rule) => Rule.required(),
+            },
           ],
           preview: {
             select: {
@@ -212,6 +218,12 @@ export default {
                   initialValue: 'Morin',
                 },
               ],
+            },
+            {
+              title: 'Set Language Color',
+              name: 'langColor',
+              type: 'color',
+              validation: (Rule) => Rule.required(),
             },
           ],
           preview: {
@@ -395,8 +407,14 @@ export default {
               ],
             }
           ]
-        }
+        },
       ],
+    },
+    {
+      title: 'Set Language Color',
+      name: 'langColor',
+      type: 'color',
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {

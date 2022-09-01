@@ -114,7 +114,13 @@ export default {
           initialValue: "View in Maps"
         },
       ],
-    }
+    },
+    {
+      title: 'Set Language Color',
+      name: 'langColor',
+      type: 'color',
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     prepare() {

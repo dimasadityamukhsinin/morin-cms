@@ -137,7 +137,13 @@ export default {
           initialValue: "See All"
         },
       ],
-    }
+    },
+    {
+      title: 'Set Language Color',
+      name: 'langColor',
+      type: 'color',
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     prepare() {

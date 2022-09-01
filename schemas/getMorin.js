@@ -321,6 +321,12 @@ export default {
         },
       ],
     },
+    {
+      title: 'Set Language Color',
+      name: 'langColor',
+      type: 'color',
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     prepare() {

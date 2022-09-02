@@ -442,6 +442,13 @@ export default {
       type: 'color',
     },
     {
+      title: 'Set Language Color (Black/White)',
+      name: 'langColor',
+      type: 'boolean',
+      initialValue: true,
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Date Published',
       name: 'date',
       type: 'date',

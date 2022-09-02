@@ -1,8 +1,15 @@
 export default {
   name: 'faq',
-  title: 'Faq',
+  title: 'FAQ',
   type: 'document',
   fields: [
+    {
+      title: "Hide FAQ",
+      name: "hide_faq",
+      type: "boolean",
+      initialValue: false,
+      validation: (Rule) => Rule.required(),
+    },
     {
       title: 'SEO - EN',
       description:

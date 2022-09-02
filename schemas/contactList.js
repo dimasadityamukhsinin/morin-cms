@@ -1,6 +1,6 @@
 export default {
   name: 'contactList',
-  title: 'Contact List',
+  title: 'Contact',
   type: 'document',
   fields: [
     {

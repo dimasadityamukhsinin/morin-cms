@@ -139,9 +139,10 @@ export default {
       ],
     },
     {
-      title: 'Set Language Color',
+      title: 'Set Language Color (Black/White)',
       name: 'langColor',
-      type: 'color',
+      type: 'boolean',
+      initialValue: true,
       validation: (Rule) => Rule.required(),
     },
   ],

@@ -89,13 +89,6 @@ export default {
         }
       ]
     },
-    {
-      title: 'Set Language Color (Black/White)',
-      name: 'langColor',
-      type: 'boolean',
-      initialValue: true,
-      validation: (Rule) => Rule.required(),
-    },
   ],
   preview: {
     prepare() {

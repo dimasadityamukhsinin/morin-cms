@@ -244,6 +244,23 @@ export default {
       ],
     },
     {
+      name: 'instagram',
+      title: 'Instagram',
+      type: 'object',
+      fields: [
+        {
+          title: 'Title',
+          name: 'title',
+          type: 'string',
+        },
+        {
+          title: 'URL',
+          name: 'url',
+          type: 'url',
+        },
+      ],
+    },
+    {
       title: 'Language',
       name: 'language',
       type: 'object',

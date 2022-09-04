@@ -248,29 +248,8 @@ export default {
       ],
     },
     {
-      title: 'Decor Component - EN',
-      name: 'decor_en',
-      type: 'object',
-      fields: [
-        {
-          title: 'Decor 1',
-          name: 'decor1',
-          type: 'reference',
-          to: [{ type: 'decorList' }],
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: 'decor2',
-          title: 'Decor 2',
-          type: 'reference',
-          to: [{ type: 'decorList' }],
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-    },
-    {
-      title: 'Decor Component - ID',
-      name: 'decor_id',
+      title: 'Decor Component',
+      name: 'decor',
       type: 'object',
       fields: [
         {
@@ -375,92 +354,6 @@ export default {
           ],
         },
       ],
-    },
-    {
-      title: "Language",
-      name: "language",
-      type: "object",
-      fields: [
-        {
-          title: "Get This Product",
-          name: "linkStore",
-          type: "object",
-          fields: [
-            {
-              title: 'ID',
-              name: 'id',
-              type: 'string',
-            },
-            {
-              title: 'EN',
-              name: 'en',
-              type: 'string',
-              initialValue: "Get This Product"
-            },
-          ],
-        },
-        {
-          title: "Things you can make",
-          name: "recipe",
-          type: "object",
-          fields: [
-            {
-              title: "Title",
-              name: "title",
-              type: "object",
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                  initialValue: "Get This Product"
-                },
-              ]
-            },
-            {
-              title: "Button",
-              name: "btn",
-              type: "object",
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                  initialValue: "See All Recipes"
-                },
-              ]
-            },
-            {
-              title: "Similar Products",
-              name: "similar",
-              type: "object",
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                  initialValue: "Similar Products"
-                },
-              ]
-            },
-          ],
-        }
-      ]
     },
     {
       title: 'Set Text Color',

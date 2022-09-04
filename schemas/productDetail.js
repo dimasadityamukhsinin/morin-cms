@@ -67,26 +67,26 @@ export default {
                 },
               ]
             },
-            {
-              title: "Similar Products",
-              name: "similar",
-              type: "object",
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                  initialValue: "Similar Products"
-                },
-              ]
-            },
           ],
-        }
+        },
+        {
+          title: "Similar Products",
+          name: "similar",
+          type: "object",
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: "Similar Products"
+            },
+          ]
+        },
       ]
     },
   ],

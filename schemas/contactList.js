@@ -14,11 +14,6 @@ export default {
       type: 'string',
     },
     {
-      title: 'Company Name',
-      name: 'name',
-      type: 'string',
-    },
-    {
       title: 'Description - EN',
       name: 'description_en',
       type: 'editorBasic',

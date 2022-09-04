@@ -169,23 +169,6 @@ export default {
       type: 'url',
     },
     {
-      name: 'instagram',
-      title: 'Instagram',
-      type: 'object',
-      fields: [
-        {
-          title: 'Title',
-          name: 'title',
-          type: 'string',
-        },
-        {
-          title: 'URL',
-          name: 'url',
-          type: 'url',
-        },
-      ],
-    },
-    {
       name: 'mailchimpID',
       description:
         'Place your Mailchimp URL here to receive incoming emails from this website',

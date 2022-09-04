@@ -46,29 +46,8 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Decor Component - EN',
-      name: 'decor_en',
-      type: 'object',
-      fields: [
-        {
-          title: 'Decor 1',
-          name: 'decor1',
-          type: 'reference',
-          to: [{ type: 'decorList' }],
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: 'decor2',
-          title: 'Decor 2',
-          type: 'reference',
-          to: [{ type: 'decorList' }],
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-    },
-    {
-      title: 'Decor Component - ID',
-      name: 'decor_id',
+      title: 'Decor Component',
+      name: 'decor',
       type: 'object',
       fields: [
         {

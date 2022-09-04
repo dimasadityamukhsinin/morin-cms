@@ -236,6 +236,7 @@ export default {
       title: 'Made With',
       name: 'made',
       type: 'array',
+      validation: (Rule) => Rule.max(2),
       of: [
         {
           title: 'Product',

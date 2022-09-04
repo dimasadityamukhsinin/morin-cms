@@ -44,7 +44,8 @@ export default () =>
             'home',
             'footer',
             'settings',
-            'shopifyData'
+            'shopifyData',
+            'translation',
           ].includes(listItem.getId()),
       ),
       S.listItem()
@@ -57,7 +58,9 @@ export default () =>
               S.documentTypeListItem('productList').icon(() => <FiFileText />),
               S.documentTypeListItem('productType').icon(() => <FiFlag />),
               S.documentTypeListItem('decorList').icon(() => <FiFileText />),
-              S.documentTypeListItem('shopifyData').title("Store Products").icon(() => <FiFileText />),
+              S.documentTypeListItem('shopifyData')
+                .title('Store Products')
+                .icon(() => <FiFileText />),
             ]),
         ),
       S.listItem()
@@ -111,7 +114,9 @@ export default () =>
                 .title('Product Page')
                 .icon(() => <FiStar />)
                 .child(
-                  S.document().schemaType('productDetail').documentId('productDetail'),
+                  S.document()
+                    .schemaType('productDetail')
+                    .documentId('productDetail'),
                 ),
               S.listItem()
                 .title('Recipe List')
@@ -120,7 +125,11 @@ export default () =>
               S.listItem()
                 .title('Recipe Page')
                 .icon(() => <FiStar />)
-                .child(S.document().schemaType('recipeDetail').documentId('recipeDetail')),
+                .child(
+                  S.document()
+                    .schemaType('recipeDetail')
+                    .documentId('recipeDetail'),
+                ),
               S.listItem()
                 .title('Event List')
                 .icon(() => <FiStar />)
@@ -128,7 +137,11 @@ export default () =>
               S.listItem()
                 .title('Event Page')
                 .icon(() => <FiStar />)
-                .child(S.document().schemaType('eventDetail').documentId('eventDetail')),
+                .child(
+                  S.document()
+                    .schemaType('eventDetail')
+                    .documentId('eventDetail'),
+                ),
               S.listItem()
                 .title('Get Morin')
                 .icon(() => <FiStar />)
@@ -144,6 +157,14 @@ export default () =>
                 .icon(() => <FiStar />)
                 .child(
                   S.document().schemaType('contact').documentId('contact'),
+                ),
+              S.listItem()
+                .title('Translation')
+                .icon(() => <FiStar />)
+                .child(
+                  S.document()
+                    .schemaType('translation')
+                    .documentId('translation'),
                 ),
             ]),
         ),

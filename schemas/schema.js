@@ -30,6 +30,7 @@ import shopifyData from './shopifyData'
 import recipeDetail from './recipeDetail'
 import productDetail from './productDetail'
 import eventDetail from './eventDetail'
+import translation from './translation'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -64,6 +65,7 @@ export default createSchema({
     settings,
     blockContent,
     editorBasic,
-    shopifyData
+    shopifyData,
+    translation,
   ]),
 })

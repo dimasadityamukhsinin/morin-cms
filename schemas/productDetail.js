@@ -1,6 +1,6 @@
 export default {
   name: 'productDetail',
-  title: 'Product Detail',
+  title: 'Product Page',
   type: 'document',
   fields: [
     {
@@ -93,7 +93,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: 'Product Detail',
+        title: 'Product Page',
       }
     },
   },

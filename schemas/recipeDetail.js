@@ -1,6 +1,6 @@
 export default {
   name: 'recipeDetail',
-  title: 'Recipe Detail',
+  title: 'Recipe Page',
   type: 'document',
   fields: [
     {
@@ -111,7 +111,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: 'Recipe Detail',
+        title: 'Recipe Page',
       }
     },
   },

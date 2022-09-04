@@ -1,6 +1,6 @@
 export default {
   name: 'eventDetail',
-  title: 'Event Detail',
+  title: 'Event Page',
   type: 'document',
   fields: [
     {
@@ -54,7 +54,7 @@ export default {
       ],
     },
     {
-      title: 'Set Language Color (Black/White)',
+      title: 'Set Header Color (Black/White)',
       name: 'langColor',
       type: 'boolean',
       initialValue: true,
@@ -64,7 +64,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: 'Event Detail',
+        title: 'Event Page',
       }
     },
   },

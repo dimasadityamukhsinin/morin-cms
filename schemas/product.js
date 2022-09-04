@@ -1,6 +1,6 @@
 export default {
   name: 'product',
-  title: 'Product',
+  title: 'Product List',
   type: 'document',
   fields: [
     {
@@ -139,7 +139,7 @@ export default {
       ],
     },
     {
-      title: 'Set Language Color (Black/White)',
+      title: 'Set Header Color (Black/White)',
       name: 'langColor',
       type: 'boolean',
       initialValue: true,
@@ -149,7 +149,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: 'Product',
+        title: 'Product List',
       }
     },
   },

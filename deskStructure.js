@@ -102,31 +102,31 @@ export default () =>
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('about').documentId('about')),
               S.listItem()
-                .title('Product')
+                .title('Product List')
                 .icon(() => <FiStar />)
                 .child(
                   S.document().schemaType('product').documentId('product'),
                 ),
               S.listItem()
-                .title('Product Detail')
+                .title('Product Page')
                 .icon(() => <FiStar />)
                 .child(
                   S.document().schemaType('productDetail').documentId('productDetail'),
                 ),
               S.listItem()
-                .title('Recipe')
+                .title('Recipe List')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('recipe').documentId('recipe')),
               S.listItem()
-                .title('Recipe Detail')
+                .title('Recipe Page')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('recipeDetail').documentId('recipeDetail')),
               S.listItem()
-                .title('Event')
+                .title('Event List')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('event').documentId('event')),
               S.listItem()
-                .title('Event Detail')
+                .title('Event Page')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('eventDetail').documentId('eventDetail')),
               S.listItem()
@@ -136,7 +136,7 @@ export default () =>
                   S.document().schemaType('getMorin').documentId('getMorin'),
                 ),
               S.listItem()
-                .title('Faq')
+                .title('FAQ')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('faq').documentId('faq')),
               S.listItem()

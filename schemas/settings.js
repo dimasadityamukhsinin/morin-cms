@@ -101,6 +101,13 @@ export default {
       ],
     },
     {
+      title: "Hide FAQ",
+      name: "hide_faq",
+      type: "boolean",
+      initialValue: false,
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: "Turn Off Language",
       name: "turn_language",
       type: "boolean",

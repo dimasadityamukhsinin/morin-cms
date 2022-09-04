@@ -116,7 +116,7 @@ export default {
       ],
     },
     {
-      title: 'Set Language Color (Black/White)',
+      title: 'Set Header Color (Black/White)',
       name: 'langColor',
       type: 'boolean',
       initialValue: true,

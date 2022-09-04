@@ -1,6 +1,6 @@
 export default {
   name: 'recipe',
-  title: 'Recipe',
+  title: 'Recipe List',
   type: 'document',
   fields: [
     {
@@ -121,7 +121,7 @@ export default {
       type: 'text',
     },
     {
-      title: 'Set Language Color (Black/White)',
+      title: 'Set Header Color (Black/White)',
       name: 'langColor',
       type: 'boolean',
       initialValue: true,
@@ -131,7 +131,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: 'Recipe',
+        title: 'Recipe List',
       }
     },
   },

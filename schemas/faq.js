@@ -4,13 +4,6 @@ export default {
   type: 'document',
   fields: [
     {
-      title: "Hide FAQ",
-      name: "hide_faq",
-      type: "boolean",
-      initialValue: false,
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'SEO - EN',
       description:
         'Search Engine Optimization allows to improve the ranking in search results.',
@@ -105,7 +98,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Set Language Color (Black/White)',
+      title: 'Set Header Color (Black/White)',
       name: 'langColor',
       type: 'boolean',
       initialValue: true,
@@ -115,7 +108,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: 'Faq',
+        title: 'FAQ',
       }
     },
   },

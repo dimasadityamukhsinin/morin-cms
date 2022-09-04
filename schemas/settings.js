@@ -114,44 +114,6 @@ export default {
       initialValue: false,
     },
     {
-      name: 'share_en',
-      title: 'Share - EN',
-      type: 'object',
-      fields: [
-        {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: 'message',
-          title: 'Message',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-    },
-    {
-      name: 'share_id',
-      title: 'Share - ID',
-      type: 'object',
-      fields: [
-        {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: 'message',
-          title: 'Message',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-    },
-    {
       name: 'googleID',
       description:
         'Place your Google Analytics ID here to link to your Google Analytics to see the website traffic statistic',

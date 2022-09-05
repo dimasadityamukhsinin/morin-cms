@@ -299,11 +299,6 @@ export default {
               initialValue: false,
               validation: (Rule) =>
                 Rule.required().custom((field, context) => {
-                  console.log(
-                    context.document.listWeight.filter(
-                      (item) => item.defaultWeight,
-                    ),
-                  )
                   if (
                     context.document.listWeight.filter(
                       (item) => item.defaultWeight,

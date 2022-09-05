@@ -129,23 +129,37 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Get this Product",
-      name: "getProduct",
-      type: "object",
+      title: 'Get this Product',
+      name: 'getProduct',
+      type: 'object',
       fields: [
         {
-          title: "Product",
-          name: "linkStore",
-          type: 'reference',
-          to: [{ type: 'shopifyData' }],
+          title: 'Custom Link',
+          name: 'custom_link',
+          type: 'boolean',
+          initialValue: false,
+          validation: (Rule) => Rule.required(),
         },
         {
-          title: "Hide Button",
-          name: "hide_get",
-          type: "boolean",
+          title: 'Product',
+          name: 'linkStore',
+          type: 'reference',
+          to: [{ type: 'shopifyData' }],
+          hidden: ({ parent }) => !parent?.custom_link,
+        },
+        {
+          title: 'Product Link',
+          name: 'linkProduct',
+          type: 'url',
+          hidden: ({ parent }) => parent?.custom_link,
+        },
+        {
+          title: 'Hide Button',
+          name: 'hide_get',
+          type: 'boolean',
           initialValue: false,
         },
-      ]
+      ],
     },
     {
       title: 'Recipes',
@@ -285,14 +299,18 @@ export default {
               initialValue: false,
               validation: (Rule) =>
                 Rule.required().custom((field, context) => {
-                  console.log(context.document.listWeight.filter(
-                    (item) => item.defaultWeight,
-                  ))
-                  if(context.document.listWeight.filter(
-                    (item) => item.defaultWeight,
-                  ).length === 0) {
-                    return "Required"
-                  }else {
+                  console.log(
+                    context.document.listWeight.filter(
+                      (item) => item.defaultWeight,
+                    ),
+                  )
+                  if (
+                    context.document.listWeight.filter(
+                      (item) => item.defaultWeight,
+                    ).length === 0
+                  ) {
+                    return 'Required'
+                  } else {
                     if (
                       context.document.listWeight.filter(
                         (item) => item.defaultWeight,

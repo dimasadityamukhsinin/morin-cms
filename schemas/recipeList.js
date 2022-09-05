@@ -205,13 +205,13 @@ export default {
               validation: (Rule) =>
                 Rule.required().custom((field, context) => {
                   if (
-                    context.document.ingredients_en.filter((item) => item.title)
+                    context.document.ingredients_id.filter((item) => item.title)
                       .length === 0
                   ) {
                     return 'Required'
                   } else {
                     if (
-                      context.document.ingredients_en.filter(
+                      context.document.ingredients_id.filter(
                         (item) => item.title,
                       ).length > 1
                     ) {

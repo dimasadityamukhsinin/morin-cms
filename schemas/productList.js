@@ -145,13 +145,13 @@ export default {
           name: 'linkStore',
           type: 'reference',
           to: [{ type: 'shopifyData' }],
-          hidden: ({ parent }) => !parent?.custom_link,
+          hidden: ({ parent }) => !!parent.custom_link,
         },
         {
           title: 'Product Link',
           name: 'linkProduct',
           type: 'url',
-          hidden: ({ parent }) => parent?.custom_link,
+          hidden: ({ parent }) => !parent.custom_link,
         },
         {
           title: 'Hide Button',

@@ -138,6 +138,11 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+    {
+      title: 'Elfsight ID',
+      name: 'elfsightID',
+      type: 'string',
+    },
   ],
   preview: {
     prepare() {

@@ -153,12 +153,6 @@ export default {
           type: 'url',
           hidden: ({ parent }) => !parent.custom_link,
         },
-        {
-          title: 'Hide Button',
-          name: 'hide_get',
-          type: 'boolean',
-          initialValue: false,
-        },
       ],
     },
     {

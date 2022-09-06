@@ -101,6 +101,25 @@ export default {
       ],
     },
     {
+      name: 'share',
+      title: 'Share',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'message',
+          title: 'Message',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
       title: "Hide FAQ",
       name: "hide_faq",
       type: "boolean",
@@ -138,6 +157,7 @@ export default {
       fields: [
         {
           title: "Number",
+          description: "Use +62 or 62",
           name: "number",
           type: "string",
           validation: (Rule) => Rule.required(),

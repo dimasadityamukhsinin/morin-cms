@@ -134,7 +134,21 @@ export default {
     {
       name: 'whatsapp',
       title: 'WhatsApp',
-      type: 'url',
+      type: 'object',
+      fields: [
+        {
+          title: "Number",
+          name: "number",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Message",
+          name: "message",
+          type: "text",
+          validation: (Rule) => Rule.required(),
+        }
+      ]
     },
     {
       name: 'mailchimpID',

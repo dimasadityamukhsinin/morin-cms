@@ -108,6 +108,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Hide Shop",
+      name: "hide_shop",
+      type: "boolean",
+      initialValue: false,
+    },
+    {
       title: "Turn Off Language",
       name: "turn_language",
       type: "boolean",

@@ -157,25 +157,6 @@ export default {
               name: 'title',
               type: 'boolean',
               initialValue: false,
-              validation: (Rule) =>
-                Rule.required().custom((field, context) => {
-                  if (
-                    context.document.ingredients_en.filter((item) => item.title)
-                      .length === 0
-                  ) {
-                    return 'Required'
-                  } else {
-                    if (
-                      context.document.ingredients_en.filter(
-                        (item) => item.title,
-                      ).length > 1
-                    ) {
-                      return 'The title has been selected'
-                    } else {
-                      return true
-                    }
-                  }
-                }),
             },
             {
               title: 'Description',
@@ -202,25 +183,6 @@ export default {
               name: 'title',
               type: 'boolean',
               initialValue: false,
-              validation: (Rule) =>
-                Rule.required().custom((field, context) => {
-                  if (
-                    context.document.ingredients_id.filter((item) => item.title)
-                      .length === 0
-                  ) {
-                    return 'Required'
-                  } else {
-                    if (
-                      context.document.ingredients_id.filter(
-                        (item) => item.title,
-                      ).length > 1
-                    ) {
-                      return 'The title has been selected'
-                    } else {
-                      return true
-                    }
-                  }
-                }),
             },
             {
               title: 'Description',

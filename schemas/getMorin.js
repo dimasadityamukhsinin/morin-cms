@@ -101,12 +101,6 @@ export default {
           name: "link",
           type: "url",
         },
-        {
-          title: "Hide Button",
-          name: "hide_shop",
-          type: "boolean",
-          initialValue: false,
-        },
       ]
     },
     {

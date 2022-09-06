@@ -166,7 +166,6 @@ export default {
           title: "Message",
           name: "message",
           type: "text",
-          validation: (Rule) => Rule.required(),
         }
       ]
     },

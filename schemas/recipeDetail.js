@@ -63,6 +63,24 @@ export default {
           ],
         },
         {
+          title: "Share",
+          name: "share",
+          type: "object",
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: "Share"
+            },
+          ],
+        },
+        {
           title: "You may also like",
           name: "related",
           type: "object",

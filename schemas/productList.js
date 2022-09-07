@@ -280,6 +280,7 @@ export default {
       title: 'Weight',
       name: 'listWeight',
       type: 'array',
+      validation: (Rule) => Rule.required(),
       of: [
         {
           title: 'Weight',
@@ -316,6 +317,7 @@ export default {
               title: 'Title',
               name: 'title',
               type: 'string',
+              validation: (Rule) => Rule.required(),
             },
             {
               title: 'Image',

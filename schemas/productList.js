@@ -323,7 +323,15 @@ export default {
               title: 'Image',
               name: 'image',
               type: 'image',
-              validation: (Rule) => Rule.required(),
+              validation: (Rule) => [
+                Rule.custom((value) => {
+                  return value && value.asset
+                    ? true
+                    : {
+                        message: 'Required',
+                      };
+                }),
+              ],
               fields: [
                 {
                   title: 'Edit Alt Text',

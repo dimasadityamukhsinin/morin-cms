@@ -107,18 +107,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Description - EN',
-      name: 'description_en',
-      type: 'text',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Description - ID',
-      name: 'description_id',
-      type: 'text',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Backgrounds',
       name: 'backgrounds',
       type: 'object',

@@ -9,7 +9,6 @@ import home from './home'
 import productType from './productType'
 import productList from './productList'
 import blockContent from './blockContent'
-import recipeCategory from './recipeCategory'
 import recipeList from './recipeList'
 import recipe from './recipe'
 import product from './product'
@@ -23,14 +22,14 @@ import faq from './faq'
 import faqList from './faqList'
 import contact from './contact'
 import contactList from './contactList'
-import difficultyList from './difficultyList'
-import cookingTimeList from './cookingTimeList'
 import editorBasic from './editorBasic'
 import shopifyData from './shopifyData'
 import recipeDetail from './recipeDetail'
 import productDetail from './productDetail'
 import eventDetail from './eventDetail'
 import translation from './translation'
+import recipeTitle from './recipeTitle'
+import recipeData from './recipeData'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -52,9 +51,8 @@ export default createSchema({
     recipe,
     recipeList,
     recipeDetail,
-    recipeCategory,
-    difficultyList,
-    cookingTimeList,
+    recipeTitle,
+    recipeData,
     product,
     productDetail,
     productList,

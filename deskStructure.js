@@ -33,9 +33,8 @@ export default () =>
             'recipe',
             'recipeList',
             'recipeDetail',
-            'recipeCategory',
-            'difficultyList',
-            'cookingTimeList',
+            'recipeTitle',
+            'recipeData',
             'product',
             'productDetail',
             'productList',
@@ -71,9 +70,17 @@ export default () =>
             .title('Recipes')
             .items([
               S.documentTypeListItem('recipeList').icon(() => <FiFileText />),
-              S.documentTypeListItem('recipeCategory').icon(() => <FiFlag />),
-              S.documentTypeListItem('difficultyList').icon(() => <FiFlag />),
-              S.documentTypeListItem('cookingTimeList').icon(() => <FiFlag />),
+              S.listItem()
+                .title('Recipe Category')
+                .icon(() => <FiFileText />)
+                .child(
+                  S.list()
+                    .title('Recipe Category')
+                    .items([
+                      S.documentTypeListItem('recipeTitle').icon(() => <FiFlag />),
+                      S.documentTypeListItem('recipeData').icon(() => <FiFlag />),
+                    ]),
+                ),
             ]),
         ),
       S.listItem()

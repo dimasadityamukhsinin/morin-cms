@@ -1,3 +1,5 @@
+import client from 'part:@sanity/base/client'
+
 export default {
   name: 'recipeList',
   title: 'Recipe List',
@@ -122,25 +124,51 @@ export default {
       ],
     },
     {
-      name: 'difficulty',
-      title: 'Difficulty',
-      type: 'reference',
-      to: [{ type: 'difficultyList' }],
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'cookingTime',
-      title: 'Cooking Time',
-      type: 'reference',
-      to: [{ type: 'cookingTimeList' }],
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'recipeCategory',
       title: 'Recipe Category',
-      type: 'reference',
-      to: [{ type: 'recipeCategory' }],
+      type: 'array',
       validation: (Rule) => Rule.required(),
+      of: [
+        {
+          name: 'category',
+          title: 'Category',
+          type: 'reference',
+          validation: (Rule) =>
+            Rule.custom(async (value, ctx) => {
+              if(ctx.parent[ctx.parent.length - 1]._ref) {
+                let recipeData = await Promise.all(
+                  ctx.parent.map(async (element) => {
+                    let data = await client.fetch(
+                      `*[_type == "recipeData" && _id == "${element._ref}"] {
+                  ...,
+                  recipeTitle ->
+                }`,
+                    )
+                    return {
+                      ...data[0],
+                    }
+                  }),
+                )
+                if(recipeData.filter((data) => data._id === value._ref).length > 1) {
+                  return 'Recipe Category Already Exists'
+                }else {
+                  if(recipeData.filter((data) => data.recipeTitle.title_en === recipeData.find((item) => item._id === value._ref).recipeTitle.title_en).length > 1) {
+                    return 'Recipe Category Title Already Exists'
+                  }else {
+                    return true
+                  }
+                }
+              }else {
+                return true
+              }
+            }),
+          to: [
+            {
+              type: 'recipeData',
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'ingredients_en',

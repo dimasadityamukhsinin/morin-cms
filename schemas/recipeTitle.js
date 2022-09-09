@@ -1,20 +1,32 @@
 export default {
     name: 'recipeTitle',
-    title: 'Recipe Title',
+    title: 'Category Title',
     type: 'document',
     fields: [
         {
           name: 'title_en',
-          title: 'Recipe Title - EN',
+          title: 'Category Title - EN',
           type: 'string',
           validation: (Rule) => Rule.required(),
         },
         {
           name: 'title_id',
-          title: 'Recipe Title - ID',
+          title: 'Category Title - ID',
           type: 'string',
           validation: (Rule) => Rule.required(),
         },
+        {
+          title: "Data",
+          name: "data",
+          type: "array",
+          of: [
+            {
+              type: 'reference',
+              to: { type: 'recipeData' },
+              validation: (Rule) => Rule.required(),
+            },
+          ]
+        }
     ],
     preview: {
       select: {

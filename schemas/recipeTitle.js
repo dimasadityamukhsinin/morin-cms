@@ -26,7 +26,13 @@ export default {
               validation: (Rule) => Rule.required(),
             },
           ]
-        }
+        },
+        {
+          name: 'order',
+          title: 'Order',
+          type: 'number',
+          hidden: true,
+        },
     ],
     preview: {
       select: {

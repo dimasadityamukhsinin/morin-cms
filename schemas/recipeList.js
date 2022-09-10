@@ -254,9 +254,25 @@ export default {
     },
     {
       name: 'thumbnail',
-      description: 'A cover image for this recipe | PNG / JPEG / WEBP',
+      description: 'A thumbnail image for this recipe | PNG / JPEG / WEBP',
       title: 'Thumbnail',
       type: 'image',
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: 'Edit Alt Text',
+          name: 'alt',
+          type: 'string',
+          initialValue: 'Morin',
+        },
+      ],
+    },
+    {
+      name: 'cover',
+      description: 'A cover image for this recipe | PNG / JPEG / WEBP',
+      title: 'Cover',
+      type: 'image',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Edit Alt Text',

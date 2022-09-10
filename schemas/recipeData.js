@@ -39,13 +39,6 @@ export default {
           }
         }),
     },
-    {
-      name: 'recipeTitle',
-      title: 'Category Title',
-      type: 'reference',
-      to: [{ type: 'recipeTitle' }],
-      validation: (Rule) => Rule.required(),
-    },
   ],
   preview: {
     select: {

@@ -135,30 +135,35 @@ export default {
           type: 'reference',
           validation: (Rule) =>
             Rule.custom(async (value, ctx) => {
-              if(ctx.parent[ctx.parent.length - 1]._ref) {
-                let recipeData = await Promise.all(
-                  ctx.parent.map(async (element) => {
-                    let data = await client.fetch(
-                      `*[_type == "recipeData" && _id == "${element._ref}"] {
+              if (ctx.parent[ctx.parent.length - 1]._ref) {
+                let data = await client.fetch(`*[_type == "recipeTitle"&& !(_id in path("drafts.**"))] {
                   ...,
-                  recipeTitle ->
-                }`,
-                    )
-                    return {
-                      ...data[0],
+                  data[]->
+                }`)
+                let recipeData = ctx.parent.map((items) => {
+                  let dataFilter = data.filter((item) => {
+                    if (item.data.find((e) => e._id === items._ref)) {
+                      return {
+                        ...item,
+                        data: item.data.find((e) => e._id === items._ref),
+                      }
                     }
-                  }),
-                )
-                if(recipeData.filter((data) => data._id === value._ref).length > 1) {
-                  return 'Recipe Category Already Exists'
-                }else {
-                  if(recipeData.filter((data) => data.recipeTitle.title_en === recipeData.find((item) => item._id === value._ref).recipeTitle.title_en).length > 1) {
-                    return 'Recipe Category Title Already Exists'
-                  }else {
-                    return true
+                  })
+                  return {
+                    ...dataFilter[0],
                   }
+                })
+
+                if (
+                  recipeData.filter((e) =>
+                    e.data.find((item) => item._id === value._ref),
+                  ).length > 1
+                ) {
+                  return 'Recipe Category Already Exists'
+                } else {
+                  return true
                 }
-              }else {
+              } else {
                 return true
               }
             }),

@@ -47,7 +47,13 @@ export default {
         title: "Maps",
         name: "maps",
         type: "url",
-    }
+    },
+    {
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+      hidden: true,
+    },
   ],
   preview: {
     select: {

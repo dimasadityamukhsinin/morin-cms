@@ -470,6 +470,12 @@ export default {
         calendarTodayLabel: 'Today',
       },
     },
+    {
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+      hidden: true,
+    },
   ],
   initialValue: async () => ({
     date: new Date().toISOString().slice(0, 10),

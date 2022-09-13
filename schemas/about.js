@@ -102,16 +102,24 @@ export default {
       ]
     },
     {
-      title: 'Title - EN',
-      name: 'title_en',
-      type: 'string',
+      title: "Title",
+      name: "title",
+      type: "object",
       validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Title - ID',
-      name: 'title_id',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
       title: 'Backgrounds',
@@ -170,131 +178,148 @@ export default {
           ],
         },
         {
-          title: 'Title - EN',
-          name: 'title_en',
-          type: 'string',
-        },
-        {
-          title: 'Title - ID',
-          name: 'title_id',
-          type: 'string',
-        },
-        {
-          title: 'Description - EN',
-          name: 'description_en',
-          type: 'array',
-          of: [
+          title: "Title",
+          name: "title",
+          type: "object",
+          validation: (Rule) => Rule.required(),
+          fields: [
             {
-              title: 'Block',
-              type: 'block',
-              marks: {
-                decorators: [
-                  { title: 'Strong', value: 'strong' },
-                  { title: 'Emphasis', value: 'em' },
-                  { title: 'Strike', value: 'strike-through' },
-                  { title: 'Underline', value: 'underline' },
-                ],
-                annotations: [
-                  {
-                    name: 'link',
-                    type: 'object',
-                    title: 'Link',
-                    blockEditor: {
-                      icon: () => <FiExternalLink />,
-                      render: linkRender,
-                    },
-                    fields: [
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ]
+        },
+        {
+          title: "Description",
+          name: "description",
+          type: "object",
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'array',
+              of: [
+                {
+                  title: 'Block',
+                  type: 'block',
+                  marks: {
+                    decorators: [
+                      { title: 'Strong', value: 'strong' },
+                      { title: 'Emphasis', value: 'em' },
+                      { title: 'Strike', value: 'strike-through' },
+                      { title: 'Underline', value: 'underline' },
+                    ],
+                    annotations: [
                       {
-                        name: 'url',
-                        type: 'url',
+                        name: 'link',
+                        type: 'object',
+                        title: 'Link',
+                        blockEditor: {
+                          icon: () => <FiExternalLink />,
+                          render: linkRender,
+                        },
+                        fields: [
+                          {
+                            name: 'url',
+                            type: 'url',
+                          },
+                        ],
                       },
                     ],
                   },
-                ],
-              },
-              styles: [
-                { title: 'Normal', value: 'normal' },
-                { title: 'H1', value: 'h1' },
-                { title: 'H2', value: 'h2' },
-                { title: 'H3', value: 'h3' },
-                { title: 'H4', value: 'h4' },
-                { title: 'H5', value: 'h5' },
-              ],
-              lists: [],
-            },
-            {
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              fields: [
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'H1', value: 'h1' },
+                    { title: 'H2', value: 'h2' },
+                    { title: 'H3', value: 'h3' },
+                    { title: 'H4', value: 'h4' },
+                    { title: 'H5', value: 'h5' },
+                  ],
+                  lists: [],
+                },
                 {
-                  title: 'Edit Alt Text',
-                  name: 'alt',
-                  type: 'string',
-                  initialValue: 'Morin',
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
                 },
               ],
             },
-          ],
-        },
-        {
-          title: 'Description - ID',
-          name: 'description_id',
-          type: 'array',
-          of: [
             {
-              title: 'Block',
-              type: 'block',
-              marks: {
-                decorators: [
-                  { title: 'Strong', value: 'strong' },
-                  { title: 'Emphasis', value: 'em' },
-                  { title: 'Strike', value: 'strike-through' },
-                  { title: 'Underline', value: 'underline' },
-                ],
-                annotations: [
-                  {
-                    name: 'link',
-                    type: 'object',
-                    title: 'Link',
-                    blockEditor: {
-                      icon: () => <FiExternalLink />,
-                      render: linkRender,
-                    },
-                    fields: [
+              title: 'ID',
+              name: 'id',
+              type: 'array',
+              of: [
+                {
+                  title: 'Block',
+                  type: 'block',
+                  marks: {
+                    decorators: [
+                      { title: 'Strong', value: 'strong' },
+                      { title: 'Emphasis', value: 'em' },
+                      { title: 'Strike', value: 'strike-through' },
+                      { title: 'Underline', value: 'underline' },
+                    ],
+                    annotations: [
                       {
-                        name: 'url',
-                        type: 'url',
+                        name: 'link',
+                        type: 'object',
+                        title: 'Link',
+                        blockEditor: {
+                          icon: () => <FiExternalLink />,
+                          render: linkRender,
+                        },
+                        fields: [
+                          {
+                            name: 'url',
+                            type: 'url',
+                          },
+                        ],
                       },
                     ],
                   },
-                ],
-              },
-              styles: [
-                { title: 'Normal', value: 'normal' },
-                { title: 'H1', value: 'h1' },
-                { title: 'H2', value: 'h2' },
-                { title: 'H3', value: 'h3' },
-                { title: 'H4', value: 'h4' },
-                { title: 'H5', value: 'h5' },
-              ],
-              lists: [],
-            },
-            {
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              fields: [
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'H1', value: 'h1' },
+                    { title: 'H2', value: 'h2' },
+                    { title: 'H3', value: 'h3' },
+                    { title: 'H4', value: 'h4' },
+                    { title: 'H5', value: 'h5' },
+                  ],
+                  lists: [],
+                },
                 {
-                  title: 'Edit Alt Text',
-                  name: 'alt',
-                  type: 'string',
-                  initialValue: 'Morin',
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
                 },
               ],
             },
-          ],
-        },
+          ]
+        }
       ],
     },
     {
@@ -321,14 +346,21 @@ export default {
           ],
         },
         {
-          title: 'Title Cover - EN',
-          name: 'titleCover_en',
-          type: 'string',
-        },
-        {
-          title: 'Title Cover - ID',
-          name: 'titleCover_id',
-          type: 'string',
+          title: "Title Cover",
+          name: "titleCover",
+          type: "object",
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+          ]
         },
         {
           name: 'thumbnail',
@@ -344,131 +376,145 @@ export default {
           ],
         },
         {
-          title: 'Title Description - EN',
-          name: 'titleDescription_en',
-          type: 'string',
-        },
-        {
-          title: 'Title Description - ID',
-          name: 'titleDescription_id',
-          type: 'string',
-        },
-        {
-          title: 'Description - EN',
-          name: 'description_en',
-          type: 'array',
-          of: [
+          title: "Title Description",
+          name: "titleDesc",
+          type: "object",
+          fields: [
             {
-              title: 'Block',
-              type: 'block',
-              marks: {
-                decorators: [
-                  { title: 'Strong', value: 'strong' },
-                  { title: 'Emphasis', value: 'em' },
-                  { title: 'Strike', value: 'strike-through' },
-                  { title: 'Underline', value: 'underline' },
-                ],
-                annotations: [
-                  {
-                    name: 'link',
-                    type: 'object',
-                    title: 'Link',
-                    blockEditor: {
-                      icon: () => <FiExternalLink />,
-                      render: linkRender,
-                    },
-                    fields: [
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+          ]
+        },
+        {
+          title: "Description",
+          name: "description",
+          type: "object",
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'array',
+              of: [
+                {
+                  title: 'Block',
+                  type: 'block',
+                  marks: {
+                    decorators: [
+                      { title: 'Strong', value: 'strong' },
+                      { title: 'Emphasis', value: 'em' },
+                      { title: 'Strike', value: 'strike-through' },
+                      { title: 'Underline', value: 'underline' },
+                    ],
+                    annotations: [
                       {
-                        name: 'url',
-                        type: 'url',
+                        name: 'link',
+                        type: 'object',
+                        title: 'Link',
+                        blockEditor: {
+                          icon: () => <FiExternalLink />,
+                          render: linkRender,
+                        },
+                        fields: [
+                          {
+                            name: 'url',
+                            type: 'url',
+                          },
+                        ],
                       },
                     ],
                   },
-                ],
-              },
-              styles: [
-                { title: 'Normal', value: 'normal' },
-                { title: 'H1', value: 'h1' },
-                { title: 'H2', value: 'h2' },
-                { title: 'H3', value: 'h3' },
-                { title: 'H4', value: 'h4' },
-                { title: 'H5', value: 'h5' },
-              ],
-              lists: [],
-            },
-            {
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              fields: [
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'H1', value: 'h1' },
+                    { title: 'H2', value: 'h2' },
+                    { title: 'H3', value: 'h3' },
+                    { title: 'H4', value: 'h4' },
+                    { title: 'H5', value: 'h5' },
+                  ],
+                  lists: [],
+                },
                 {
-                  title: 'Edit Alt Text',
-                  name: 'alt',
-                  type: 'string',
-                  initialValue: 'Morin',
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
                 },
               ],
             },
-          ],
-        },
-        {
-          title: 'Description - ID',
-          name: 'description_id',
-          type: 'array',
-          of: [
             {
-              title: 'Block',
-              type: 'block',
-              marks: {
-                decorators: [
-                  { title: 'Strong', value: 'strong' },
-                  { title: 'Emphasis', value: 'em' },
-                  { title: 'Strike', value: 'strike-through' },
-                  { title: 'Underline', value: 'underline' },
-                ],
-                annotations: [
-                  {
-                    name: 'link',
-                    type: 'object',
-                    title: 'Link',
-                    blockEditor: {
-                      icon: () => <FiExternalLink />,
-                      render: linkRender,
-                    },
-                    fields: [
+              title: 'ID',
+              name: 'id',
+              type: 'array',
+              of: [
+                {
+                  title: 'Block',
+                  type: 'block',
+                  marks: {
+                    decorators: [
+                      { title: 'Strong', value: 'strong' },
+                      { title: 'Emphasis', value: 'em' },
+                      { title: 'Strike', value: 'strike-through' },
+                      { title: 'Underline', value: 'underline' },
+                    ],
+                    annotations: [
                       {
-                        name: 'url',
-                        type: 'url',
+                        name: 'link',
+                        type: 'object',
+                        title: 'Link',
+                        blockEditor: {
+                          icon: () => <FiExternalLink />,
+                          render: linkRender,
+                        },
+                        fields: [
+                          {
+                            name: 'url',
+                            type: 'url',
+                          },
+                        ],
                       },
                     ],
                   },
-                ],
-              },
-              styles: [
-                { title: 'Normal', value: 'normal' },
-                { title: 'H1', value: 'h1' },
-                { title: 'H2', value: 'h2' },
-                { title: 'H3', value: 'h3' },
-                { title: 'H4', value: 'h4' },
-                { title: 'H5', value: 'h5' },
-              ],
-              lists: [],
-            },
-            {
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              fields: [
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'H1', value: 'h1' },
+                    { title: 'H2', value: 'h2' },
+                    { title: 'H3', value: 'h3' },
+                    { title: 'H4', value: 'h4' },
+                    { title: 'H5', value: 'h5' },
+                  ],
+                  lists: [],
+                },
                 {
-                  title: 'Edit Alt Text',
-                  name: 'alt',
-                  type: 'string',
-                  initialValue: 'Morin',
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
                 },
               ],
             },
-          ],
-        },
+          ]
+        }
       ],
     },
     {
@@ -495,14 +541,21 @@ export default {
           ],
         },
         {
-          title: 'Title Cover - EN',
-          name: 'titleCover_en',
-          type: 'string',
-        },
-        {
-          title: 'Title Cover - ID',
-          name: 'titleCover_id',
-          type: 'string',
+          title: "Title Cover",
+          name: "titleCover",
+          type: "object",
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+          ]
         },
         {
           name: 'thumbnail',
@@ -518,99 +571,113 @@ export default {
           ],
         },
         {
-          title: 'Title Description - EN',
-          name: 'titleDescription_en',
-          type: 'string',
-        },
-        {
-          title: 'Title Description - ID',
-          name: 'titleDescription_id',
-          type: 'string',
-        },
-        {
-          title: 'Description - EN',
-          name: 'description_en',
-          type: 'array',
-          of: [
+          title: "Title Description",
+          name: "titleDesc",
+          type: "object",
+          fields: [
             {
-              title: 'Block',
-              type: 'block',
-              marks: {
-                decorators: [
-                  { title: 'Strong', value: 'strong' },
-                  { title: 'Emphasis', value: 'em' },
-                  { title: 'Strike', value: 'strike-through' },
-                  { title: 'Underline', value: 'underline' },
-                ],
-                annotations: [],
-              },
-              styles: [
-                { title: 'Normal', value: 'normal' },
-                { title: 'H1', value: 'h1' },
-                { title: 'H2', value: 'h2' },
-                { title: 'H3', value: 'h3' },
-                { title: 'H4', value: 'h4' },
-                { title: 'H5', value: 'h5' },
-              ],
-              lists: [],
+              title: 'EN',
+              name: 'en',
+              type: 'string',
             },
             {
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              fields: [
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+          ]
+        },
+        {
+          title: "Description",
+          name: "description",
+          type: "object",
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'array',
+              of: [
                 {
-                  title: 'Edit Alt Text',
-                  name: 'alt',
-                  type: 'string',
-                  initialValue: 'Morin',
+                  title: 'Block',
+                  type: 'block',
+                  marks: {
+                    decorators: [
+                      { title: 'Strong', value: 'strong' },
+                      { title: 'Emphasis', value: 'em' },
+                      { title: 'Strike', value: 'strike-through' },
+                      { title: 'Underline', value: 'underline' },
+                    ],
+                    annotations: [],
+                  },
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'H1', value: 'h1' },
+                    { title: 'H2', value: 'h2' },
+                    { title: 'H3', value: 'h3' },
+                    { title: 'H4', value: 'h4' },
+                    { title: 'H5', value: 'h5' },
+                  ],
+                  lists: [],
+                },
+                {
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
                 },
               ],
             },
-          ],
-        },
-        {
-          title: 'Description - ID',
-          name: 'description_id',
-          type: 'array',
-          of: [
             {
-              title: 'Block',
-              type: 'block',
-              marks: {
-                decorators: [
-                  { title: 'Strong', value: 'strong' },
-                  { title: 'Emphasis', value: 'em' },
-                  { title: 'Strike', value: 'strike-through' },
-                  { title: 'Underline', value: 'underline' },
-                ],
-                annotations: [],
-              },
-              styles: [
-                { title: 'Normal', value: 'normal' },
-                { title: 'H1', value: 'h1' },
-                { title: 'H2', value: 'h2' },
-                { title: 'H3', value: 'h3' },
-                { title: 'H4', value: 'h4' },
-                { title: 'H5', value: 'h5' },
-              ],
-              lists: [],
-            },
-            {
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              fields: [
+              title: 'ID',
+              name: 'id',
+              type: 'array',
+              of: [
                 {
-                  title: 'Edit Alt Text',
-                  name: 'alt',
-                  type: 'string',
-                  initialValue: 'Morin',
+                  title: 'Block',
+                  type: 'block',
+                  marks: {
+                    decorators: [
+                      { title: 'Strong', value: 'strong' },
+                      { title: 'Emphasis', value: 'em' },
+                      { title: 'Strike', value: 'strike-through' },
+                      { title: 'Underline', value: 'underline' },
+                    ],
+                    annotations: [],
+                  },
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'H1', value: 'h1' },
+                    { title: 'H2', value: 'h2' },
+                    { title: 'H3', value: 'h3' },
+                    { title: 'H4', value: 'h4' },
+                    { title: 'H5', value: 'h5' },
+                  ],
+                  lists: [],
+                },
+                {
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
                 },
               ],
             },
-          ],
-        },
+          ]
+        }
       ],
     },
     {

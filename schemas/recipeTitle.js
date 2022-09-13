@@ -5,13 +5,13 @@ export default {
   fields: [
     {
       name: 'title_en',
-      title: 'Category Title - EN',
+      title: 'Title - EN',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'title_id',
-      title: 'Category Title - ID',
+      title: 'Title - ID',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },

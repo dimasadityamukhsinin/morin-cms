@@ -4,19 +4,26 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Title - EN',
-      name: 'title_en',
-      type: 'string',
-    },
-    {
-      title: 'Title - ID',
-      name: 'title_id',
-      type: 'string',
-    },
+      title: "Title",
+      name: "title",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'string',
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'string',
+        },
+      ]
+    }
   ],
   preview: {
     select: {
-      title: 'title_en',
+      title: 'title.en',
     },
   },
 }

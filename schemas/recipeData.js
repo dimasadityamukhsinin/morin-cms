@@ -6,16 +6,23 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Title - EN',
-      name: 'title_en',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Title - ID',
-      name: 'title_id',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      title: "Title",
+      name: "title",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
       name: 'slug',

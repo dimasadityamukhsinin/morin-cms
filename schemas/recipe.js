@@ -93,16 +93,23 @@ export default {
       ]
     },
     {
-      title: 'Title - EN',
-      name: 'title_en',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Title - ID',
-      name: 'title_id',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      title: "Title",
+      name: "title",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
       name: 'background',
@@ -118,14 +125,21 @@ export default {
       ],
     },
     {
-      title: 'Description - EN',
-      name: 'description_en',
-      type: 'text',
-    },
-    {
-      title: 'Description - ID',
-      name: 'description_id',
-      type: 'text',
+      title: "Description",
+      name: "description",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'text',
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'text',
+        },
+      ]
     },
     {
       title: 'Set Header Color (Black/White)',

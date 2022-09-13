@@ -4,16 +4,23 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title_en',
-      title: 'Title - EN',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'title_id',
-      title: 'Title - ID',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      title: "Title",
+      name: "title",
+      type: "object",
+      fields: [
+        {
+          name: 'en',
+          title: 'EN',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'id',
+          title: 'ID',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
       title: 'Data',

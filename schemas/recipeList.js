@@ -6,16 +6,23 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title_en',
-      title: 'Recipe Title - EN',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'title_id',
-      title: 'Recipe Title - ID',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      title: "Recipe Title",
+      name: "title",
+      type: "object",
+      fields: [
+        {
+          name: 'en',
+          title: 'EN',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'title_id',
+          title: 'ID',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
       name: 'slug',
@@ -24,7 +31,7 @@ export default {
       description:
         "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
       options: {
-        source: 'title_en',
+        source: 'title.en',
         maxLength: 96,
       },
       validation: (Rule) =>
@@ -183,56 +190,63 @@ export default {
       ],
     },
     {
-      name: 'ingredients_en',
-      title: 'Ingredients - EN',
-      type: 'array',
-      of: [
+      title: "Ingredients",
+      name: "ingredient",
+      type: "object",
+      fields: [
         {
-          title: 'Ingredient',
-          name: 'ingredient',
-          type: 'object',
-          fields: [
+          name: 'en',
+          title: 'EN',
+          type: 'array',
+          of: [
             {
-              title: 'Title',
-              name: 'title',
-              type: 'boolean',
-              initialValue: false,
-            },
-            {
-              title: 'Description',
-              name: 'description',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
+              title: 'Ingredient',
+              name: 'ingredient',
+              type: 'object',
+              fields: [
+                {
+                  title: 'Title',
+                  name: 'title',
+                  type: 'boolean',
+                  initialValue: false,
+                },
+                {
+                  title: 'Description',
+                  name: 'description',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
             },
           ],
         },
-      ],
-    },
-    {
-      name: 'ingredients_id',
-      title: 'Ingredients - ID',
-      type: 'array',
-      of: [
         {
-          title: 'Ingredient',
-          name: 'ingredient',
-          type: 'object',
-          fields: [
+          name: 'id',
+          title: 'ID',
+          type: 'array',
+          of: [
             {
-              title: 'Title',
-              name: 'title',
-              type: 'boolean',
-              initialValue: false,
-            },
-            {
-              title: 'Description',
-              name: 'description',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
+              title: 'Ingredient',
+              name: 'ingredient',
+              type: 'object',
+              fields: [
+                {
+                  title: 'Title',
+                  name: 'title',
+                  type: 'boolean',
+                  initialValue: false,
+                },
+                {
+                  title: 'Description',
+                  name: 'description',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
             },
           ],
         },
-      ],
+      ]
     },
     {
       title: 'Made With',
@@ -250,14 +264,21 @@ export default {
       ],
     },
     {
-      title: 'Recipe Description - EN',
-      name: 'description_en',
-      type: 'editorBasic',
-    },
-    {
-      title: 'Recipe Description - ID',
-      name: 'description_id',
-      type: 'editorBasic',
+      title: "Recipe Description",
+      name: "description",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'editorBasic',
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'editorBasic',
+        },
+      ]
     },
     {
       name: 'thumbnail',
@@ -290,36 +311,43 @@ export default {
       ],
     },
     {
-      title: 'Steps - EN',
-      name: 'steps_en',
-      type: 'array',
-      of: [
+      title: "Steps",
+      name: "steps",
+      type: "object",
+      fields: [
         {
-          title: 'Step',
-          name: 'step',
-          type: 'object',
-          fields: [
+          title: 'EN',
+          name: 'en',
+          type: 'array',
+          of: [
             {
-              name: 'description',
-              title: 'Description',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
-            },
-            {
-              name: 'images',
-              title: 'Images',
-              type: 'array',
-              of: [
+              title: 'Step',
+              name: 'step',
+              type: 'object',
+              fields: [
                 {
-                  title: 'Image',
-                  name: 'image',
-                  type: 'image',
-                  fields: [
+                  name: 'description',
+                  title: 'Description',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'images',
+                  title: 'Images',
+                  type: 'array',
+                  of: [
                     {
-                      title: 'Edit Alt Text',
-                      name: 'alt',
-                      type: 'string',
-                      initialValue: 'Morin',
+                      title: 'Image',
+                      name: 'image',
+                      type: 'image',
+                      fields: [
+                        {
+                          title: 'Edit Alt Text',
+                          name: 'alt',
+                          type: 'string',
+                          initialValue: 'Morin',
+                        },
+                      ],
                     },
                   ],
                 },
@@ -327,39 +355,39 @@ export default {
             },
           ],
         },
-      ],
-    },
-    {
-      title: 'Steps - ID',
-      name: 'steps_id',
-      type: 'array',
-      of: [
         {
-          title: 'Step',
-          name: 'step',
-          type: 'object',
-          fields: [
+          title: 'ID',
+          name: 'id',
+          type: 'array',
+          of: [
             {
-              name: 'description',
-              title: 'Description',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
-            },
-            {
-              name: 'images',
-              title: 'Images',
-              type: 'array',
-              of: [
+              title: 'Step',
+              name: 'step',
+              type: 'object',
+              fields: [
                 {
-                  title: 'Image',
-                  name: 'image',
-                  type: 'image',
-                  fields: [
+                  name: 'description',
+                  title: 'Description',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'images',
+                  title: 'Images',
+                  type: 'array',
+                  of: [
                     {
-                      title: 'Edit Alt Text',
-                      name: 'alt',
-                      type: 'string',
-                      initialValue: 'Morin',
+                      title: 'Image',
+                      name: 'image',
+                      type: 'image',
+                      fields: [
+                        {
+                          title: 'Edit Alt Text',
+                          name: 'alt',
+                          type: 'string',
+                          initialValue: 'Morin',
+                        },
+                      ],
                     },
                   ],
                 },
@@ -367,7 +395,7 @@ export default {
             },
           ],
         },
-      ],
+      ]
     },
     {
       title: 'Gallery',
@@ -484,7 +512,7 @@ export default {
   }),
   preview: {
     select: {
-      title: 'title_en',
+      title: 'title.en',
       media: 'thumbnail',
     },
   },

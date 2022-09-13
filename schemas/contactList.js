@@ -4,24 +4,38 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Title - EN',
-      name: 'title_en',
-      type: 'string',
+      title: "Title",
+      name: "title",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'string',
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'string',
+        },
+      ]
     },
     {
-      title: 'Title - ID',
-      name: 'title_id',
-      type: 'string',
-    },
-    {
-      title: 'Description - EN',
-      name: 'description_en',
-      type: 'editorBasic',
-    },
-    {
-      title: 'Description - ID',
-      name: 'description_id',
-      type: 'editorBasic',
+      title: "Description",
+      name: "description",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'editorBasic',
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'editorBasic',
+        },
+      ]
     },
     {
       title: 'Images',
@@ -57,7 +71,7 @@ export default {
   ],
   preview: {
     select: {
-      title: "title_en",
+      title: "title.en",
     },
   },
 }

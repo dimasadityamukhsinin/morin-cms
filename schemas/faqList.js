@@ -4,24 +4,42 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Title - EN',
-      name: 'title_en',
-      type: 'string',
+      title: "Title",
+      name: "title",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
-      title: 'Title - ID',
-      name: 'title_id',
-      type: 'string',
-    },
-    {
-      title: 'Description - EN',
-      name: 'description_en',
-      type: 'text',
-    },
-    {
-      title: 'Description - ID',
-      name: 'description_id',
-      type: 'text',
+      title: "Description",
+      name: "description",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'text',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'text',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
       title: 'Background Dark Blue',
@@ -30,4 +48,9 @@ export default {
       initialValue: false,
     },
   ],
+  preview: {
+    select: {
+      title: 'title.en'
+    },
+  },
 }

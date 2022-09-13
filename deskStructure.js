@@ -78,6 +78,7 @@ export default () =>
                     .title('Recipe Category')
                     .items([
                       S.documentTypeListItem('recipeTitle').icon(() => <FiFlag />),
+                      S.documentTypeListItem('recipeData').icon(() => <FiFlag />),
                     ]),
                 ),
             ]),

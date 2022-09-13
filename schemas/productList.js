@@ -4,16 +4,23 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title_en',
-      title: 'Product Title - EN',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'title_id',
-      title: 'Product Title - ID',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      title: "Title",
+      name: "title",
+      type: "object",
+      fields: [
+        {
+          name: 'en',
+          title: 'EN',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'id',
+          title: 'ID',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
       name: 'slug',
@@ -22,7 +29,7 @@ export default {
       description:
         "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
       options: {
-        source: 'title_en',
+        source: 'title.en',
         maxLength: 96,
       },
       validation: (Rule) =>
@@ -177,14 +184,21 @@ export default {
       ],
     },
     {
-      title: 'Product Description - EN',
-      name: 'description_en',
-      type: 'text',
-    },
-    {
-      title: 'Product Description - ID',
-      name: 'description_id',
-      type: 'text',
+      title: "Product Description",
+      name: "description",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'text',
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'text',
+        },
+      ]
     },
     {
       name: 'thumbnail',
@@ -412,7 +426,7 @@ export default {
   }),
   preview: {
     select: {
-      title: 'title_en',
+      title: 'title.en',
       media: 'thumbnail',
     },
   },

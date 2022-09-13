@@ -4,16 +4,23 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Title - EN',
-      name: 'title_en',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Title - ID',
-      name: 'title_id',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      title: "Title",
+      name: "title",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
       name: 'slug',
@@ -22,7 +29,7 @@ export default {
       description:
         "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
       options: {
-        source: 'title_en',
+        source: 'title.en',
         maxLength: 96,
       },
       validation: (Rule) =>
@@ -67,14 +74,21 @@ export default {
       ],
     },
     {
-      title: 'Description - EN',
-      name: 'description_en',
-      type: 'text',
-    },
-    {
-      title: 'Description - ID',
-      name: 'description_id',
-      type: 'text',
+      title: "Description",
+      name: "description",
+      type: "object",
+      fields: [
+        {
+          title: 'EN',
+          name: 'en',
+          type: 'text',
+        },
+        {
+          title: 'ID',
+          name: 'id',
+          type: 'text',
+        },
+      ]
     },
     {
       title: 'Image 1',
@@ -115,7 +129,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title_en',
+      title: 'title.en',
     },
   },
 }

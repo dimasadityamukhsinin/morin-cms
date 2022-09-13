@@ -93,162 +93,169 @@ export default {
       ]
     },
     {
-      name: 'component_en',
-      title: 'Slider Component - EN',
-      type: 'array',
-      of: [
+      title: "Slider Component",
+      name: "component",
+      type: "object",
+      fields: [
         {
-          title: 'Slider',
-          name: 'slider',
-          type: 'object',
-          fields: [
+          name: 'en',
+          title: 'EN',
+          type: 'array',
+          of: [
             {
-              title: 'Text or Text Image',
-              name: 'option',
-              type: 'boolean',
-              initialValue: false,
-            },
-            {
-              title: 'Title',
-              name: 'title',
-              type: 'string',
-              hidden: ({ parent }) => !(parent?.option === false),
-            },
-            {
-              title: 'Text Image',
-              name: 'textImage',
+              title: 'Slider',
+              name: 'slider',
               type: 'object',
               fields: [
                 {
-                  title: 'Image Desktop',
-                  name: 'imageDesktop',
-                  type: 'image',
-                  validation: (Rule) => Rule.required(),
+                  title: 'Text or Text Image',
+                  name: 'option',
+                  type: 'boolean',
+                  initialValue: false,
                 },
                 {
-                  title: 'Image Mobile',
-                  name: 'imageMobile',
-                  type: 'image',
-                  validation: (Rule) => Rule.required(),
-                },
-              ],
-              hidden: ({ parent }) => !(parent?.option === true),
-            },
-            {
-              title: 'Background',
-              name: 'background',
-              type: 'image',
-              validation: (Rule) => Rule.required(),
-              fields: [
-                {
-                  title: 'Edit Alt Text',
-                  name: 'alt',
+                  title: 'Title',
+                  name: 'title',
                   type: 'string',
-                  initialValue: 'Morin',
+                  hidden: ({ parent }) => !(parent?.option === false),
+                },
+                {
+                  title: 'Text Image',
+                  name: 'textImage',
+                  type: 'object',
+                  fields: [
+                    {
+                      title: 'Image Desktop',
+                      name: 'imageDesktop',
+                      type: 'image',
+                      validation: (Rule) => Rule.required(),
+                    },
+                    {
+                      title: 'Image Mobile',
+                      name: 'imageMobile',
+                      type: 'image',
+                      validation: (Rule) => Rule.required(),
+                    },
+                  ],
+                  hidden: ({ parent }) => !(parent?.option === true),
+                },
+                {
+                  title: 'Background',
+                  name: 'background',
+                  type: 'image',
+                  validation: (Rule) => Rule.required(),
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
+                },
+                {
+                  title: 'Set Header Color (Black/White)',
+                  name: 'langColor',
+                  type: 'boolean',
+                  initialValue: true,
+                  validation: (Rule) => Rule.required(),
                 },
               ],
-            },
-            {
-              title: 'Set Header Color (Black/White)',
-              name: 'langColor',
-              type: 'boolean',
-              initialValue: true,
-              validation: (Rule) => Rule.required(),
+              preview: {
+                select: {
+                  media: 'background',
+                },
+                prepare(selection) {
+                  const { media } = selection
+                  return {
+                    title: 'Home Slider',
+                    media: media,
+                  }
+                },
+              },
             },
           ],
-          preview: {
-            select: {
-              media: 'background',
-            },
-            prepare(selection) {
-              const { media } = selection
-              return {
-                title: 'Home Slider',
-                media: media,
-              }
-            },
-          },
         },
-      ],
-    },
-    {
-      name: 'component_id',
-      title: 'Slider Component - ID',
-      type: 'array',
-      of: [
         {
-          title: 'Slider',
-          name: 'slider',
-          type: 'object',
-          fields: [
+          name: 'id',
+          title: 'ID',
+          type: 'array',
+          of: [
             {
-              title: 'Text or Text Image',
-              name: 'option',
-              type: 'boolean',
-              initialValue: false,
-            },
-            {
-              title: 'Title',
-              name: 'title',
-              type: 'string',
-              hidden: ({ parent }) => !(parent?.option === false),
-            },
-            {
-              title: 'Text Image',
-              name: 'textImage',
+              title: 'Slider',
+              name: 'slider',
               type: 'object',
               fields: [
                 {
-                  title: 'Image Desktop',
-                  name: 'imageDesktop',
-                  type: 'image',
-                  validation: (Rule) => Rule.required(),
+                  title: 'Text or Text Image',
+                  name: 'option',
+                  type: 'boolean',
+                  initialValue: false,
                 },
                 {
-                  title: 'Image Mobile',
-                  name: 'imageMobile',
-                  type: 'image',
-                  validation: (Rule) => Rule.required(),
-                },
-              ],
-              hidden: ({ parent }) => !(parent?.option === true),
-            },
-            {
-              title: 'Background',
-              name: 'background',
-              type: 'image',
-              validation: (Rule) => Rule.required(),
-              fields: [
-                {
-                  title: 'Edit Alt Text',
-                  name: 'alt',
+                  title: 'Title',
+                  name: 'title',
                   type: 'string',
-                  initialValue: 'Morin',
+                  hidden: ({ parent }) => !(parent?.option === false),
+                },
+                {
+                  title: 'Text Image',
+                  name: 'textImage',
+                  type: 'object',
+                  fields: [
+                    {
+                      title: 'Image Desktop',
+                      name: 'imageDesktop',
+                      type: 'image',
+                      validation: (Rule) => Rule.required(),
+                    },
+                    {
+                      title: 'Image Mobile',
+                      name: 'imageMobile',
+                      type: 'image',
+                      validation: (Rule) => Rule.required(),
+                    },
+                  ],
+                  hidden: ({ parent }) => !(parent?.option === true),
+                },
+                {
+                  title: 'Background',
+                  name: 'background',
+                  type: 'image',
+                  validation: (Rule) => Rule.required(),
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
+                },
+                {
+                  title: 'Set Header Color (Black/White)',
+                  name: 'langColor',
+                  type: 'boolean',
+                  initialValue: true,
+                  validation: (Rule) => Rule.required(),
                 },
               ],
-            },
-            {
-              title: 'Set Header Color (Black/White)',
-              name: 'langColor',
-              type: 'boolean',
-              initialValue: true,
-              validation: (Rule) => Rule.required(),
+              preview: {
+                select: {
+                  media: 'background',
+                },
+                prepare(selection) {
+                  const { media } = selection
+                  return {
+                    title: 'Home Slider',
+                    media: media,
+                  }
+                },
+              },
             },
           ],
-          preview: {
-            select: {
-              media: 'background',
-            },
-            prepare(selection) {
-              const { media } = selection
-              return {
-                title: 'Home Slider',
-                media: media,
-              }
-            },
-          },
         },
-      ],
+      ]
     },
     {
       name: 'instagram',

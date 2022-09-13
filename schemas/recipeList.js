@@ -42,86 +42,93 @@ export default {
         }),
     },
     {
-      title: 'SEO - EN',
-      description:
-        'Search Engine Optimization allows to improve the ranking in search results.',
-      name: 'seo_en',
-      type: 'object',
-      options: {
-        collapsible: true,
-      },
+      title: "SEO",
+      name: "seo",
+      type: "object",
       fields: [
         {
-          name: 'seo_description',
+          title: 'EN',
           description:
-            'Enter up to 400 characters to describe this article. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).',
-          type: 'string',
-          title: 'Description',
-        },
-        {
-          name: 'seo_keywords',
-          description:
-            'Enter some keywords to describe this article (separated by commas)',
-          type: 'string',
-          title: 'Keywords',
-        },
-        {
-          name: 'seo_image',
-          title: 'Image',
-          description:
-            '800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)',
-          type: 'image',
+            'Search Engine Optimization allows to improve the ranking in search results.',
+          name: 'en',
+          type: 'object',
+          options: {
+            collapsible: true,
+          },
           fields: [
             {
-              title: 'Edit Alt Text',
-              name: 'alt',
+              name: 'seo_description',
+              description:
+                'Enter up to 400 characters to describe this article. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).',
               type: 'string',
-              initialValue: 'Morin',
+              title: 'Description',
+            },
+            {
+              name: 'seo_keywords',
+              description:
+                'Enter some keywords to describe this article (separated by commas)',
+              type: 'string',
+              title: 'Keywords',
+            },
+            {
+              name: 'seo_image',
+              title: 'Image',
+              description:
+                '800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)',
+              type: 'image',
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'alt',
+                  type: 'string',
+                  initialValue: 'Morin',
+                },
+              ],
             },
           ],
         },
-      ],
-    },
-    {
-      title: 'SEO - ID',
-      description:
-        'Search Engine Optimization allows to improve the ranking in search results.',
-      name: 'seo_id',
-      type: 'object',
-      options: {
-        collapsible: true,
-      },
-      fields: [
         {
-          name: 'seo_description',
+          title: 'ID',
           description:
-            'Enter up to 400 characters to describe this article. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).',
-          type: 'string',
-          title: 'Description',
-        },
-        {
-          name: 'seo_keywords',
-          description:
-            'Enter some keywords to describe this article (separated by commas)',
-          type: 'string',
-          title: 'Keywords',
-        },
-        {
-          name: 'seo_image',
-          title: 'Image',
-          description:
-            '800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)',
-          type: 'image',
+            'Search Engine Optimization allows to improve the ranking in search results.',
+          name: 'id',
+          type: 'object',
+          options: {
+            collapsible: true,
+          },
           fields: [
             {
-              title: 'Edit Alt Text',
-              name: 'alt',
+              name: 'seo_description',
+              description:
+                'Enter up to 400 characters to describe this article. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).',
               type: 'string',
-              initialValue: 'Morin',
+              title: 'Description',
+            },
+            {
+              name: 'seo_keywords',
+              description:
+                'Enter some keywords to describe this article (separated by commas)',
+              type: 'string',
+              title: 'Keywords',
+            },
+            {
+              name: 'seo_image',
+              title: 'Image',
+              description:
+                '800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)',
+              type: 'image',
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'alt',
+                  type: 'string',
+                  initialValue: 'Morin',
+                },
+              ],
             },
           ],
         },
-      ],
+      ]
     },
     {
       name: 'recipeCategory',
@@ -444,17 +451,12 @@ export default {
       ],
     },
     {
-      title: 'Set Text Color',
-      name: 'textColor',
-      type: 'color',
-    },
-    {
       title: 'Set Background Color',
       name: 'backgroundColor',
       type: 'color',
     },
     {
-      title: 'Set Header Color (Black/White)',
+      title: 'Set Title Color (Black or White)',
       name: 'langColor',
       type: 'boolean',
       initialValue: true,

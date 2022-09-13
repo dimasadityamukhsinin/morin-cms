@@ -1,3 +1,5 @@
+import client from 'part:@sanity/base/client'
+
 export default {
   name: 'recipeData',
   title: 'Category Data',
@@ -20,7 +22,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       description:
-        "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
+        "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 2 Characters, eg: 'project-title'",
       options: {
         source: 'title_en',
         maxLength: 96,
@@ -38,11 +40,12 @@ export default {
             return 'Required'
           }
         }),
-    },
+    }
   ],
   preview: {
     select: {
-      title: 'slug.current',
-    },
+      title: 'title_en'
+    }
   },
 }
+

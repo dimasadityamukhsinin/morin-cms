@@ -482,6 +482,12 @@ export default {
       ],
     },
     {
+      title: 'Elfsight ID',
+      name: 'elfsightID',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Set Header Color',
       name: 'langColor',
       type: 'string',

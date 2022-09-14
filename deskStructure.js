@@ -165,14 +165,6 @@ export default () =>
                 .child(
                   S.document().schemaType('contact').documentId('contact'),
                 ),
-              S.listItem()
-                .title('Translation')
-                .icon(() => <FiStar />)
-                .child(
-                  S.document()
-                    .schemaType('translation')
-                    .documentId('translation'),
-                ),
             ]),
         ),
       S.listItem()
@@ -188,14 +180,14 @@ export default () =>
                 .child(
                   S.document().schemaType('settings').documentId('settings'),
                 ),
-              //   S.listItem()
-              //     .title('Header')
-              //     .icon(() => <FiSliders />)
-              //     .child(S.document().schemaType('header').documentId('header')),
               S.listItem()
                 .title('Footer')
                 .icon(() => <FiSliders />)
                 .child(S.document().schemaType('footer').documentId('footer')),
+              S.listItem()
+                .title('Translation')
+                .icon(() => <FiSliders />)
+                .child(S.document().schemaType('translation').documentId('translation')),
             ]),
         ),
     ])

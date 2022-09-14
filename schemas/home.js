@@ -166,7 +166,7 @@ export default {
                     layout: 'radio'
                   },
                   initialValue: 'white',
-                },        
+                },
                 {
                   title: "Custom Link",
                   name: "customLink",
@@ -264,6 +264,18 @@ export default {
                     layout: 'radio'
                   },
                   initialValue: 'white',
+                },
+                {
+                  title: "Custom Link",
+                  name: "customLink",
+                  type: "boolean",
+                  initialValue: false,
+                },
+                {
+                  title: "Link",
+                  name: "link",
+                  type: "url",
+                  hidden: ({ parent }) => !(parent?.customLink === true),
                 },
               ],
               preview: {

@@ -486,7 +486,7 @@ export default {
     },
     {
       title: 'Set Title Color (Black or White)',
-      name: 'langColor',
+      name: 'titleColor',
       type: 'boolean',
       initialValue: true,
       validation: (Rule) => Rule.required(),

@@ -13,7 +13,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "SEO",
+      title: "Default & General SEO Metadata",
       name: "seo",
       type: "object",
       fields: [
@@ -108,39 +108,56 @@ export default {
       ]
     },
     {
-      title: "Hide FAQ",
-      name: "hide_faq",
-      type: "boolean",
-      initialValue: false,
-      validation: (Rule) => Rule.required(),
+      title: "Advance Setting",
+      name: "advance_setting",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          title: "Hide FAQ",
+          name: "hide_faq",
+          type: "boolean",
+          initialValue: false,
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Hide Shop",
+          name: "hide_shop",
+          type: "boolean",
+          initialValue: false,
+        },
+        {
+          title: "Turn Off Language",
+          name: "turn_language",
+          type: "boolean",
+          initialValue: false,
+        },
+      ]
     },
     {
-      title: "Hide Shop",
-      name: "hide_shop",
-      type: "boolean",
-      initialValue: false,
-    },
-    {
-      title: "Turn Off Language",
-      name: "turn_language",
-      type: "boolean",
-      initialValue: false,
-    },
-    {
-      name: 'googleID',
-      description:
-        'Place your Google Analytics ID here to link to your Google Analytics to see the website traffic statistic',
-      title: 'Google Analytics ID',
-      type: 'string',
-    },
-    {
-      name: 'facebookID',
-      title: 'Facebook Pixel ID',
-      type: 'string',
+      title: "Analytics",
+      name: "analytics",
+      type: "object",
+      fields: [
+        {
+          name: 'googleID',
+          description:
+            'Place your Google Analytics ID here to link to your Google Analytics to see the website traffic statistic',
+          title: 'Google Analytics ID',
+          type: 'string',
+        },
+        {
+          name: 'facebookID',
+          title: 'Facebook Pixel ID',
+          type: 'string',
+        },
+      ]
     },
     {
       name: 'whatsapp',
-      title: 'WhatsApp',
+      title: 'Floating Whatsapp Button',
       type: 'object',
       fields: [
         {
@@ -156,14 +173,6 @@ export default {
           type: "text",
         }
       ]
-    },
-    {
-      name: 'mailchimpID',
-      description:
-        'Place your Mailchimp URL here to receive incoming emails from this website',
-      title: 'Mailchimp Embed URL',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Elfsight ID',

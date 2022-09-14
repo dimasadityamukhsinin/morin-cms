@@ -4,6 +4,14 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'mailchimpID',
+      description:
+        'Place your Mailchimp URL here to receive incoming emails from this website',
+      title: 'Mailchimp Embed URL',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Show Social Media',
       name: 'show_socmed',
       type: 'boolean',

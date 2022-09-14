@@ -154,11 +154,30 @@ export default {
                   ],
                 },
                 {
-                  title: 'Set Header Color (Black/White)',
+                  title: 'Set Header Color',
                   name: 'langColor',
-                  type: 'boolean',
-                  initialValue: true,
+                  type: 'string',
                   validation: (Rule) => Rule.required(),
+                  options: {
+                    list: [
+                      {title: 'Black', value: 'black'},
+                      {title: 'White', value: 'white'}
+                    ],
+                    layout: 'radio'
+                  },
+                  initialValue: 'white',
+                },        
+                {
+                  title: "Custom Link",
+                  name: "customLink",
+                  type: "boolean",
+                  initialValue: false,
+                },
+                {
+                  title: "Link",
+                  name: "link",
+                  type: "url",
+                  hidden: ({ parent }) => !(parent?.customLink === true),
                 },
               ],
               preview: {
@@ -233,11 +252,18 @@ export default {
                   ],
                 },
                 {
-                  title: 'Set Header Color (Black/White)',
+                  title: 'Set Header Color',
                   name: 'langColor',
-                  type: 'boolean',
-                  initialValue: true,
+                  type: 'string',
                   validation: (Rule) => Rule.required(),
+                  options: {
+                    list: [
+                      {title: 'Black', value: 'black'},
+                      {title: 'White', value: 'white'}
+                    ],
+                    layout: 'radio'
+                  },
+                  initialValue: 'white',
                 },
               ],
               preview: {

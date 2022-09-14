@@ -485,6 +485,11 @@ export default {
       type: 'color',
     },
     {
+      title: 'Set Text Color',
+      name: 'textColor',
+      type: 'color',
+    },
+    {
       title: 'Set Title Color',
       name: 'titleColor',
       type: 'string',

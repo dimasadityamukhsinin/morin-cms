@@ -370,6 +370,20 @@ export default {
         calendarTodayLabel: 'Today',
       },
     },
+    {
+      title: 'Set Header Color',
+      name: 'langColor',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          {title: 'Black', value: 'black'},
+          {title: 'White', value: 'white'}
+        ],
+        layout: 'radio'
+      },
+      initialValue: 'white',
+    },
   ],
   initialValue: async () => ({
     date: new Date().toISOString().slice(0, 10),

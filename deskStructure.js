@@ -11,6 +11,7 @@ import {
   FiList,
   FiAlertCircle,
   FiPhone,
+  FiFilter,
 } from 'react-icons/fi'
 
 export default () =>
@@ -28,15 +29,12 @@ export default () =>
             'getMorin',
             'event',
             'eventList',
-            'eventDetail',
             'eventCategory',
             'recipe',
             'recipeList',
-            'recipeDetail',
             'recipeTitle',
             'recipeData',
             'product',
-            'productDetail',
             'productList',
             'productType',
             'about',
@@ -56,6 +54,19 @@ export default () =>
             .items([
               S.documentTypeListItem('productList').icon(() => <FiFileText />),
               S.documentTypeListItem('productType').icon(() => <FiFlag />),
+              S.listItem()
+                .title('Product By Type')
+                .icon(() => <FiFilter />)
+                .child(
+                  S.documentTypeList('productType')
+                    .title('Product By Type')
+                    .child((productTypeId) =>
+                      S.documentList()
+                        .title('Product')
+                        .filter('_type == "productList" && $productTypeId == type._ref')
+                        .params({ productTypeId }),
+                    ),
+                ),
               S.documentTypeListItem('decorList').icon(() => <FiFileText />),
               S.documentTypeListItem('shopifyData')
                 .title('Store Products')
@@ -118,37 +129,13 @@ export default () =>
                   S.document().schemaType('product').documentId('product'),
                 ),
               S.listItem()
-                .title('Product Page')
-                .icon(() => <FiStar />)
-                .child(
-                  S.document()
-                    .schemaType('productDetail')
-                    .documentId('productDetail'),
-                ),
-              S.listItem()
                 .title('Recipe List')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('recipe').documentId('recipe')),
               S.listItem()
-                .title('Recipe Page')
-                .icon(() => <FiStar />)
-                .child(
-                  S.document()
-                    .schemaType('recipeDetail')
-                    .documentId('recipeDetail'),
-                ),
-              S.listItem()
                 .title('Event List')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('event').documentId('event')),
-              S.listItem()
-                .title('Event Page')
-                .icon(() => <FiStar />)
-                .child(
-                  S.document()
-                    .schemaType('eventDetail')
-                    .documentId('eventDetail'),
-                ),
               S.listItem()
                 .title('Get Morin')
                 .icon(() => <FiStar />)

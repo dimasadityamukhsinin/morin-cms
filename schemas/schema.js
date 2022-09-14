@@ -24,9 +24,6 @@ import contact from './contact'
 import contactList from './contactList'
 import editorBasic from './editorBasic'
 import shopifyData from './shopifyData'
-import recipeDetail from './recipeDetail'
-import productDetail from './productDetail'
-import eventDetail from './eventDetail'
 import translation from './translation'
 import recipeTitle from './recipeTitle'
 import recipeData from './recipeData'
@@ -46,15 +43,12 @@ export default createSchema({
     getMorin,
     event,
     eventList,
-    eventDetail,
     eventCategory,
     recipe,
     recipeList,
-    recipeDetail,
     recipeTitle,
     recipeData,
     product,
-    productDetail,
     productList,
     productType,
     about,

@@ -6,9 +6,9 @@ export default {
   type: 'document',
   fields: [
     {
-      title: "Recipe Title",
-      name: "title",
-      type: "object",
+      title: 'Recipe Title',
+      name: 'title',
+      type: 'object',
       validation: (Rule) => Rule.required(),
       fields: [
         {
@@ -23,7 +23,7 @@ export default {
           type: 'string',
           validation: (Rule) => Rule.required(),
         },
-      ]
+      ],
     },
     {
       name: 'slug',
@@ -50,9 +50,9 @@ export default {
         }),
     },
     {
-      title: "SEO",
-      name: "seo",
-      type: "object",
+      title: 'SEO',
+      name: 'seo',
+      type: 'object',
       fields: [
         {
           title: 'EN',
@@ -136,7 +136,7 @@ export default {
             },
           ],
         },
-      ]
+      ],
     },
     {
       name: 'recipeCategory',
@@ -191,9 +191,9 @@ export default {
       ],
     },
     {
-      title: "Ingredients",
-      name: "ingredient",
-      type: "object",
+      title: 'Ingredients',
+      name: 'ingredient',
+      type: 'object',
       fields: [
         {
           name: 'en',
@@ -247,7 +247,7 @@ export default {
             },
           ],
         },
-      ]
+      ],
     },
     {
       title: 'Made With',
@@ -265,9 +265,9 @@ export default {
       ],
     },
     {
-      title: "Recipe Description",
-      name: "description",
-      type: "object",
+      title: 'Recipe Description',
+      name: 'description',
+      type: 'object',
       fields: [
         {
           title: 'EN',
@@ -279,7 +279,7 @@ export default {
           name: 'id',
           type: 'editorBasic',
         },
-      ]
+      ],
     },
     {
       name: 'thumbnail',
@@ -312,9 +312,9 @@ export default {
       ],
     },
     {
-      title: "Steps",
-      name: "steps",
-      type: "object",
+      title: 'Steps',
+      name: 'steps',
+      type: 'object',
       fields: [
         {
           title: 'EN',
@@ -396,7 +396,7 @@ export default {
             },
           ],
         },
-      ]
+      ],
     },
     {
       title: 'Gallery',
@@ -485,11 +485,18 @@ export default {
       type: 'color',
     },
     {
-      title: 'Set Title Color (Black or White)',
+      title: 'Set Title Color',
       name: 'titleColor',
-      type: 'boolean',
-      initialValue: true,
+      type: 'string',
       validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          { title: 'Black', value: 'black' },
+          { title: 'White', value: 'white' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'white',
     },
     {
       title: 'Date Published',

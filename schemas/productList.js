@@ -7,6 +7,7 @@ export default {
       title: "Title",
       name: "title",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'en',
@@ -205,6 +206,7 @@ export default {
       description: 'A cover image for this product | PNG / JPEG / WEBP',
       title: 'Thumbnail',
       type: 'image',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Edit Alt Text',

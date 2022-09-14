@@ -9,6 +9,7 @@ export default {
       title: "Recipe Title",
       name: "title",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'en',
@@ -17,7 +18,7 @@ export default {
           validation: (Rule) => Rule.required(),
         },
         {
-          name: 'title_id',
+          name: 'id',
           title: 'ID',
           type: 'string',
           validation: (Rule) => Rule.required(),

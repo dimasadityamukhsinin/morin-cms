@@ -9,6 +9,7 @@ export default {
       title: "Title",
       name: "title",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'EN',

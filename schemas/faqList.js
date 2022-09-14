@@ -7,6 +7,7 @@ export default {
       title: "Title",
       name: "title",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'EN',
@@ -26,6 +27,7 @@ export default {
       title: "Description",
       name: "description",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'EN',

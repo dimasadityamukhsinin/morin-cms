@@ -7,6 +7,7 @@ export default {
       title: "Title",
       name: "title",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'EN',
@@ -56,6 +57,7 @@ export default {
       title: 'Decor Component',
       name: 'decor',
       type: 'object',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Decor 1',

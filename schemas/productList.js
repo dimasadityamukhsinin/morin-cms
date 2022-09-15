@@ -251,7 +251,7 @@ export default {
           title: 'Fruit 3',
           name: 'fruit3',
           type: 'image',
-          hidden: ({ parent }) => !(parent?.layout === '1'),
+          hidden: ({ parent }) => !(parent?.layout === '3' || parent?.layout === '4'),
           fields: [
             {
               title: 'Edit Alt Text',

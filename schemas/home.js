@@ -4,9 +4,9 @@ export default {
   type: 'document',
   fields: [
     {
-      title: "SEO",
-      name: "seo",
-      type: "object",
+      title: 'SEO',
+      name: 'seo',
+      type: 'object',
       fields: [
         {
           title: 'EN',
@@ -90,12 +90,12 @@ export default {
             },
           ],
         },
-      ]
+      ],
     },
     {
-      title: "Slider Component",
-      name: "component",
-      type: "object",
+      title: 'Slider Component',
+      name: 'component',
+      type: 'object',
       fields: [
         {
           name: 'en',
@@ -160,24 +160,48 @@ export default {
                   validation: (Rule) => Rule.required(),
                   options: {
                     list: [
-                      {title: 'Black', value: 'black'},
-                      {title: 'White', value: 'white'}
+                      { title: 'Black', value: 'black' },
+                      { title: 'White', value: 'white' },
                     ],
-                    layout: 'radio'
+                    layout: 'radio',
                   },
                   initialValue: 'white',
                 },
                 {
-                  title: "Custom Link",
-                  name: "customLink",
-                  type: "boolean",
+                  title: 'Custom',
+                  name: 'customOption',
+                  type: 'boolean',
                   initialValue: false,
                 },
                 {
-                  title: "Link",
-                  name: "link",
-                  type: "url",
-                  hidden: ({ parent }) => !(parent?.customLink === true),
+                  title: 'Custom',
+                  name: 'custom',
+                  type: 'object',
+                  hidden: ({ parent }) => !(parent?.customOption === true),
+                  fields: [
+                    {
+                      title: 'Title',
+                      name: 'title',
+                      type: 'object',
+                      fields: [
+                        {
+                          title: 'EN',
+                          name: 'en',
+                          type: 'string',
+                        },
+                        {
+                          title: 'ID',
+                          name: 'id',
+                          type: 'string',
+                        },
+                      ],
+                    },
+                    {
+                      title: 'Link',
+                      name: 'link',
+                      type: 'url',
+                    },
+                  ],
                 },
               ],
               preview: {
@@ -258,24 +282,51 @@ export default {
                   validation: (Rule) => Rule.required(),
                   options: {
                     list: [
-                      {title: 'Black', value: 'black'},
-                      {title: 'White', value: 'white'}
+                      { title: 'Black', value: 'black' },
+                      { title: 'White', value: 'white' },
                     ],
-                    layout: 'radio'
+                    layout: 'radio',
                   },
                   initialValue: 'white',
                 },
                 {
-                  title: "Custom Link",
-                  name: "customLink",
-                  type: "boolean",
+                  title: 'Custom',
+                  name: 'customOption',
+                  type: 'boolean',
                   initialValue: false,
                 },
                 {
-                  title: "Link",
-                  name: "link",
-                  type: "url",
-                  hidden: ({ parent }) => !(parent?.customLink === true),
+                  title: 'Custom',
+                  name: 'custom',
+                  type: 'object',
+                  hidden: ({ parent }) => !(parent?.customOption === true),
+                  fields: [
+                    {
+                      title: 'Title',
+                      name: 'title',
+                      type: 'object',
+                      fields: [
+                        {
+                          title: 'EN',
+                          name: 'en',
+                          type: 'string',
+                          validation: (Rule) => Rule.required(),
+                        },
+                        {
+                          title: 'ID',
+                          name: 'id',
+                          type: 'string',
+                          validation: (Rule) => Rule.required(),
+                        },
+                      ],
+                    },
+                    {
+                      title: 'Link',
+                      name: 'link',
+                      type: 'url',
+                      validation: (Rule) => Rule.required(),
+                    },
+                  ],
                 },
               ],
               preview: {
@@ -293,7 +344,7 @@ export default {
             },
           ],
         },
-      ]
+      ],
     },
     {
       name: 'instagram',
@@ -331,7 +382,7 @@ export default {
               title: 'EN',
               name: 'en',
               type: 'string',
-              initialValue: "Find Out More"
+              initialValue: 'Find Out More',
             },
           ],
         },
@@ -349,7 +400,7 @@ export default {
               title: 'EN',
               name: 'en',
               type: 'string',
-              initialValue: "See All Products"
+              initialValue: 'See All Products',
             },
           ],
         },
@@ -389,7 +440,7 @@ export default {
                   title: 'EN',
                   name: 'en',
                   type: 'string',
-                  initialValue: "See All Recipes"
+                  initialValue: 'See All Recipes',
                 },
               ],
             },
@@ -431,7 +482,7 @@ export default {
                   title: 'EN',
                   name: 'en',
                   type: 'string',
-                  initialValue: "See All Events"
+                  initialValue: 'See All Events',
                 },
               ],
             },
@@ -449,16 +500,16 @@ export default {
                   title: 'EN',
                   name: 'en',
                   type: 'string',
-                  initialValue: "See Events"
+                  initialValue: 'See Events',
                 },
               ],
             },
           ],
         },
         {
-          title: "Instagram",
-          name: "instagram",
-          type: "object",
+          title: 'Instagram',
+          name: 'instagram',
+          type: 'object',
           fields: [
             {
               title: 'Title',
@@ -476,8 +527,8 @@ export default {
                   type: 'string',
                 },
               ],
-            }
-          ]
+            },
+          ],
         },
       ],
     },
@@ -494,10 +545,10 @@ export default {
       validation: (Rule) => Rule.required(),
       options: {
         list: [
-          {title: 'Black', value: 'black'},
-          {title: 'White', value: 'white'}
+          { title: 'Black', value: 'black' },
+          { title: 'White', value: 'white' },
         ],
-        layout: 'radio'
+        layout: 'radio',
       },
       initialValue: 'white',
     },

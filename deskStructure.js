@@ -52,7 +52,7 @@ export default () =>
           S.list()
             .title('Products')
             .items([
-              S.documentTypeListItem('productList').icon(() => <FiFileText />),
+              // S.documentTypeListItem('productList').icon(() => <FiFileText />),
               S.documentTypeListItem('productType').icon(() => <FiFlag />),
               S.listItem()
                 .title('Product By Type')

@@ -52,21 +52,8 @@ export default () =>
           S.list()
             .title('Products')
             .items([
-              // S.documentTypeListItem('productList').icon(() => <FiFileText />),
+              S.documentTypeListItem('productList').icon(() => <FiFileText />),
               S.documentTypeListItem('productType').icon(() => <FiFlag />),
-              S.listItem()
-                .title('Product By Type')
-                .icon(() => <FiFilter />)
-                .child(
-                  S.documentTypeList('productType')
-                    .title('Product By Type')
-                    .child((productTypeId) =>
-                      S.documentList()
-                        .title('Product')
-                        .filter('_type == "productList" && $productTypeId == type._ref')
-                        .params({ productTypeId }),
-                    ),
-                ),
               S.documentTypeListItem('decorList').icon(() => <FiFileText />),
               S.documentTypeListItem('shopifyData')
                 .title('Store Products')

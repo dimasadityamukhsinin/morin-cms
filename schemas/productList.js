@@ -137,13 +137,6 @@ export default {
       ]
     },
     {
-      title: 'Product Type',
-      name: 'type',
-      type: 'reference',
-      to: [{ type: 'productType' }],
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Get this Product',
       name: 'getProduct',
       type: 'object',

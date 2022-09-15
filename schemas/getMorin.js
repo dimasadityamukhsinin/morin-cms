@@ -390,20 +390,6 @@ export default {
         },
       ],
     },
-    {
-      title: 'Set Header Color',
-      name: 'langColor',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Black', value: 'black' },
-          { title: 'White', value: 'white' },
-        ],
-        layout: 'radio',
-      },
-      initialValue: 'white',
-    },
   ],
   preview: {
     prepare() {

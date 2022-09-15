@@ -369,6 +369,24 @@ export default {
       type: 'object',
       fields: [
         {
+          title: 'Button Slider',
+          name: 'btn_slider',
+          type: 'object',
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'Find Out More',
+            },
+          ],
+        },
+        {
           title: 'Button Product Type',
           name: 'btn_product_type',
           type: 'object',

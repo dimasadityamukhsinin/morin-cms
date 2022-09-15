@@ -123,6 +123,20 @@ export default {
       initialValue: '1',
     },
     {
+      title: "Products",
+      name: "products",
+      type: "array",
+      of: [
+        {
+          title: 'Product',
+          name: 'product',
+          type: 'reference',
+          to: [{ type: 'productList' }],
+          validation: (Rule) => Rule.required(),
+        },
+      ]
+    },
+    {
       name: 'order',
       title: 'Order',
       type: 'number',

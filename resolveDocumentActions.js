@@ -1,14 +1,16 @@
 // resolveDocumentActions.js
 
-// import the default document actions
 import { useDocumentOperation } from '@sanity/react-hooks'
 import defaultResolve, {
   DeleteAction,
 } from 'part:@sanity/base/document-actions'
 import React from 'react'
 import { Button, Grid } from '@sanity/ui'
+import client from 'part:@sanity/base/client'
 
 function DeleteAllAction(props) {
+  const doc = props.draft || props.published
+
   const { del } = useDocumentOperation(props.id, props.type)
   const deleteAllAction = DeleteAction(props)
   const [isDialogOpen, setDialogOpen] = React.useState(false)
@@ -24,7 +26,11 @@ function DeleteAllAction(props) {
         setDialogOpen(false)
       },
       header: 'Delete Document?',
-      content: 'Are you sure you want to delete “tes”?',
+      content: (
+        <p style={{ padding: 0, margin: 0 }}>
+          Are you sure you want to delete <b>“{doc?.title?.en}”</b>?
+        </p>
+      ),
       footer: (
         <Grid columns={2} gap={2}>
           <Button
@@ -41,7 +47,23 @@ function DeleteAllAction(props) {
             tone="critical"
             mode="default"
             text="Delete now"
-            onClick={() => del.execute()}
+            onClick={() => {
+              client
+                .fetch(`*[_type == "productType" && _id == "${props.id}"]`)
+                .then((data) => {
+                  data.map((item) => {
+                    item.products?.map((e) => {
+                      client
+                        .delete({
+                          query: `*[_type == "productList" && _id == "${e._ref}"]`,
+                        })
+                        .catch(console.error)
+                    })
+                  })
+                })
+                .catch(console.error)
+              del.execute()
+            }}
           />
         </Grid>
       ),
@@ -61,18 +83,3 @@ export default function resolveDocumentActions(props) {
     return [...defaultResolve(props)]
   }
 }
-
-// const MyPublishAction = (props) => {
-//   const defaultPublishAction = DeleteAction(props)
-//   return {
-//     ...defaultPublishAction,
-//     onHandle: () => {
-//       console.log('Hello world!')
-//       defaultPublishAction.onHandle()
-//     }
-//   }
-// }
-
-// export default function resolveDocumentActions(props) {
-//   return [...defaultResolve(props).filter((action) => action.name !== 'DeleteAction'),MyPublishAction]
-// }

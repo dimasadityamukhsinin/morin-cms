@@ -24,12 +24,25 @@ export default {
           validation: (Rule) => Rule.required(),
         },
       ]
-    }
+    },
+    {
+      title: 'Recipe Title',
+      name: 'type',
+      type: 'string',
+      hidden: true,
+    },
   ],
   preview: {
     select: {
-      title: 'title.en'
-    }
+      title: 'title.en',
+      type: 'type',
+    },
+    prepare(selection) {
+      const { title, type } = selection
+      return {
+        title: `${title}${type ? ` - ${type}` : ''}`,
+      }
+    },
   },
 }
 

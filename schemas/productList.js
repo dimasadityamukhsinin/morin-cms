@@ -27,6 +27,7 @@ export default {
       title: 'Product Type',
       name: 'type',
       type: 'string',
+      hidden: true,
     },
     {
       name: 'slug',

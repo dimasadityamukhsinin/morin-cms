@@ -64,6 +64,7 @@ function DeleteAllActionRecipe(props) {
                 })
                 .catch(console.error)
               del.execute()
+              setDialogOpen(false)
             }}
           />
         </Grid>
@@ -79,25 +80,13 @@ function SetAndPublishActionRecipe(props) {
   return {
     ...defaultPublishAction,
     onHandle: () => {
-      client
-        .fetch(
-          `*[_type == "recipeTitle" && _id == "${props.id}"] {
-          ...,
-          data[]->
-        }`,
-        )
-        .then((data) => {
-          data.map((item) => {
-            item.data?.map((e) => {
-              client
-                .patch(e._id) // Document ID to patch
-                .set({ type: doc?.title?.en }) // Shallow merge
-                .commit() // Perform the patch and return a promise
-                .catch(console.error)
-            })
-          })
-        })
-        .catch(console.error)
+      doc.data?.map((e) => {
+        client
+          .patch(e._ref) // Document ID to patch
+          .set({ type: doc?.title?.en }) // Shallow merge
+          .commit() // Perform the patch and return a promise
+          .catch(console.error)
+      })
       defaultPublishAction.onHandle()
     },
   }
@@ -158,6 +147,7 @@ function DeleteAllActionProduct(props) {
                 })
                 .catch(console.error)
               del.execute()
+              setDialogOpen(false)
             }}
           />
         </Grid>
@@ -173,25 +163,13 @@ function SetAndPublishActionProduct(props) {
   return {
     ...defaultPublishAction,
     onHandle: () => {
-      client
-        .fetch(
-          `*[_type == "productType" && _id == "${props.id}"] {
-          ...,
-          products[]->
-        }`,
-        )
-        .then((data) => {
-          data.map((item) => {
-            item.products?.map((e) => {
-              client
-                .patch(e._id) // Document ID to patch
-                .set({ type: doc?.title?.en }) // Shallow merge
-                .commit() // Perform the patch and return a promise
-                .catch(console.error)
-            })
-          })
-        })
-        .catch(console.error)
+      doc.products?.map((e) => {
+        client
+          .patch(e._ref) // Document ID to patch
+          .set({ type: doc?.title?.en }) // Shallow merge
+          .commit() // Perform the patch and return a promise
+          .catch(console.error)
+      })
       defaultPublishAction.onHandle()
     },
   }

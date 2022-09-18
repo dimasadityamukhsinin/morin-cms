@@ -152,7 +152,6 @@ export default {
                   ...dataFilter[0],
                 }
               })
-              console.log(productData)
               return true
             }),
         },

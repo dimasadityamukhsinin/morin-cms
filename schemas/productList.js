@@ -4,9 +4,9 @@ export default {
   type: 'document',
   fields: [
     {
-      title: "Title",
-      name: "title",
-      type: "object",
+      title: 'Title',
+      name: 'title',
+      type: 'object',
       validation: (Rule) => Rule.required(),
       fields: [
         {
@@ -21,7 +21,12 @@ export default {
           type: 'string',
           validation: (Rule) => Rule.required(),
         },
-      ]
+      ],
+    },
+    {
+      title: 'Product Type',
+      name: 'type',
+      type: 'string',
     },
     {
       name: 'slug',
@@ -48,9 +53,9 @@ export default {
         }),
     },
     {
-      title: "SEO",
-      name: "seo",
-      type: "object",
+      title: 'SEO',
+      name: 'seo',
+      type: 'object',
       fields: [
         {
           title: 'EN',
@@ -134,7 +139,7 @@ export default {
             },
           ],
         },
-      ]
+      ],
     },
     {
       title: 'Get this Product',
@@ -178,9 +183,9 @@ export default {
       ],
     },
     {
-      title: "Product Description",
-      name: "description",
-      type: "object",
+      title: 'Product Description',
+      name: 'description',
+      type: 'object',
       fields: [
         {
           title: 'EN',
@@ -192,7 +197,7 @@ export default {
           name: 'id',
           type: 'text',
         },
-      ]
+      ],
     },
     {
       name: 'thumbnail',
@@ -244,7 +249,8 @@ export default {
           title: 'Fruit 3',
           name: 'fruit3',
           type: 'image',
-          hidden: ({ parent }) => !(parent?.layout === '3' || parent?.layout === '4'),
+          hidden: ({ parent }) =>
+            !(parent?.layout === '3' || parent?.layout === '4'),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -345,7 +351,7 @@ export default {
                     ? true
                     : {
                         message: 'Required',
-                      };
+                      }
                 }),
               ],
               fields: [
@@ -405,10 +411,10 @@ export default {
       validation: (Rule) => Rule.required(),
       options: {
         list: [
-          {title: 'Black', value: 'black'},
-          {title: 'White', value: 'white'}
+          { title: 'Black', value: 'black' },
+          { title: 'White', value: 'white' },
         ],
-        layout: 'radio'
+        layout: 'radio',
       },
       initialValue: 'white',
     },
@@ -430,6 +436,14 @@ export default {
     select: {
       title: 'title.en',
       media: 'thumbnail',
+      type: 'type',
+    },
+    prepare(selection) {
+      const { title, media, type } = selection
+      return {
+        title: `${title}${type ? ` - ${type}` : ''}`,
+        media: media,
+      }
     },
   },
 }

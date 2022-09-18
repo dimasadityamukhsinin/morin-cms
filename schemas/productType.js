@@ -1,12 +1,14 @@
+import client from 'part:@sanity/base/client'
+
 export default {
   name: 'productType',
   title: 'Product Type',
   type: 'document',
   fields: [
     {
-      title: "Title",
-      name: "title",
-      type: "object",
+      title: 'Title',
+      name: 'title',
+      type: 'object',
       validation: (Rule) => Rule.required(),
       fields: [
         {
@@ -21,7 +23,7 @@ export default {
           type: 'string',
           validation: (Rule) => Rule.required(),
         },
-      ]
+      ],
     },
     {
       name: 'slug',
@@ -76,9 +78,9 @@ export default {
       ],
     },
     {
-      title: "Description",
-      name: "description",
-      type: "object",
+      title: 'Description',
+      name: 'description',
+      type: 'object',
       fields: [
         {
           title: 'EN',
@@ -90,7 +92,7 @@ export default {
           name: 'id',
           type: 'text',
         },
-      ]
+      ],
     },
     {
       title: 'Image 1',
@@ -123,18 +125,38 @@ export default {
       initialValue: '1',
     },
     {
-      title: "Products",
-      name: "products",
-      type: "array",
+      title: 'Products',
+      name: 'products',
+      type: 'array',
       of: [
         {
           title: 'Product',
           name: 'product',
           type: 'reference',
           to: [{ type: 'productList' }],
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(async (value, ctx) => {
+              let product = await client.fetch(
+                `*[_type == "productType" && !(_id in path("drafts.**"))]`,
+              )
+              let productData = ctx.parent.map((items) => {
+                let dataFilter = product.filter((item) => {
+                  if (item.products.find((e) => e._id === items._ref)) {
+                    return {
+                      ...item,
+                      data: item.products.find((e) => e._id === items._ref),
+                    }
+                  }
+                })
+                return {
+                  ...dataFilter[0],
+                }
+              })
+              console.log(productData)
+              return true
+            }),
         },
-      ]
+      ],
     },
     {
       name: 'order',

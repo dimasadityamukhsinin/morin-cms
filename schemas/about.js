@@ -13,9 +13,9 @@ export default {
   type: 'document',
   fields: [
     {
-      title: "SEO",
-      name: "seo",
-      type: "object",
+      title: 'SEO',
+      name: 'seo',
+      type: 'object',
       fields: [
         {
           title: 'EN',
@@ -99,12 +99,12 @@ export default {
             },
           ],
         },
-      ]
+      ],
     },
     {
-      title: "Title",
-      name: "title",
-      type: "object",
+      title: 'Title',
+      name: 'title',
+      type: 'object',
       validation: (Rule) => Rule.required(),
       fields: [
         {
@@ -119,7 +119,7 @@ export default {
           type: 'string',
           validation: (Rule) => Rule.required(),
         },
-      ]
+      ],
     },
     {
       title: 'Backgrounds',
@@ -155,14 +155,244 @@ export default {
       ],
     },
     {
+      title: 'Contents',
+      name: 'contents',
+      type: 'array',
+      of: [
+        {
+          title: 'Content',
+          name: 'content',
+          type: 'object',
+          fields: [
+            {
+              title: 'First',
+              name: 'first',
+              type: 'boolean',
+              initialValue: false,
+            },
+            {
+              title: 'Title Cover',
+              name: 'titleCover',
+              type: 'object',
+              hidden: ({ parent }) => parent?.first === true,
+              fields: [
+                {
+                  title: 'EN',
+                  name: 'en',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  title: 'ID',
+                  name: 'id',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            },
+            {
+              title: 'Title Description',
+              name: 'titleDescription',
+              type: 'object',
+              validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  title: 'EN',
+                  name: 'en',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  title: 'ID',
+                  name: 'id',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            },
+            {
+              title: 'Button',
+              name: 'button',
+              type: 'object',
+              validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  title: 'EN',
+                  name: 'en',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  title: 'ID',
+                  name: 'id',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            },
+            {
+              name: 'thumbnail',
+              title: 'Thumbnail',
+              type: 'image',
+              validation: (Rule) =>
+                Rule.custom((field, { parent }) => {
+                  console.log(field)
+                  if (parent?.first) {
+                    return true
+                  } else {
+                    return field && field.asset ? true : 'Required'
+                  }
+                }),
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'alt',
+                  type: 'string',
+                  initialValue: 'Morin',
+                },
+              ],
+            },
+            {
+              title: 'Description',
+              name: 'description',
+              type: 'object',
+              fields: [
+                {
+                  title: 'EN',
+                  name: 'en',
+                  type: 'array',
+                  of: [
+                    {
+                      title: 'Block',
+                      type: 'block',
+                      marks: {
+                        decorators: [
+                          { title: 'Strong', value: 'strong' },
+                          { title: 'Emphasis', value: 'em' },
+                          { title: 'Strike', value: 'strike-through' },
+                          { title: 'Underline', value: 'underline' },
+                        ],
+                        annotations: [
+                          {
+                            name: 'link',
+                            type: 'object',
+                            title: 'Link',
+                            blockEditor: {
+                              icon: () => <FiExternalLink />,
+                              render: linkRender,
+                            },
+                            fields: [
+                              {
+                                name: 'url',
+                                type: 'url',
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                      styles: [
+                        { title: 'Normal', value: 'normal' },
+                        { title: 'H1', value: 'h1' },
+                        { title: 'H2', value: 'h2' },
+                        { title: 'H3', value: 'h3' },
+                        { title: 'H4', value: 'h4' },
+                        { title: 'H5', value: 'h5' },
+                      ],
+                      lists: [],
+                    },
+                    {
+                      name: 'image',
+                      title: 'Image',
+                      type: 'image',
+                      fields: [
+                        {
+                          title: 'Edit Alt Text',
+                          name: 'alt',
+                          type: 'string',
+                          initialValue: 'Morin',
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  title: 'ID',
+                  name: 'id',
+                  type: 'array',
+                  of: [
+                    {
+                      title: 'Block',
+                      type: 'block',
+                      marks: {
+                        decorators: [
+                          { title: 'Strong', value: 'strong' },
+                          { title: 'Emphasis', value: 'em' },
+                          { title: 'Strike', value: 'strike-through' },
+                          { title: 'Underline', value: 'underline' },
+                        ],
+                        annotations: [
+                          {
+                            name: 'link',
+                            type: 'object',
+                            title: 'Link',
+                            blockEditor: {
+                              icon: () => <FiExternalLink />,
+                              render: linkRender,
+                            },
+                            fields: [
+                              {
+                                name: 'url',
+                                type: 'url',
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                      styles: [
+                        { title: 'Normal', value: 'normal' },
+                        { title: 'H1', value: 'h1' },
+                        { title: 'H2', value: 'h2' },
+                        { title: 'H3', value: 'h3' },
+                        { title: 'H4', value: 'h4' },
+                        { title: 'H5', value: 'h5' },
+                      ],
+                      lists: [],
+                    },
+                    {
+                      name: 'image',
+                      title: 'Image',
+                      type: 'image',
+                      fields: [
+                        {
+                          title: 'Edit Alt Text',
+                          name: 'alt',
+                          type: 'string',
+                          initialValue: 'Morin',
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          preview: {
+            select: {
+              title: 'titleDescription.en',
+            },
+          },
+        },
+      ],
+    },
+    {
       title: 'First Read More',
       name: 'first_more',
       type: 'object',
       fields: [
         {
-          title: "Button",
-          name: "btn",
-          type: "object",
+          title: 'Button',
+          name: 'btn',
+          type: 'object',
           fields: [
             {
               title: 'ID',
@@ -178,9 +408,9 @@ export default {
           ],
         },
         {
-          title: "Title",
-          name: "title",
-          type: "object",
+          title: 'Title',
+          name: 'title',
+          type: 'object',
           validation: (Rule) => Rule.required(),
           fields: [
             {
@@ -195,12 +425,12 @@ export default {
               type: 'string',
               validation: (Rule) => Rule.required(),
             },
-          ]
+          ],
         },
         {
-          title: "Description",
-          name: "description",
-          type: "object",
+          title: 'Description',
+          name: 'description',
+          type: 'object',
           fields: [
             {
               title: 'EN',
@@ -318,8 +548,8 @@ export default {
                 },
               ],
             },
-          ]
-        }
+          ],
+        },
       ],
     },
     {
@@ -328,9 +558,9 @@ export default {
       type: 'object',
       fields: [
         {
-          title: "Button",
-          name: "btn",
-          type: "object",
+          title: 'Button',
+          name: 'btn',
+          type: 'object',
           fields: [
             {
               title: 'ID',
@@ -346,9 +576,9 @@ export default {
           ],
         },
         {
-          title: "Title Cover",
-          name: "titleCover",
-          type: "object",
+          title: 'Title Cover',
+          name: 'titleCover',
+          type: 'object',
           fields: [
             {
               title: 'EN',
@@ -360,7 +590,7 @@ export default {
               name: 'id',
               type: 'string',
             },
-          ]
+          ],
         },
         {
           name: 'thumbnail',
@@ -376,9 +606,9 @@ export default {
           ],
         },
         {
-          title: "Title Description",
-          name: "titleDesc",
-          type: "object",
+          title: 'Title Description',
+          name: 'titleDesc',
+          type: 'object',
           fields: [
             {
               title: 'EN',
@@ -390,12 +620,12 @@ export default {
               name: 'id',
               type: 'string',
             },
-          ]
+          ],
         },
         {
-          title: "Description",
-          name: "description",
-          type: "object",
+          title: 'Description',
+          name: 'description',
+          type: 'object',
           fields: [
             {
               title: 'EN',
@@ -513,8 +743,8 @@ export default {
                 },
               ],
             },
-          ]
-        }
+          ],
+        },
       ],
     },
     {
@@ -523,9 +753,9 @@ export default {
       type: 'object',
       fields: [
         {
-          title: "Button",
-          name: "btn",
-          type: "object",
+          title: 'Button',
+          name: 'btn',
+          type: 'object',
           fields: [
             {
               title: 'ID',
@@ -541,9 +771,9 @@ export default {
           ],
         },
         {
-          title: "Title Cover",
-          name: "titleCover",
-          type: "object",
+          title: 'Title Cover',
+          name: 'titleCover',
+          type: 'object',
           fields: [
             {
               title: 'EN',
@@ -555,7 +785,7 @@ export default {
               name: 'id',
               type: 'string',
             },
-          ]
+          ],
         },
         {
           name: 'thumbnail',
@@ -571,9 +801,9 @@ export default {
           ],
         },
         {
-          title: "Title Description",
-          name: "titleDesc",
-          type: "object",
+          title: 'Title Description',
+          name: 'titleDesc',
+          type: 'object',
           fields: [
             {
               title: 'EN',
@@ -585,12 +815,12 @@ export default {
               name: 'id',
               type: 'string',
             },
-          ]
+          ],
         },
         {
-          title: "Description",
-          name: "description",
-          type: "object",
+          title: 'Description',
+          name: 'description',
+          type: 'object',
           fields: [
             {
               title: 'EN',
@@ -676,8 +906,8 @@ export default {
                 },
               ],
             },
-          ]
-        }
+          ],
+        },
       ],
     },
   ],

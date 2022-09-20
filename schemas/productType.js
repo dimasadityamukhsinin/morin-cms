@@ -62,7 +62,7 @@ export default {
       validation: (Rule) => Rule.required(),
       fields: [
         {
-          title: 'Decor 1',
+          title: 'Decor Left',
           name: 'decor1',
           type: 'reference',
           to: [{ type: 'decorList' }],
@@ -70,7 +70,7 @@ export default {
         },
         {
           name: 'decor2',
-          title: 'Decor 2',
+          title: 'Decor Right',
           type: 'reference',
           to: [{ type: 'decorList' }],
           validation: (Rule) => Rule.required(),

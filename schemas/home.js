@@ -174,7 +174,7 @@ export default {
                   initialValue: false,
                 },
                 {
-                  title: 'Custom',
+                  title: 'Custom Button',
                   name: 'custom',
                   type: 'object',
                   hidden: ({ parent }) => !(parent?.customOption === true),
@@ -347,197 +347,273 @@ export default {
       ],
     },
     {
-      name: 'instagram',
-      title: 'Instagram',
-      type: 'object',
+      title: "Product",
+      name: "product",
+      type: "object",
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: "Button",
+          name: "button",
+          type: "object",
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          title: "Icons",
+          name: "icons",
+          type: "array",
+          of: [
+            {
+              title: "Icon",
+              name: "icon",
+              type: "object",
+              validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  title: "Title",
+                  name: "title",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  title: 'Icon',
+                  name: 'icon',
+                  type: 'image',
+                  validation: (Rule) => Rule.required(),
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
+                },
+              ]
+            }
+          ],
+        },
+        {
+          title: "Description",
+          name: "description",
+          type: "object",
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'text',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'text',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        }
+      ]
+    },
+    {
+      title: "Recipe",
+      name: "recipe",
+      type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Title',
           name: 'title',
+          type: 'object',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          title: 'Button',
+          name: 'button',
+          type: 'object',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'See All Recipes',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          title: "Description",
+          name: "description",
+          type: "object",
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'text',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'text',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        }
+      ]
+    },
+    {
+      title: "Event",
+      name: "event",
+      type: "object",
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: 'Title',
+          name: 'title',
+          type: 'object',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          title: 'Button All',
+          name: 'btn_all',
+          type: 'object',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'See All Events',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          title: 'Button Card',
+          name: 'btn_card',
+          type: 'object',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              initialValue: 'See Events',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        }
+      ]
+    },
+    {
+      name: 'instagram',
+      title: 'Instagram',
+      type: 'object',
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: 'Title',
+          name: 'title',
+          type: 'object',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          title: 'Button',
+          name: 'button',
           type: 'string',
+          validation: (Rule) => Rule.required(),
         },
         {
           title: 'URL',
           name: 'url',
           type: 'url',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'Elfsight ID',
+          name: 'elfsightID',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
         },
       ],
-    },
-    {
-      title: 'Language',
-      name: 'language',
-      type: 'object',
-      fields: [
-        {
-          title: 'Button Slider',
-          name: 'btn_slider',
-          type: 'object',
-          fields: [
-            {
-              title: 'ID',
-              name: 'id',
-              type: 'string',
-            },
-            {
-              title: 'EN',
-              name: 'en',
-              type: 'string',
-              initialValue: 'Find Out More',
-            },
-          ],
-        },
-        {
-          title: 'Button Product Type',
-          name: 'btn_product_type',
-          type: 'object',
-          fields: [
-            {
-              title: 'ID',
-              name: 'id',
-              type: 'string',
-            },
-            {
-              title: 'EN',
-              name: 'en',
-              type: 'string',
-              initialValue: 'See All Products',
-            },
-          ],
-        },
-        {
-          title: 'Recipe',
-          name: 'recipe',
-          type: 'object',
-          fields: [
-            {
-              title: 'Title',
-              name: 'title',
-              type: 'object',
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                },
-              ],
-            },
-            {
-              title: 'Button',
-              name: 'btn',
-              type: 'object',
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                  initialValue: 'See All Recipes',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          title: 'Event',
-          name: 'event',
-          type: 'object',
-          fields: [
-            {
-              title: 'Title',
-              name: 'title',
-              type: 'object',
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                },
-              ],
-            },
-            {
-              title: 'Button All',
-              name: 'btn_all',
-              type: 'object',
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                  initialValue: 'See All Events',
-                },
-              ],
-            },
-            {
-              title: 'Button Card',
-              name: 'btn_card',
-              type: 'object',
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                  initialValue: 'See Events',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          title: 'Instagram',
-          name: 'instagram',
-          type: 'object',
-          fields: [
-            {
-              title: 'Title',
-              name: 'title',
-              type: 'object',
-              fields: [
-                {
-                  title: 'ID',
-                  name: 'id',
-                  type: 'string',
-                },
-                {
-                  title: 'EN',
-                  name: 'en',
-                  type: 'string',
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Elfsight ID',
-      name: 'elfsightID',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
+    }
   ],
   preview: {
     prepare() {

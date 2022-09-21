@@ -126,23 +126,6 @@ export default {
       ],
     },
     {
-      title: "Description",
-      name: "description",
-      type: "object",
-      fields: [
-        {
-          title: 'EN',
-          name: 'en',
-          type: 'text',
-        },
-        {
-          title: 'ID',
-          name: 'id',
-          type: 'text',
-        },
-      ]
-    },
-    {
       title: 'Set Header Color',
       name: 'langColor',
       type: 'string',

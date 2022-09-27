@@ -68,17 +68,7 @@ export default () =>
             .title('Recipes')
             .items([
               S.documentTypeListItem('recipeList').icon(() => <FiFileText />),
-              S.listItem()
-                .title('Recipe Category')
-                .icon(() => <FiFileText />)
-                .child(
-                  S.list()
-                    .title('Recipe Category')
-                    .items([
-                      S.documentTypeListItem('recipeTitle').icon(() => <FiFlag />),
-                      // S.documentTypeListItem('recipeData').icon(() => <FiFlag />),
-                    ]),
-                ),
+              S.documentTypeListItem('recipeTitle').icon(() => <FiFileText />),
             ]),
         ),
       S.listItem()

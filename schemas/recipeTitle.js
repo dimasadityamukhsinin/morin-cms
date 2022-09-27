@@ -1,6 +1,6 @@
 export default {
   name: 'recipeTitle',
-  title: 'Category Data',
+  title: 'Recipe Category',
   type: 'document',
   fields: [
     {

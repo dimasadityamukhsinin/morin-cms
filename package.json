@@ -15,16 +15,16 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.33.3",
-    "@sanity/color-input": "^2.33.3",
+    "@sanity/base": "^2.34.0",
+    "@sanity/color-input": "^2.34.0",
     "@sanity/components": "^2.14.0",
-    "@sanity/core": "^2.33.3",
-    "@sanity/dashboard": "^2.33.3",
-    "@sanity/default-layout": "^2.33.3",
-    "@sanity/default-login": "^2.33.3",
-    "@sanity/desk-tool": "^2.33.3",
+    "@sanity/core": "^2.34.0",
+    "@sanity/dashboard": "^2.34.0",
+    "@sanity/default-layout": "^2.34.0",
+    "@sanity/default-login": "^2.34.0",
+    "@sanity/desk-tool": "^2.34.0",
     "@sanity/uuid": "^3.0.1",
-    "@sanity/vision": "^2.33.3",
+    "@sanity/vision": "^2.34.0",
     "lodash.get": "^4.4.2",
     "prop-types": "^15.7",
     "react": "^17.0",
@@ -35,6 +35,6 @@
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
-    "@sanity/cli": "^2.33.3"
+    "@sanity/cli": "^2.34.0"
   }
 }

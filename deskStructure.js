@@ -46,6 +46,53 @@ export default () =>
           ].includes(listItem.getId()),
       ),
       S.listItem()
+      .title('Pages')
+      .icon(() => <FiFile />)
+      .child(
+        S.list()
+          .title('Pages')
+          .items([
+            S.listItem()
+              .title('Home')
+              .icon(() => <FiStar />)
+              .child(S.document().schemaType('home').documentId('home')),
+            S.listItem()
+              .title('About')
+              .icon(() => <FiStar />)
+              .child(S.document().schemaType('about').documentId('about')),
+            S.listItem()
+              .title('Product List')
+              .icon(() => <FiStar />)
+              .child(
+                S.document().schemaType('product').documentId('product'),
+              ),
+            S.listItem()
+              .title('Recipe List')
+              .icon(() => <FiStar />)
+              .child(S.document().schemaType('recipe').documentId('recipe')),
+            S.listItem()
+              .title('Event List')
+              .icon(() => <FiStar />)
+              .child(S.document().schemaType('event').documentId('event')),
+            S.listItem()
+              .title('Get Morin')
+              .icon(() => <FiStar />)
+              .child(
+                S.document().schemaType('getMorin').documentId('getMorin'),
+              ),
+            S.listItem()
+              .title('FAQ')
+              .icon(() => <FiStar />)
+              .child(S.document().schemaType('faq').documentId('faq')),
+            S.listItem()
+              .title('Contact')
+              .icon(() => <FiStar />)
+              .child(
+                S.document().schemaType('contact').documentId('contact'),
+              ),
+          ]),
+      ),
+      S.listItem()
         .title('Products')
         .icon(() => <FiBook />)
         .child(
@@ -56,7 +103,7 @@ export default () =>
               S.documentTypeListItem('productType').icon(() => <FiFlag />),
               S.documentTypeListItem('decorList').icon(() => <FiFileText />),
               S.documentTypeListItem('shopifyData')
-                .title('Store Products')
+                .title('WIP - Store Products')
                 .icon(() => <FiFileText />),
             ]),
         ),
@@ -84,53 +131,6 @@ export default () =>
         ),
       S.documentTypeListItem('faqList').icon(() => <FiAlertCircle />),
       S.documentTypeListItem('contactList').icon(() => <FiPhone />),
-      S.listItem()
-        .title('Pages')
-        .icon(() => <FiFile />)
-        .child(
-          S.list()
-            .title('Pages')
-            .items([
-              S.listItem()
-                .title('Home')
-                .icon(() => <FiStar />)
-                .child(S.document().schemaType('home').documentId('home')),
-              S.listItem()
-                .title('About')
-                .icon(() => <FiStar />)
-                .child(S.document().schemaType('about').documentId('about')),
-              S.listItem()
-                .title('Product List')
-                .icon(() => <FiStar />)
-                .child(
-                  S.document().schemaType('product').documentId('product'),
-                ),
-              S.listItem()
-                .title('Recipe List')
-                .icon(() => <FiStar />)
-                .child(S.document().schemaType('recipe').documentId('recipe')),
-              S.listItem()
-                .title('Event List')
-                .icon(() => <FiStar />)
-                .child(S.document().schemaType('event').documentId('event')),
-              S.listItem()
-                .title('Get Morin')
-                .icon(() => <FiStar />)
-                .child(
-                  S.document().schemaType('getMorin').documentId('getMorin'),
-                ),
-              S.listItem()
-                .title('FAQ')
-                .icon(() => <FiStar />)
-                .child(S.document().schemaType('faq').documentId('faq')),
-              S.listItem()
-                .title('Contact')
-                .icon(() => <FiStar />)
-                .child(
-                  S.document().schemaType('contact').documentId('contact'),
-                ),
-            ]),
-        ),
       S.listItem()
         .title('Settings')
         .icon(() => <FiSettings />)

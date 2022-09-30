@@ -44,47 +44,6 @@ export default {
           type: 'url',
         },
       ],
-    },    
-    {
-      title: 'Subscription Language',
-      name: 'sub_language',
-      type: 'object',
-      fields: [
-        {
-          title: 'Title',
-          name: 'title',
-          type: 'object',
-          fields: [
-            {
-              title: 'ID',
-              name: 'id',
-              type: 'string',
-            },
-            {
-              title: 'EN',
-              name: 'en',
-              type: 'string',
-            },
-          ],
-        },
-        {
-          title: 'Sub Title',
-          name: 'sub_title',
-          type: 'object',
-          fields: [
-            {
-              title: 'ID',
-              name: 'id',
-              type: 'string',
-            },
-            {
-              title: 'EN',
-              name: 'en',
-              type: 'string',
-            },
-          ],
-        },
-      ],
     },
     {
       name: 'creditText',

@@ -24,7 +24,7 @@ export default {
       ]
     },
     {
-      title: "Description",
+      title: "Location Details",
       name: "description",
       type: "object",
       fields: [

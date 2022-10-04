@@ -134,6 +134,19 @@ export default {
           type: "boolean",
           initialValue: false,
         },
+        {
+          title: 'Default Language',
+          name: 'default_language',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'ID', value: 'id'},
+              {title: 'EN', value: 'en'}
+            ],
+            layout: 'radio'
+          },
+          initialValue: 'id',
+        },
       ]
     },
     {

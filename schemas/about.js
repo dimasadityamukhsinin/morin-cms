@@ -155,6 +155,179 @@ export default {
       ],
     },
     {
+      title: 'Cover Content',
+      name: 'cover',
+      type: 'object',
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          title: 'Title Description',
+          name: 'titleDescription',
+          type: 'object',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          title: 'Button',
+          name: 'button',
+          type: 'object',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+        {
+          title: 'Description',
+          name: 'description',
+          type: 'object',
+          fields: [
+            {
+              title: 'EN',
+              name: 'en',
+              type: 'array',
+              of: [
+                {
+                  title: 'Block',
+                  type: 'block',
+                  marks: {
+                    decorators: [
+                      { title: 'Strong', value: 'strong' },
+                      { title: 'Emphasis', value: 'em' },
+                      { title: 'Strike', value: 'strike-through' },
+                      { title: 'Underline', value: 'underline' },
+                    ],
+                    annotations: [
+                      {
+                        name: 'link',
+                        type: 'object',
+                        title: 'Link',
+                        blockEditor: {
+                          icon: () => <FiExternalLink />,
+                          render: linkRender,
+                        },
+                        fields: [
+                          {
+                            name: 'url',
+                            type: 'url',
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'H1', value: 'h1' },
+                    { title: 'H2', value: 'h2' },
+                    { title: 'H3', value: 'h3' },
+                    { title: 'H4', value: 'h4' },
+                    { title: 'H5', value: 'h5' },
+                  ],
+                  lists: [],
+                },
+                {
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              title: 'ID',
+              name: 'id',
+              type: 'array',
+              of: [
+                {
+                  title: 'Block',
+                  type: 'block',
+                  marks: {
+                    decorators: [
+                      { title: 'Strong', value: 'strong' },
+                      { title: 'Emphasis', value: 'em' },
+                      { title: 'Strike', value: 'strike-through' },
+                      { title: 'Underline', value: 'underline' },
+                    ],
+                    annotations: [
+                      {
+                        name: 'link',
+                        type: 'object',
+                        title: 'Link',
+                        blockEditor: {
+                          icon: () => <FiExternalLink />,
+                          render: linkRender,
+                        },
+                        fields: [
+                          {
+                            name: 'url',
+                            type: 'url',
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  styles: [
+                    { title: 'Normal', value: 'normal' },
+                    { title: 'H1', value: 'h1' },
+                    { title: 'H2', value: 'h2' },
+                    { title: 'H3', value: 'h3' },
+                    { title: 'H4', value: 'h4' },
+                    { title: 'H5', value: 'h5' },
+                  ],
+                  lists: [],
+                },
+                {
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'alt',
+                      type: 'string',
+                      initialValue: 'Morin',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
       title: 'Contents',
       name: 'contents',
       type: 'array',
@@ -165,16 +338,10 @@ export default {
           type: 'object',
           fields: [
             {
-              title: 'First',
-              name: 'first',
-              type: 'boolean',
-              initialValue: false,
-            },
-            {
               title: 'Title Cover',
               name: 'titleCover',
               type: 'object',
-              hidden: ({ parent }) => parent?.first === true,
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: 'EN',
@@ -234,15 +401,7 @@ export default {
               name: 'thumbnail',
               title: 'Thumbnail',
               type: 'image',
-              validation: (Rule) =>
-                Rule.custom((field, { parent }) => {
-                  console.log(field)
-                  if (parent?.first) {
-                    return true
-                  } else {
-                    return field && field.asset ? true : 'Required'
-                  }
-                }),
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: 'Edit Alt Text',

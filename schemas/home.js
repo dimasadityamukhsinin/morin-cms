@@ -168,38 +168,27 @@ export default {
                   initialValue: 'white',
                 },
                 {
-                  title: 'Custom',
-                  name: 'customOption',
-                  type: 'boolean',
-                  initialValue: false,
-                },
-                {
-                  title: 'Custom Button',
-                  name: 'custom',
+                  title: 'Button',
+                  name: 'button',
                   type: 'object',
-                  hidden: ({ parent }) => !(parent?.customOption === true),
                   fields: [
                     {
                       title: 'Title',
                       name: 'title',
-                      type: 'object',
-                      fields: [
-                        {
-                          title: 'EN',
-                          name: 'en',
-                          type: 'string',
-                        },
-                        {
-                          title: 'ID',
-                          name: 'id',
-                          type: 'string',
-                        },
-                      ],
+                      type: 'string',
+                      initialValue: 'Find Out More',
+                    },
+                    {
+                      title: 'Custom Link',
+                      name: 'customLink',
+                      type: 'boolean',
+                      initialValue: false,
                     },
                     {
                       title: 'Link',
                       name: 'link',
                       type: 'url',
+                      hidden: ({ parent }) => !(parent?.customLink === true),
                     },
                   ],
                 },
@@ -290,16 +279,9 @@ export default {
                   initialValue: 'white',
                 },
                 {
-                  title: 'Custom',
-                  name: 'customOption',
-                  type: 'boolean',
-                  initialValue: false,
-                },
-                {
-                  title: 'Custom',
-                  name: 'custom',
+                  title: 'Button',
+                  name: 'button',
                   type: 'object',
-                  hidden: ({ parent }) => !(parent?.customOption === true),
                   fields: [
                     {
                       title: 'Title',
@@ -310,21 +292,27 @@ export default {
                           title: 'EN',
                           name: 'en',
                           type: 'string',
-                          validation: (Rule) => Rule.required(),
+                          initialValue: 'Find Out More',
                         },
                         {
                           title: 'ID',
                           name: 'id',
                           type: 'string',
-                          validation: (Rule) => Rule.required(),
+                          initialValue: 'Temukan Lebih Banyak Lagi',
                         },
                       ],
+                    },
+                    {
+                      title: 'Custom Link',
+                      name: 'customLink',
+                      type: 'boolean',
+                      initialValue: false,
                     },
                     {
                       title: 'Link',
                       name: 'link',
                       type: 'url',
-                      validation: (Rule) => Rule.required(),
+                      hidden: ({ parent }) => !(parent?.customLink === true),
                     },
                   ],
                 },
@@ -347,15 +335,15 @@ export default {
       ],
     },
     {
-      title: "Product",
-      name: "product",
-      type: "object",
+      title: 'Product',
+      name: 'product',
+      type: 'object',
       validation: (Rule) => Rule.required(),
       fields: [
         {
-          title: "Button",
-          name: "button",
-          type: "object",
+          title: 'Button',
+          name: 'button',
+          type: 'object',
           validation: (Rule) => Rule.required(),
           fields: [
             {
@@ -373,20 +361,20 @@ export default {
           ],
         },
         {
-          title: "Icons",
-          name: "icons",
-          type: "array",
+          title: 'Icons',
+          name: 'icons',
+          type: 'array',
           of: [
             {
-              title: "Icon",
-              name: "icon",
-              type: "object",
+              title: 'Icon',
+              name: 'icon',
+              type: 'object',
               validation: (Rule) => Rule.required(),
               fields: [
                 {
-                  title: "Title",
-                  name: "title",
-                  type: "string",
+                  title: 'Title',
+                  name: 'title',
+                  type: 'string',
                   validation: (Rule) => Rule.required(),
                 },
                 {
@@ -403,14 +391,14 @@ export default {
                     },
                   ],
                 },
-              ]
-            }
+              ],
+            },
           ],
         },
         {
-          title: "Description",
-          name: "description",
-          type: "object",
+          title: 'Description',
+          name: 'description',
+          type: 'object',
           validation: (Rule) => Rule.required(),
           fields: [
             {
@@ -426,13 +414,13 @@ export default {
               validation: (Rule) => Rule.required(),
             },
           ],
-        }
-      ]
+        },
+      ],
     },
     {
-      title: "Recipe",
-      name: "recipe",
-      type: "object",
+      title: 'Recipe',
+      name: 'recipe',
+      type: 'object',
       validation: (Rule) => Rule.required(),
       fields: [
         {
@@ -477,9 +465,9 @@ export default {
           ],
         },
         {
-          title: "Description",
-          name: "description",
-          type: "object",
+          title: 'Description',
+          name: 'description',
+          type: 'object',
           validation: (Rule) => Rule.required(),
           fields: [
             {
@@ -495,13 +483,13 @@ export default {
               validation: (Rule) => Rule.required(),
             },
           ],
-        }
-      ]
+        },
+      ],
     },
     {
-      title: "Event",
-      name: "event",
-      type: "object",
+      title: 'Event',
+      name: 'event',
+      type: 'object',
       validation: (Rule) => Rule.required(),
       fields: [
         {
@@ -565,8 +553,8 @@ export default {
               validation: (Rule) => Rule.required(),
             },
           ],
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'instagram',
@@ -613,7 +601,7 @@ export default {
           validation: (Rule) => Rule.required(),
         },
       ],
-    }
+    },
   ],
   preview: {
     prepare() {

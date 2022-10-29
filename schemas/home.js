@@ -7,11 +7,11 @@ export default {
       title: 'SEO',
       name: 'seo',
       type: 'object',
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       fields: [
         {
           title: 'EN',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'en',
           type: 'object',
           options: {
@@ -51,8 +51,6 @@ export default {
         },
         {
           title: 'ID',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'id',
           type: 'object',
           options: {
@@ -96,6 +94,7 @@ export default {
       title: 'Slider Component',
       name: 'component',
       type: 'object',
+      description: "Edit the Slider Component to change and customize the landing slideshow on the main website.",
       fields: [
         {
           name: 'en',
@@ -108,41 +107,56 @@ export default {
               type: 'object',
               fields: [
                 {
-                  title: 'Text or Text Image',
+                  title: 'Change to Text Image',
                   name: 'option',
                   type: 'boolean',
                   initialValue: false,
+                  description: "Turn on the ‘Change to Text Image’ button to use an overlay image for the title on the landing slideshow.",
+                  validation: (Rule) => Rule.required(),
                 },
                 {
-                  title: 'Title',
+                  title: 'Text Display',
                   name: 'title',
                   type: 'string',
+                  description: "Text on top of the background image.",
                   hidden: ({ parent }) => !(parent?.option === false),
+                  validation: (Rule) =>
+                    Rule.custom((field, context) => {
+                      if(!context.parent.option) {
+                        return "Required"
+                      }else {
+                        return true
+                      }
+                    }),
                 },
                 {
                   title: 'Text Image',
                   name: 'textImage',
                   type: 'object',
+                  description: "Add Text Image to use an overlay image as the title on the background picture slider. Refer to the Figma template to create the text image.",
                   fields: [
                     {
-                      title: 'Image Desktop',
+                      title: 'Image Text / Graphic  on Desktop Image',
                       name: 'imageDesktop',
                       type: 'image',
+                      description: "For text display on desktop screen in a Landscape Format  I  recommended size 1920 x 1200 pixels  I  SVG / PNG (with transparent background)",
                       validation: (Rule) => Rule.required(),
                     },
                     {
-                      title: 'Image Mobile',
+                      title: 'Image Text / Graphic on Mobile Image',
                       name: 'imageMobile',
                       type: 'image',
+                      description: "For text display on mobile screen in a Portrait Format  I  recommended size 800 x 1800 pixels  I  SVG / PNG (with transparent background)",
                       validation: (Rule) => Rule.required(),
                     },
                   ],
                   hidden: ({ parent }) => !(parent?.option === true),
                 },
                 {
-                  title: 'Background',
+                  title: 'Background Image',
                   name: 'background',
                   type: 'image',
+                  description: "Picture on the background slide  I  Recommended size 1920 x 1200 pixels  I  JPEG / WEBP",
                   validation: (Rule) => Rule.required(),
                   fields: [
                     {
@@ -154,9 +168,10 @@ export default {
                   ],
                 },
                 {
-                  title: 'Set Header Color',
+                  title: 'Set Menu & Header Button Color',
                   name: 'langColor',
                   type: 'string',
+                  description: "Customize the color for the header, text, and button on the slider to black or white.",
                   validation: (Rule) => Rule.required(),
                   options: {
                     list: [
@@ -173,19 +188,21 @@ export default {
                   type: 'object',
                   fields: [
                     {
-                      title: 'Title',
+                      title: 'Button Text',
                       name: 'title',
                       type: 'string',
                       initialValue: 'Find Out More',
+                      validation: (Rule) => Rule.required(),
                     },
                     {
-                      title: 'Custom Link',
+                      title: 'Custom Button Link',
                       name: 'customLink',
                       type: 'boolean',
+                      description: "Enable this option to display a button for this slider that can be customized.",
                       initialValue: false,
                     },
                     {
-                      title: 'Link',
+                      title: 'Button Link',
                       name: 'link',
                       type: 'url',
                       hidden: ({ parent }) => !(parent?.customLink === true),
@@ -219,41 +236,56 @@ export default {
               type: 'object',
               fields: [
                 {
-                  title: 'Text or Text Image',
+                  title: 'Change to Text Image',
                   name: 'option',
                   type: 'boolean',
                   initialValue: false,
+                  description: "Turn on the ‘Change to Text Image’ button to use an overlay image for the title on the landing slideshow.",
+                  validation: (Rule) => Rule.required(),
                 },
                 {
-                  title: 'Title',
+                  title: 'Text Display',
                   name: 'title',
                   type: 'string',
+                  description: "Text on top of the background image.",
                   hidden: ({ parent }) => !(parent?.option === false),
+                  validation: (Rule) =>
+                    Rule.custom((field, context) => {
+                      if(!context.parent.option) {
+                        return "Required"
+                      }else {
+                        return true
+                      }
+                    }),
                 },
                 {
                   title: 'Text Image',
                   name: 'textImage',
                   type: 'object',
+                  description: "Add Text Image to use an overlay image as the title on the background picture slider. Refer to the Figma template to create the text image.",
                   fields: [
                     {
-                      title: 'Image Desktop',
+                      title: 'Image Text / Graphic  on Desktop Image',
                       name: 'imageDesktop',
                       type: 'image',
+                      description: "For text display on desktop screen in a Landscape Format  I  recommended size 1920 x 1200 pixels  I  SVG / PNG (with transparent background)",
                       validation: (Rule) => Rule.required(),
                     },
                     {
-                      title: 'Image Mobile',
+                      title: 'Image Text / Graphic on Mobile Image',
                       name: 'imageMobile',
                       type: 'image',
+                      description: "For text display on mobile screen in a Portrait Format  I  recommended size 800 x 1800 pixels  I  SVG / PNG (with transparent background)",
                       validation: (Rule) => Rule.required(),
                     },
                   ],
                   hidden: ({ parent }) => !(parent?.option === true),
                 },
                 {
-                  title: 'Background',
+                  title: 'Background Image',
                   name: 'background',
                   type: 'image',
+                  description: "Picture on the background slide  I  Recommended size 1920 x 1200 pixels  I  JPEG / WEBP",
                   validation: (Rule) => Rule.required(),
                   fields: [
                     {
@@ -265,9 +297,10 @@ export default {
                   ],
                 },
                 {
-                  title: 'Set Header Color',
+                  title: 'Set Menu & Header Button Color',
                   name: 'langColor',
                   type: 'string',
+                  description: "Customize the color for the header, text, and button on the slider to black or white.",
                   validation: (Rule) => Rule.required(),
                   options: {
                     list: [
@@ -284,32 +317,21 @@ export default {
                   type: 'object',
                   fields: [
                     {
-                      title: 'Title',
+                      title: 'Button Text',
                       name: 'title',
-                      type: 'object',
-                      fields: [
-                        {
-                          title: 'EN',
-                          name: 'en',
-                          type: 'string',
-                          initialValue: 'Find Out More',
-                        },
-                        {
-                          title: 'ID',
-                          name: 'id',
-                          type: 'string',
-                          initialValue: 'Temukan Lebih Banyak Lagi',
-                        },
-                      ],
+                      type: 'string',
+                      initialValue: 'Temukan lebih banyak lagi',
+                      validation: (Rule) => Rule.required(),
                     },
                     {
-                      title: 'Custom Link',
+                      title: 'Custom Button Link',
                       name: 'customLink',
                       type: 'boolean',
+                      description: "Enable this option to display a button for this slider that can be customized.",
                       initialValue: false,
                     },
                     {
-                      title: 'Link',
+                      title: 'Button Link',
                       name: 'link',
                       type: 'url',
                       hidden: ({ parent }) => !(parent?.customLink === true),
@@ -335,13 +357,13 @@ export default {
       ],
     },
     {
-      title: 'Product',
+      title: 'Product Section',
       name: 'product',
       type: 'object',
       validation: (Rule) => Rule.required(),
       fields: [
         {
-          title: 'Button',
+          title: 'See All Products Button Text',
           name: 'button',
           type: 'object',
           validation: (Rule) => Rule.required(),
@@ -364,6 +386,7 @@ export default {
           title: 'Icons',
           name: 'icons',
           type: 'array',
+          description: "Symbol in the lower part of the section | SVG / PNG (with transparent background)",
           of: [
             {
               title: 'Icon',
@@ -396,9 +419,10 @@ export default {
           ],
         },
         {
-          title: 'Description',
+          title: 'Product Section Description',
           name: 'description',
           type: 'object',
+          description: "All text below will be displayed on the product section.",
           validation: (Rule) => Rule.required(),
           fields: [
             {
@@ -418,7 +442,7 @@ export default {
       ],
     },
     {
-      title: 'Recipe',
+      title: 'Recipe Section',
       name: 'recipe',
       type: 'object',
       validation: (Rule) => Rule.required(),
@@ -444,7 +468,7 @@ export default {
           ],
         },
         {
-          title: 'Button',
+          title: 'Browse Recipe Button Text',
           name: 'button',
           type: 'object',
           validation: (Rule) => Rule.required(),
@@ -465,9 +489,10 @@ export default {
           ],
         },
         {
-          title: 'Description',
+          title: 'Recipe Section Description',
           name: 'description',
           type: 'object',
+          description: "All text below will be displayed in the recipe section.",
           validation: (Rule) => Rule.required(),
           fields: [
             {
@@ -487,7 +512,7 @@ export default {
       ],
     },
     {
-      title: 'Event',
+      title: 'Event Section',
       name: 'event',
       type: 'object',
       validation: (Rule) => Rule.required(),
@@ -513,7 +538,7 @@ export default {
           ],
         },
         {
-          title: 'Button All',
+          title: 'All Event Button Text',
           name: 'btn_all',
           type: 'object',
           validation: (Rule) => Rule.required(),
@@ -534,7 +559,7 @@ export default {
           ],
         },
         {
-          title: 'Button Card',
+          title: 'View Event Button Text',
           name: 'btn_card',
           type: 'object',
           validation: (Rule) => Rule.required(),
@@ -558,7 +583,7 @@ export default {
     },
     {
       name: 'instagram',
-      title: 'Instagram',
+      title: 'Instagram Section',
       type: 'object',
       validation: (Rule) => Rule.required(),
       fields: [
@@ -583,13 +608,13 @@ export default {
           ],
         },
         {
-          title: 'Button',
+          title: 'Instagram Button Text',
           name: 'button',
           type: 'string',
           validation: (Rule) => Rule.required(),
         },
         {
-          title: 'URL',
+          title: 'Instagram Button Link',
           name: 'url',
           type: 'url',
           validation: (Rule) => Rule.required(),
@@ -598,6 +623,7 @@ export default {
           title: 'Elfsight ID',
           name: 'elfsightID',
           type: 'string',
+          description: "The ID of the Elfsight Widget used to embed the Widget on Morin's Website. Please refer to the documentation for further instructions to get the ID.",
           validation: (Rule) => Rule.required(),
         },
       ],

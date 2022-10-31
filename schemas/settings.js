@@ -1,6 +1,6 @@
 export default {
   name: 'settings',
-  title: 'General',
+  title: 'General Settings',
   type: 'document',
   initialValue: () => ({
     webTitle: 'Morin',
@@ -10,22 +10,25 @@ export default {
       name: 'webTitle',
       title: 'Website Title',
       type: 'string',
+      description: "Title will be shown on the browser tab along side other general and meta purposes.",
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Default & General SEO Metadata",
+      title: "Default SEO Metadata",
       name: "seo",
       type: "object",
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
+        validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'EN',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'en',
           type: 'object',
           options: {
             collapsible: true,
           },
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               name: 'seo_description',
@@ -63,13 +66,12 @@ export default {
         },
         {
           title: 'ID',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'id',
           type: 'object',
           options: {
             collapsible: true,
           },
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               name: 'seo_description',
@@ -104,48 +106,6 @@ export default {
               ],
             },
           ],
-        },
-      ]
-    },
-    {
-      title: "Advance Setting",
-      name: "advance_setting",
-      type: "object",
-      options: {
-        collapsible: true,
-      },
-      fields: [
-        {
-          title: "Hide FAQ",
-          name: "hide_faq",
-          type: "boolean",
-          initialValue: false,
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Hide Shop",
-          name: "hide_shop",
-          type: "boolean",
-          initialValue: false,
-        },
-        {
-          title: "Turn Off Language",
-          name: "turn_language",
-          type: "boolean",
-          initialValue: false,
-        },
-        {
-          title: 'Default Language',
-          name: 'default_language',
-          type: 'string',
-          options: {
-            list: [
-              {title: 'ID', value: 'id'},
-              {title: 'EN', value: 'en'}
-            ],
-            layout: 'radio'
-          },
-          initialValue: 'id',
         },
       ]
     },
@@ -184,14 +144,59 @@ export default {
           title: "Message",
           name: "message",
           type: "text",
+          description: "All text below will be used as a preset message filled for the customer when they clicked on the WhatsApp Button.",
         }
+      ]
+    },
+    {
+      title: "Advance Setting",
+      name: "advance_setting",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          title: "Hide FAQ",
+          name: "hide_faq",
+          type: "boolean",
+          initialValue: false,
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Hide Shop",
+          name: "hide_shop",
+          type: "boolean",
+          description: "Hide All Internal Shop related button and content",
+          initialValue: false,
+        },
+        {
+          title: "Turn off Dual Language",
+          name: "turn_language",
+          type: "boolean",
+          description: "Set website to 1 Language (Indonesian)",
+          initialValue: false,
+        },
+        {
+          title: 'Default Language',
+          name: 'default_language',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'ID', value: 'id'},
+              {title: 'EN', value: 'en'}
+            ],
+            layout: 'radio'
+          },
+          initialValue: 'id',
+        },
       ]
     },
   ],
   preview: {
     prepare() {
       return {
-        title: 'General',
+        title: 'General Settings',
       }
     },
   },

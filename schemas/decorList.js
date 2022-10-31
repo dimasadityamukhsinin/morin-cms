@@ -4,19 +4,22 @@ export default {
   type: 'document',
   fields: [
     {
-      title: "Title",
+      title: "Decoration Title",
       name: "title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
-      title: "Image",
+      title: "Decoration Image",
       name: "image",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'en',
           title: 'EN',
           type: 'image',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -30,6 +33,7 @@ export default {
           name: 'id',
           title: 'ID',
           type: 'image',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: 'Edit Alt Text',

@@ -44,10 +44,17 @@ export default {
       ]
     },
     {
-      title: 'Background Dark Blue',
+      title: 'Answer Background Color',
       name: 'option',
-      type: 'boolean',
-      initialValue: false,
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Light Blue', value: 'light_blue'},
+          {title: 'Dark Blue', value: 'dark_blue'}
+        ],
+        layout: 'radio'
+      },
+      initialValue: 'light_blue',
     },
   ],
   preview: {

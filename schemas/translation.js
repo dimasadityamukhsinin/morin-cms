@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Menu Language',
+      title: 'Menu Text',
       name: 'menu_lang',
       type: 'object',
       fields: [
@@ -155,7 +155,7 @@ export default {
       ],
     },
     {
-      title: 'Product Page Language',
+      title: 'Product Page Text',
       name: 'productLanguage',
       type: 'object',
       fields: [
@@ -241,7 +241,7 @@ export default {
       ],
     },
     {
-      title: 'Event Page Language',
+      title: 'Event Page Text',
       name: 'eventLanguage',
       type: 'object',
       fields: [
@@ -291,7 +291,7 @@ export default {
       ],
     },
     {
-      title: 'Recipe Page Language',
+      title: 'Recipe Page Text',
       name: 'recipeLanguage',
       type: 'object',
       fields: [
@@ -413,7 +413,7 @@ export default {
       ],
     },
     {
-      title: 'Subscription Language',
+      title: 'Subscription Text',
       name: 'sub_language',
       type: 'object',
       fields: [

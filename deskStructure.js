@@ -139,13 +139,13 @@ export default () =>
             .title('Settings')
             .items([
               S.listItem()
-                .title('General')
+                .title('General Settings')
                 .icon(() => <FiSliders />)
                 .child(
                   S.document().schemaType('settings').documentId('settings'),
                 ),
               S.listItem()
-                .title('Footer')
+                .title('Footer Settings')
                 .icon(() => <FiSliders />)
                 .child(S.document().schemaType('footer').documentId('footer')),
               S.listItem()

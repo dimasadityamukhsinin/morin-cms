@@ -53,11 +53,11 @@ export default {
       title: 'SEO',
       name: 'seo',
       type: 'object',
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       fields: [
         {
           title: 'EN',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'en',
           type: 'object',
           options: {
@@ -97,8 +97,6 @@ export default {
         },
         {
           title: 'ID',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'id',
           type: 'object',
           options: {
@@ -142,6 +140,7 @@ export default {
       name: 'recipeCategory',
       title: 'Recipe Category',
       type: 'array',
+      description: "The categories added for this recipe will be displayed on the thumbnails in the lists of recipe.",
       validation: (Rule) => Rule.required(),
       of: [
         {
@@ -191,14 +190,17 @@ export default {
       ],
     },
     {
-      title: 'Ingredients',
+      title: 'Recipe Ingredients',
       name: 'ingredient',
       type: 'object',
+      description: "Add Item below to add ingredients for this recipe",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'en',
           title: 'EN',
           type: 'array',
+          validation: (Rule) => Rule.required(),
           of: [
             {
               title: 'Ingredient',
@@ -209,12 +211,14 @@ export default {
                   title: 'Title',
                   name: 'title',
                   type: 'boolean',
+                  description: "Enable this button to make this a title.",
                   initialValue: false,
                 },
                 {
                   title: 'Description',
                   name: 'description',
                   type: 'string',
+                  description: "All text below will be displayed in the ingredient section",
                   validation: (Rule) => Rule.required(),
                 },
               ],
@@ -225,6 +229,7 @@ export default {
           name: 'id',
           title: 'ID',
           type: 'array',
+          validation: (Rule) => Rule.required(),
           of: [
             {
               title: 'Ingredient',
@@ -235,12 +240,14 @@ export default {
                   title: 'Title',
                   name: 'title',
                   type: 'boolean',
+                  description: "Enable this button to make this a title.",
                   initialValue: false,
                 },
                 {
                   title: 'Description',
                   name: 'description',
                   type: 'string',
+                  description: "All text below will be displayed in the ingredient section",
                   validation: (Rule) => Rule.required(),
                 },
               ],
@@ -253,6 +260,7 @@ export default {
       title: 'Made With',
       name: 'made',
       type: 'array',
+      description: "The items added will be displayed the recipe page and be clicked to be directed to the product’s page.",
       validation: (Rule) => Rule.max(2),
       of: [
         {
@@ -268,6 +276,7 @@ export default {
       title: 'Recipe Description',
       name: 'description',
       type: 'object',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'EN',
@@ -283,8 +292,8 @@ export default {
     },
     {
       name: 'thumbnail',
-      description: 'A thumbnail image for this recipe | PNG / JPEG / WEBP',
-      title: 'Thumbnail',
+      description: 'Thumbnail on the Card in the Recipe landing page  I  Recommended size 600 x 750 pixels  I  PNG / JPEG',
+      title: 'Recipe Thumbnail',
       type: 'image',
       validation: (Rule) => Rule.required(),
       fields: [
@@ -298,8 +307,8 @@ export default {
     },
     {
       name: 'cover',
-      description: 'A cover image for this recipe | PNG / JPEG / WEBP',
-      title: 'Cover',
+      description: 'Picture on the Banner in the Recipe page I  Recommended size 1920 x 900 pixels  I  PNG / JPEG',
+      title: 'Recipe Cover',
       type: 'image',
       validation: (Rule) => Rule.required(),
       fields: [
@@ -312,14 +321,17 @@ export default {
       ],
     },
     {
-      title: 'Steps',
+      title: 'Recipe Steps',
       name: 'steps',
       type: 'object',
+      description: "The orders displayed in the recipe will follow the orders below.",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'EN',
           name: 'en',
           type: 'array',
+          validation: (Rule) => Rule.required(),
           of: [
             {
               title: 'Step',
@@ -328,7 +340,7 @@ export default {
               fields: [
                 {
                   name: 'description',
-                  title: 'Description',
+                  title: 'Step Description',
                   type: 'string',
                   validation: (Rule) => Rule.required(),
                 },
@@ -360,6 +372,7 @@ export default {
           title: 'ID',
           name: 'id',
           type: 'array',
+          validation: (Rule) => Rule.required(),
           of: [
             {
               title: 'Step',
@@ -368,7 +381,7 @@ export default {
               fields: [
                 {
                   name: 'description',
-                  title: 'Description',
+                  title: 'Step Description',
                   type: 'string',
                   validation: (Rule) => Rule.required(),
                 },
@@ -399,14 +412,16 @@ export default {
       ],
     },
     {
-      title: 'Gallery',
+      title: 'Recipe Gallery',
       name: 'gallery',
       type: 'array',
+      description: "List of image for the Recipe page I  Recommended size 1500 x 900 pixels  I  PNG / JPEG",
       of: [
         {
           name: 'image',
-          title: 'Image',
+          title: 'Gallery Image',
           type: 'image',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -453,9 +468,10 @@ export default {
       },
     },
     {
-      title: 'You may also like',
+      title: 'Recipe Recommendation (You may also like)',
       name: 'related',
       type: 'object',
+      description: "Enable this button to set the recommended recipes manually or automatically.",
       fields: [
         {
           title: 'Manual / Auto',
@@ -483,14 +499,16 @@ export default {
       title: 'Set Background Color',
       name: 'backgroundColor',
       type: 'color',
+      description: "Customize the background color of the recipe page. Please refer to the documentation for the proper color pairing. Ensure the text color and background color has enough contrast for legibility."
     },
     {
       title: 'Set Text Color',
       name: 'textColor',
       type: 'color',
+      description: "Customize the text color of the recipe page. Please refer to the documentation for the proper color pairing. Ensure the text color and background color has enough contrast for legibility.",
     },
     {
-      title: 'Set Title Color',
+      title: 'Set Header & Menu Button Color',
       name: 'titleColor',
       type: 'string',
       validation: (Rule) => Rule.required(),

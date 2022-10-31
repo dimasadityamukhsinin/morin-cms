@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     {
-      title: "Title",
+      title: "Recipe Category Title",
       name: "title",
       type: "object",
       validation: (Rule) => Rule.required(),
@@ -24,9 +24,10 @@ export default {
       ]
     },
     {
-      title: 'Data',
+      title: 'Recipe Category Entry',
       name: 'data',
       type: 'array',
+      validation: (Rule) => Rule.required(),
       of: [
         {
           type: 'reference',

@@ -13,7 +13,7 @@ export default {
   type: 'document',
   fields: [
     {
-      title: "Title",
+      title: "Event Title",
       name: "title",
       type: "object",
       validation: (Rule) => Rule.required(),
@@ -60,11 +60,11 @@ export default {
       title: "SEO",
       name: "seo",
       type: "object",
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       fields: [
         {
           title: 'EN',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'en',
           type: 'object',
           options: {
@@ -104,8 +104,6 @@ export default {
         },
         {
           title: 'ID',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'id',
           type: 'object',
           options: {
@@ -159,8 +157,8 @@ export default {
     },
     {
       name: 'thumbnail',
-      description: 'PNG / JPEG / WEBP',
-      title: 'Thumbnail',
+      description: 'Image on the Card in the Event landing page  I  Recommended Size 900 x 530 pixels  I  JPEG / WEBP',
+      title: 'Event Thumbnail',
       type: 'image',
       validation: (Rule) => Rule.required(),
       fields: [
@@ -174,9 +172,9 @@ export default {
     },
     {
       name: 'cover_image',
-      description: 'PNG / JPEG / WEBP',
-      title: 'Cover Image',
+      title: 'Event Cover Image',
       type: 'image',
+      description: "Image on top of the Event article page  I  Recommended Size 900 x 600 pixels  I  JPEG / WEBP",
       validation: (Rule) => Rule.required(),
       fields: [
         {
@@ -188,14 +186,17 @@ export default {
       ],
     },
     {
-      title: "Description",
+      title: "Event Content",
       name: "description",
       type: "object",
+      description: "Image on the event article alongside with text  I  Recommended Size 600 x 300 pixels  I  JPEG / WEBP",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'EN',
           name: 'en',
           type: 'array',
+          validation: (Rule) => Rule.required(),
           of: [
             {
               title: 'Block',
@@ -279,6 +280,7 @@ export default {
           title: 'ID',
           name: 'id',
           type: 'array',
+          validation: (Rule) => Rule.required(),
           of: [
             {
               title: 'Block',

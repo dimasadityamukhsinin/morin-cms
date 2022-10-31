@@ -57,11 +57,11 @@ export default {
       title: 'SEO',
       name: 'seo',
       type: 'object',
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       fields: [
         {
           title: 'EN',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'en',
           type: 'object',
           options: {
@@ -101,8 +101,6 @@ export default {
         },
         {
           title: 'ID',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'id',
           type: 'object',
           options: {
@@ -146,6 +144,7 @@ export default {
       title: 'Get this Product',
       name: 'getProduct',
       type: 'object',
+      description: "Button to show where to get or purchase the related product. Toggle the Custom link to set the button to an external link. Leave Blank to hide the button.",
       fields: [
         {
           title: 'Custom Link',
@@ -155,14 +154,14 @@ export default {
           validation: (Rule) => Rule.required(),
         },
         {
-          title: 'Product',
+          title: 'Internal Shop Product Page',
           name: 'linkStore',
           type: 'reference',
           to: [{ type: 'shopifyData' }],
           hidden: ({ parent }) => !!parent.custom_link,
         },
         {
-          title: 'Product Link',
+          title: 'External Product Page Link',
           name: 'linkProduct',
           type: 'url',
           hidden: ({ parent }) => !parent.custom_link,
@@ -187,23 +186,26 @@ export default {
       title: 'Product Description',
       name: 'description',
       type: 'object',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'EN',
           name: 'en',
           type: 'text',
+          validation: (Rule) => Rule.required(),
         },
         {
           title: 'ID',
           name: 'id',
           type: 'text',
+          validation: (Rule) => Rule.required(),
         },
       ],
     },
     {
       name: 'thumbnail',
-      description: 'A cover image for this product | PNG / JPEG / WEBP',
-      title: 'Thumbnail',
+      description: 'Image on the Card on the Product page  I  Recommended Size 530 x 600 pixels  I  PNG / WEBP',
+      title: 'Product Card Thumbnail',
       type: 'image',
       validation: (Rule) => Rule.required(),
       fields: [
@@ -216,9 +218,11 @@ export default {
       ],
     },
     {
-      title: 'Thumbnail Fruit',
+      title: 'Product Card Decorative Elements for Thumbnail',
       name: 'thumbnailFruit',
       type: 'object',
+      description: "Fruit pictures on the background Thumbnail of Product  I  Recommended Size 430 x 270 pixels  I  PNG / WEBP",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Fruit 1',
@@ -262,15 +266,17 @@ export default {
           ],
         },
         {
-          title: 'Layout',
+          title: 'Product Decorative Element Layouts',
           name: 'layout',
           type: 'string',
+          description: "Placings for each decorative when it is displayed on the Product Card Thumbnail.",
+          validation: (Rule) => Rule.required(),
           options: {
             list: [
-              { title: '1', value: '1' },
-              { title: '2', value: '2' },
-              { title: '3', value: '3' },
-              { title: '4', value: '4' },
+              { title: 'Layout 1 - 3 Fruits', value: '1' },
+              { title: 'Layout 2 - 3 Fruits', value: '2' },
+              { title: 'Layout 3 - 2 Fruits', value: '3' },
+              { title: 'Layout 4 - 2 Fruits', value: '4' },
             ],
             layout: 'radio',
           },
@@ -279,30 +285,33 @@ export default {
       ],
     },
     {
-      title: 'Decor Component',
+      title: 'Product Decoration Component',
       name: 'decor',
       type: 'object',
       fields: [
         {
-          title: 'Decor Left',
+          title: 'Left Decoration',
           name: 'decor1',
           type: 'reference',
+          description: "The decoration for the left side of the landing page",
           to: [{ type: 'decorList' }],
           validation: (Rule) => Rule.required(),
         },
         {
           name: 'decor2',
-          title: 'Decor Right',
+          title: 'Right Decoration',
           type: 'reference',
+          description: "The decoration for the right side of the landing page",
           to: [{ type: 'decorList' }],
           validation: (Rule) => Rule.required(),
         },
       ],
     },
     {
-      title: 'Weight',
+      title: 'Product Weight',
       name: 'listWeight',
       type: 'array',
+      description: "Every entry listed will be displayed as options on the product page on the website.",
       validation: (Rule) => Rule.required(),
       of: [
         {
@@ -369,9 +378,10 @@ export default {
       ],
     },
     {
-      title: 'Similar Products',
+      title: 'Product Recommendation (Similar Products)',
       name: 'similar',
       type: 'object',
+      description: "Enable this button to set the recommended products manual or automatically.",
       fields: [
         {
           title: 'Manual / Auto',
@@ -399,14 +409,16 @@ export default {
       title: 'Set Text Color',
       name: 'textColor',
       type: 'color',
+      description: "Customize the text color of the product page Please refer to the documentation for the proper color pairing. Ensure the text color and background color has enough contrast for legibility."
     },
     {
       title: 'Set Background Color',
       name: 'backgroundColor',
       type: 'color',
+      description: "Customize the background color of the product page. Please refer to the documentation for the proper color pairing. Ensure the text color and background color has enough contrast for legibility."
     },
     {
-      title: 'Set Header Color',
+      title: 'Set Header & Menu Button Color',
       name: 'langColor',
       type: 'string',
       validation: (Rule) => Rule.required(),

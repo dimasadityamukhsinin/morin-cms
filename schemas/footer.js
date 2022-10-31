@@ -1,6 +1,6 @@
 export default {
   name: 'footer',
-  title: 'Footer',
+  title: 'Footer Settings',
   type: 'document',
   fields: [
     {
@@ -15,12 +15,14 @@ export default {
       title: 'Show Social Media',
       name: 'show_socmed',
       type: 'boolean',
+      description: "Toggle to show or hide social media on Footer",
       initialValue: true,
     },
     {
-      title: 'Social Media',
+      title: 'Social Media Links',
       name: 'footerLink',
       type: 'object',
+      description: "Leave blank to hide the specific social media button.",
       hidden: ({ parent }) => !(parent?.show_socmed === true),
       fields: [
         {
@@ -49,12 +51,13 @@ export default {
       name: 'creditText',
       title: 'Credits Text',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     prepare() {
       return {
-        title: 'Footer',
+        title: 'Footer Settings',
       }
     },
   },

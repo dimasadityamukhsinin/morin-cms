@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     {
-      title: "Title",
+      title: "Event Category Title",
       name: "title",
       type: "object",
       validation: (Rule) => Rule.required(),

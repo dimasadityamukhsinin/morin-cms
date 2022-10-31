@@ -16,11 +16,11 @@ export default {
       title: 'SEO',
       name: 'seo',
       type: 'object',
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       fields: [
         {
           title: 'EN',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'en',
           type: 'object',
           options: {
@@ -60,8 +60,6 @@ export default {
         },
         {
           title: 'ID',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'id',
           type: 'object',
           options: {
@@ -127,9 +125,11 @@ export default {
       type: 'object',
       fields: [
         {
-          title: 'Image Left',
+          title: 'Left Floating Product Image',
           name: 'imageLeft',
           type: 'image',
+          validation: (Rule) => Rule.required(),
+          description: "Featured product image on the left side of the website  I  recommended size 530 x 600 pixels  I  WEBP / PNG (with transparent background)",
           fields: [
             {
               title: 'Edit Alt Text',
@@ -140,9 +140,11 @@ export default {
           ],
         },
         {
-          title: 'Image Right',
+          title: 'Right Floating Product Image',
           name: 'imageRight',
           type: 'image',
+          validation: (Rule) => Rule.required(),
+          description: "Featured product image on the right side of the website  I  recommended size 530 x 600 pixels  I  WEBP / PNG (with transparent background)",
           fields: [
             {
               title: 'Edit Alt Text',
@@ -158,12 +160,13 @@ export default {
       title: 'Cover Content',
       name: 'cover',
       type: 'object',
+      description: "The pop-up window that will show when the button in the Header is clicked",
       options: {
         collapsible: true,
       },
       fields: [
         {
-          title: 'Title Description',
+          title: 'Content Title',
           name: 'titleDescription',
           type: 'object',
           validation: (Rule) => Rule.required(),
@@ -183,7 +186,7 @@ export default {
           ],
         },
         {
-          title: 'Button',
+          title: 'Button Text',
           name: 'button',
           type: 'object',
           validation: (Rule) => Rule.required(),
@@ -206,6 +209,8 @@ export default {
           title: 'Description',
           name: 'description',
           type: 'object',
+          description: "All text below will be displayed on the Cover Content section",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: 'EN',
@@ -338,9 +343,10 @@ export default {
           type: 'object',
           fields: [
             {
-              title: 'Title Cover',
+              title: 'Cover Title',
               name: 'titleCover',
               type: 'object',
+              description: "All text below will be displayed on the thumbnail for this content.",
               validation: (Rule) => Rule.required(),
               fields: [
                 {
@@ -358,7 +364,7 @@ export default {
               ],
             },
             {
-              title: 'Title Description',
+              title: 'Content Title',
               name: 'titleDescription',
               type: 'object',
               validation: (Rule) => Rule.required(),
@@ -378,9 +384,10 @@ export default {
               ],
             },
             {
-              title: 'Button',
+              title: 'Button Text',
               name: 'button',
               type: 'object',
+              description: "All text will be displayed on the button in the thumbnail for this content.",
               validation: (Rule) => Rule.required(),
               fields: [
                 {
@@ -401,6 +408,7 @@ export default {
               name: 'thumbnail',
               title: 'Thumbnail',
               type: 'image',
+              description: "Image which represents the whole article  I  recommended size 900 x 1150 pixels  I  JPEG / WEBP",
               validation: (Rule) => Rule.required(),
               fields: [
                 {
@@ -415,6 +423,8 @@ export default {
               title: 'Description',
               name: 'description',
               type: 'object',
+              validation: (Rule) => Rule.required(),
+              description: "All contents below will be displayed on the pop-up window when this content is clicked.",
               fields: [
                 {
                   title: 'EN',

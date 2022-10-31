@@ -7,11 +7,11 @@ export default {
       title: "SEO",
       name: "seo",
       type: "object",
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       fields: [
         {
           title: 'EN',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'en',
           type: 'object',
           options: {
@@ -51,8 +51,6 @@ export default {
         },
         {
           title: 'ID',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'id',
           type: 'object',
           options: {
@@ -113,7 +111,7 @@ export default {
       ]
     },
     {
-      title: "Button Language",
+      title: "Button Text",
       name: "btn_lang",
       type: "object",
       fields: [

@@ -7,11 +7,11 @@ export default {
       title: "SEO",
       name: "seo",
       type: "object",
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       fields: [
         {
           title: 'EN',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'en',
           type: 'object',
           options: {
@@ -51,8 +51,6 @@ export default {
         },
         {
           title: 'ID',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'id',
           type: 'object',
           options: {
@@ -116,6 +114,8 @@ export default {
       name: 'background',
       title: 'Background',
       type: 'image',
+      description: "Picture on the background Banner  I  Recommended size 1920 x 900 pixels  I  JPEG / WEBP",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Edit Alt Text',
@@ -126,9 +126,10 @@ export default {
       ],
     },
     {
-      title: 'Set Header Color',
+      title: 'Set Menu & Header Button Color',
       name: 'langColor',
       type: 'string',
+      description: "Customize the color for the header to black or white.",
       validation: (Rule) => Rule.required(),
       options: {
         list: [

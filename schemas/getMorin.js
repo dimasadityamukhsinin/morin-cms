@@ -7,11 +7,11 @@ export default {
       title: 'SEO',
       name: 'seo',
       type: 'object',
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       fields: [
         {
           title: 'EN',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'en',
           type: 'object',
           options: {
@@ -51,8 +51,6 @@ export default {
         },
         {
           title: 'ID',
-          description:
-            'Search Engine Optimization allows to improve the ranking in search results.',
           name: 'id',
           type: 'object',
           options: {
@@ -93,7 +91,7 @@ export default {
       ],
     },
     {
-      title: "Shop",
+      title: "Shop Button",
       name: "shop",
       type: "object",
       fields: [
@@ -107,6 +105,7 @@ export default {
           title: "Link",
           name: "link",
           type: "url",
+          validation: (Rule) => Rule.required(),
         },
       ]
     },
@@ -114,6 +113,7 @@ export default {
       title: 'Contents',
       name: 'Shops',
       type: 'array',
+      description: "Online and offline list of the marketplace. Click to edit each section and Add Item to make new. ",
       of: [
         {
           title: 'Content',
@@ -185,7 +185,7 @@ export default {
                       initialValue: 'link',
                     },
                     {
-                      title: 'Links',
+                      title: 'Shop Entries',
                       name: 'links',
                       type: 'array',
                       hidden: ({ parent }) => !(parent?.option === 'link'),
@@ -207,6 +207,7 @@ export default {
                               title: 'Image',
                               type: 'image',
                               validation: (Rule) => Rule.required(),
+                              description: "The file type is PNG/WEBP/SVG and the recommended size is 400 x 200 pixels.",
                               fields: [
                                 {
                                   title: 'Edit Alt Text',

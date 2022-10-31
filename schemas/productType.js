@@ -101,19 +101,31 @@ export default {
       ],
     },
     {
-      title: 'Middle Image',
-      name: 'image1',
-      type: 'image',
-    },
-    {
-      title: 'Left Image',
-      name: 'image2',
-      type: 'image',
-    },
-    {
-      title: 'Right Image',
-      name: 'image3',
-      type: 'image',
+      title: "Product Category Image Hover",
+      name: "imageHover",
+      type: "object",
+      description: "Images on the Product Category on the Product landing page | Recommended Size 530 x 600 pixels | JPEG / WEBP",
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: 'Middle Image',
+          name: 'image1',
+          type: 'image',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'Left Image',
+          name: 'image2',
+          type: 'image',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'Right Image',
+          name: 'image3',
+          type: 'image',
+          validation: (Rule) => Rule.required(),
+        },
+      ]
     },
     {
       name: 'animation',

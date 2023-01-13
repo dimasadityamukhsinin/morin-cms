@@ -314,6 +314,34 @@ export default {
       ],
     },
     {
+      title: 'Get this Product',
+      name: 'getProduct',
+      type: 'object',
+      description: "Button to show where to get or purchase the related product. Toggle the Custom link to set the button to an external link. Leave Blank to hide the button.",
+      fields: [
+        {
+          title: 'Custom Link',
+          name: 'custom_link',
+          type: 'boolean',
+          initialValue: false,
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'Internal Shop Product Page',
+          name: 'linkStore',
+          type: 'reference',
+          to: [{ type: 'shopifyData' }],
+          hidden: ({ parent }) => !!parent.custom_link,
+        },
+        {
+          title: 'External Product Page Link',
+          name: 'linkProduct',
+          type: 'url',
+          hidden: ({ parent }) => !parent.custom_link,
+        },
+      ],
+    },
+    {
       title: 'Product Type',
       name: 'type',
       type: 'reference',

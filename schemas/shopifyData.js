@@ -314,10 +314,9 @@ export default {
       ],
     },
     {
-      title: 'Get this Product',
+      title: 'View Products Details',
       name: 'getProduct',
       type: 'object',
-      description: "Button to show where to get or purchase the related product. Toggle the Custom link to set the button to an external link. Leave Blank to hide the button.",
       fields: [
         {
           title: 'Custom Link',

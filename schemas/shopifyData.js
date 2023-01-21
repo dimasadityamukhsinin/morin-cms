@@ -1,47 +1,6 @@
 import { SunIcon, ImageIcon } from '@sanity/icons'
 import React, { forwardRef, useState } from 'react'
 
-const ShopifyDocumentStatus = forwardRef((props, ref) => {
-  const { url } = props
-
-  const [imageVisible, setImageVisible] = useState(true)
-
-  // Hide image on error / 404
-  const handleImageError = () => setImageVisible(false)
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        alignItems: 'center',
-        borderRadius: 'inherit',
-        display: 'flex',
-        height: '100%',
-        justifyContent: 'center',
-        overflow: 'hidden',
-        width: '100%',
-      }}
-    >
-      {imageVisible && url ? (
-        <img
-          onError={handleImageError}
-          src={`${url}&width=400`}
-          style={{
-            height: '100%',
-            left: 0,
-            objectFit: 'contain',
-            position: 'absolute',
-            top: 0,
-            width: '100%',
-          }}
-        />
-      ) : (
-        <ImageIcon style={{ position: 'absolute' }} />
-      )}
-    </div>
-  )
-})
-
 export default {
   name: 'shopifyData',
   title: 'Shopify Data',
@@ -119,20 +78,6 @@ export default {
           type: 'string',
           description: 'Shopify Product ID',
         },
-        // Product ID
-        {
-          name: 'gid',
-          title: 'GID',
-          type: 'string',
-          description: 'Shopify Product GID',
-        },
-        // Slug
-        {
-          name: 'handle',
-          title: 'Slug',
-          type: 'string',
-          description: 'Shopify Product handle',
-        },
         // Product Type
         {
           fieldset: 'organization',
@@ -147,13 +92,6 @@ export default {
           title: 'Vendor',
           type: 'string',
         },
-        // Tags
-        // {
-        //   fieldset: 'organization',
-        //   name: 'tags',
-        //   title: 'Tags',
-        //   type: 'string',
-        // },
         // Price range
         {
           name: 'priceRange',
@@ -174,13 +112,6 @@ export default {
               type: 'number',
             },
           ],
-        },
-        // Preview Image URL
-        {
-          name: 'image',
-          title: 'Preview Image URL',
-          type: 'string',
-          description: 'Image displayed in both cart and checkout',
         },
         // Options
         {
@@ -206,7 +137,19 @@ export default {
                   title: 'Values',
                   name: 'values',
                   type: 'array',
-                  of: [{ type: 'string' }],
+                  of: [
+                    { 
+                      Title: "Name",
+                      name: "name",
+                      type: 'object',
+                      fields: [
+                        {
+                          name: "name",
+                          type: "string"
+                        }
+                      ]
+                    }
+                  ],
                 },
               ],
               preview: {
@@ -329,7 +272,7 @@ export default {
           title: 'Internal Shop Product Page',
           name: 'linkStore',
           type: 'reference',
-          to: [{ type: 'shopifyData' }],
+          to: [{ type: 'productList' }],
           hidden: ({ parent }) => !!parent.custom_link,
         },
         {
@@ -394,9 +337,15 @@ export default {
             },
           ],
           preview: {
-            prepare() {
+            select: {
+              title: 'shopifyProduct.title',
+              media: 'image',
+            },
+            prepare(selection) {
+              const { media } = selection
               return {
                 title: 'Image Slider',
+                media: media
               }
             },
           },
@@ -408,14 +357,7 @@ export default {
   preview: {
     select: {
       title: 'shopifyProduct.title',
-      media: 'shopifyProduct.image',
-    },
-    prepare(selection) {
-      const { title, media } = selection
-      return {
-        media: <ShopifyDocumentStatus url={media} />,
-        title,
-      }
+      media: 'thumbnail',
     },
   },
 }

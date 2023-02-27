@@ -118,7 +118,14 @@ export default {
           name: 'googleID',
           description:
             'Place your Google Analytics ID here to link to your Google Analytics to see the website traffic statistic',
-          title: 'Google Analytics ID',
+          title: 'Google Analytics ID Main Website',
+          type: 'string',
+        },
+        {
+          name: 'googleIDShop',
+          description:
+            'Place your Google Analytics ID here to link to your Google Analytics to see the website traffic statistic',
+          title: 'Google Analytics ID Shop',
           type: 'string',
         },
         {

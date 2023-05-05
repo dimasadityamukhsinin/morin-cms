@@ -103,7 +103,7 @@ export default () =>
               S.documentTypeListItem('productType').icon(() => <FiFlag />),
               S.documentTypeListItem('decorList').icon(() => <FiFileText />),
               S.documentTypeListItem('shopifyData')
-                .title('WIP - Store Products')
+                .title('Store Products [Shopify Inactive]')
                 .icon(() => <FiFileText />),
             ]),
         ),
